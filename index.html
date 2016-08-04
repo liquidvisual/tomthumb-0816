@@ -132,18 +132,17 @@
     <!-- HERO -->
     <div class="lv-hero">
 
-    <!-- style="background-image: url('/assets/img/content/video/video-1.jpg')" data-background-image="/assets/img/content/video/video-1.jpg" -->
         <!-- HERO ITEM -->
         <div class="lv-hero-item" style="background-image: url('/assets/img/content/video/video-1.jpg')" data-background-image="/assets/img/content/video/video-1.jpg">
 
-            <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-
+            <!-- HTML5 VIDEO -->
             <video autoplay loop muted>
-                <source src="/assets/img/content/video/video-1.mp4" type="video/mp4">
                 <source src="/assets/img/content/video/video-1.webm" type="video/webm">
+                <source src="/assets/img/content/video/video-1.mp4" type="video/mp4">
             </video>
 
-            <div class="display-table">
+            <!-- CAPTION -->
+            <div class="lv-hero-caption-wrapper display-table">
                 <div class="display-cell align-middle">
                     <div class="container text-xs-center">
                         <div class="lv-hero-item-caption animated fadeInLeft">
@@ -154,6 +153,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div> <!-- /.lv-hero -->
 </div> <!-- /.hero-wrapper -->
