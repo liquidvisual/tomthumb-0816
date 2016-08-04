@@ -1,0 +1,20 @@
+- title: Home
+  url: /
+
+- title: Our Model
+  url: /our-model/
+  include_children_in_nav: true
+  children: null
+
+- title: Case Studies
+  url: /case-studies/
+  include_children_in_nav: true
+  children: null
+
+- title: About Us
+  url: /about-us/
+  include_children_in_nav: true
+  children: null
+
+- title: Contact
+  url: /contact/

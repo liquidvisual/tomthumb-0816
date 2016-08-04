@@ -1,0 +1,22 @@
+{% assign settings = site.data.settings %}
+{% assign logo_light = "/img/content/logo-light.png" %}
+{% assign logo_dark = "/img/content/logo-dark.png" %}
+
+<div class="container">
+    <div class="display-table">
+        <div class="display-cell">
+
+            <!-- LOGO -->
+            <a class="logo" href="/" title="{{ settings.seo_title }}" itemprop="url">
+                <img width="270" class="hidden-sm-down" src="{{ logo_light }}" alt="{{ settings.company_title }}" itemprop="logo">
+                <img width="270" class="hidden-md-up" src="{{ logo_dark }}" alt="{{ settings.company_title }}" itemprop="logo">
+            </a>
+
+            <!-- HAMBURGER -->
+            <div class="global-mobile-menu hidden-xl-up">
+                <a class="hamburger"><i class="fa fa fa-navicon"></i></a>
+            </div>
+
+        </div>
+    </div>
+</div>

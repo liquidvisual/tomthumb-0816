@@ -1,0 +1,41 @@
+{% comment %}
+    LIQUIDVISUAL-HERO
+
+    - updated: 02.08.16
+    - notes:
+        * Multiple items in carousel_slides.yml triggers carousel mode
+        * .has-auto-height - caption will detemine height
+        * .has-fixed-height - used for internal pages to set a height
+{% endcomment %}
+
+{% assign hero = page.hero %}
+
+<div class="lv-hero-wrapper">
+
+    <!-- HERO -->
+    <div class="lv-hero">
+
+        <!-- HERO ITEM -->
+        <div class="lv-hero-item" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
+
+            <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+
+           <video playsinline autoplay loop muted>
+               <source src="{{ site.assets}}/img/content/video/video-1.webm" type="video/webm">
+               <source src="{{ site.assets }}/img/content/video/video-1.mp4" type="video/mp4">
+           </video>
+
+            <div class="display-table">
+                <div class="display-cell align-middle">
+                    <div class="container text-xs-center">
+                        <div class="lv-hero-item-caption animated fadeInLeft">
+                            <h1 class="lv-hero-header">Every vision needs a strategy.</h1>
+                            <div class="lv-hero-header-underline"></div>
+                            <a class="btn btn-primary" href="/">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /.lv-hero -->
+</div> <!-- /.hero-wrapper -->

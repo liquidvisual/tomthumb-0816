@@ -1,0 +1,49 @@
+---
+layout: internal
+---
+
+{% assign settings = site.data.settings %}
+{% assign contacts = settings.contacts %}
+
+<section class="section-dark is-slim">
+	<div class="container">
+		<p class="lead m-b-0 text-xs-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et.</p>
+	</div>
+</section>
+
+{% assign address = site.data.settings.offices[0].address %}
+
+<iframe class="lv-google-map"
+        width="100%"
+        height="320"
+        frameborder="0"
+        src="https://maps.google.com/maps?hl=en&q={{address | strip_html }}&ie=UTF8&t=roadmap&z=14&iwloc=A&output=embed">
+</iframe>
+
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<p><img src="/img/content/logo-dark.png"></p>
+				<br>
+				<br>
+				<p class="h6 m-b-2">{{ settings.offices[0].address }}</p>
+
+				<ul class="block-grid-md-2">
+					{% for person in contacts %}
+					<li>
+						<h4 class="h6">{{ person.name }}</h4>
+						<p>Email: <a href="mailto:{{ person.email }}">{{ person.email }}</a><br>
+						Phone: <a href="tel:{{ person.mob }}">{{ person.mob }}</a></p>
+					</li>
+					{% endfor %}
+				</ul>
+
+			</div>
+			<div class="col-md-6">
+				{% include form_contact.html %}
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,89 @@
+/*
+    HERO.CSS
+
+    - Last updated: 00.00.00
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Hero
+//-----------------------------------------------------------------
+
+.lv-hero .lv-hero-item-caption {
+	color: white;
+	text-align: center;
+	padding: rem-calc(30);
+
+	@include media-breakpoint-down(sm) {
+	    background: rgba(black, 0.3);
+	}
+
+	.lv-hero-header {
+		font-weight: bold;
+		font-size: rem-calc(30);
+		margin-bottom: 30px;
+
+		@include media-breakpoint-up(md) {
+		    font-size: rem-calc(36);
+		}
+	}
+
+	.lv-hero-header-underline {
+		width: 40%;
+		height: 2px;
+		background: white;
+		margin: 0 auto 45px auto;
+
+		@include media-breakpoint-up(md) {
+		    width: 56%;
+		}
+	}
+
+	.btn {
+		background: none;
+		border-radius: 0;
+		border: 3px solid white;
+		text-transform: uppercase;
+		font-size: rem-calc(21);
+		font-weight: bold;
+		padding: rem-calc(9 30);
+
+		&:hover {
+			background: white;
+			color: #222;
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// Media Symbol Video
+//-----------------------------------------------------------------
+
+.lv-hero-wrapper {
+	overflow: hidden;
+}
+
+.lv-hero video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	// z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	// background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+	background-size: cover;
+	// transition: 1s opacity;
+}
+
+video::-webkit-media-controls {
+    display: none !important; // hacky
+}
+
+//=========================================
+//
+//=========================================

@@ -1,0 +1,44 @@
+/*
+    SECTIONS.CSS
+
+    - Last updated: 00.00.00
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Sections
+//-----------------------------------------------------------------
+
+.section {
+	padding: rem-calc(50 0);
+}
+
+.section-light {
+	background: #f5f5f5;
+}
+
+.section-dark {
+	background: $brand-primary;
+	padding: rem-calc(40 0);
+	color: white;
+
+	a {
+		color: white;
+	}
+
+	@include media-breakpoint-up(md) {
+	    padding: rem-calc(65 0);
+	}
+
+	&.is-slim {
+		@include media-breakpoint-up(md) {
+		    padding: rem-calc(50 0)
+		}
+	}
+}
+
+//=========================================
+//
+//=========================================

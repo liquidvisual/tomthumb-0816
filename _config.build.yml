@@ -1,0 +1,13 @@
+# Jekyll configuration precedence:
+# 1. Gruntfile task
+# 2. config.build.yml
+# 3. config.yml
+
+future: false
+show_drafts: false
+mode: build
+dev_mode_enabled: false # LV responsive tool
+
+# Used on files that can't be prefixed by CDNify
+# Eg. The Hero images - which are inline (or data urls)
+assets: '/assets'

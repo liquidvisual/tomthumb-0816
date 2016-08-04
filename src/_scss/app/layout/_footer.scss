@@ -1,0 +1,46 @@
+/*
+    FOOTER.CSS
+
+    - Last updated: 21.10.15
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Footer Bottom
+//-----------------------------------------------------------------
+
+.global-footer-bottom {
+	padding: rem-calc(20 0);
+	overflow: hidden; // force
+	background: $brand-primary;
+	color: $gray-light;
+
+	@include media-breakpoint-up(md) {
+	    height: rem-calc(100);
+	    line-height: rem-calc(100);
+	    padding: 0;
+	}
+
+	a {
+		color: $gray-light;
+
+		&:hover {
+			color: white;
+		}
+	}
+
+	small {
+		font-size: rem-calc(11);
+		font-weight: bold;
+	}
+
+	i {
+		font-size: rem-calc(25);
+	}
+}
+
+//=========================================
+//
+//=========================================

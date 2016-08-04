@@ -1,0 +1,48 @@
+# ---------------------
+# GLOBAL SITE SETTINGS
+# ---------------------
+
+cname: tomthumb.yourwebvisual.com
+
+# META
+title: "Tom Thumb"
+seo_title: "Tom Thumb: Inspirational Ideas. Exceptional Results."
+company: "Tom Thumb"
+description: ""
+
+# CONTACTS
+contacts:
+  - name: Ben Perry
+    email: ben@tomthumb.com.au
+    mob: 0425 324 256
+    skype: bptomthumb
+
+  - name: Briony Evans
+    email: briony@tomthumb.com.au
+    mob: 0404 730 206
+
+# OFFICES
+offices:
+  - title: Sydney
+    address: "7B, 1110 Middle Head Road, Mosman NSW 2088"
+    po_box: "PO Box 823<br> Neutral Bay Junction NSW 2089"
+
+# SOCIAL MEDIA
+facebook: "..."
+linked_in: "..."
+google_plus: "..."
+instagram: "http://instagram.com"
+
+# LINKS
+events: http://tomthumbevents.com.au
+
+# GOOGLE
+google_map: ""
+google_analytics: "UA-XXXXXXXX-X"
+
+# AUTHOR
+author:
+  - title: David Sheiles
+    url: http://digitalmomentum.com.au
+    logo: /img/ui/digital-momentum-logo.svg
+    description: Website by Digital Momentum
