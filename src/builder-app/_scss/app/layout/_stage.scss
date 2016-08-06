@@ -11,8 +11,13 @@
 // DO NOT REMOVE
 //-----------------------------------------------------------------
 
+body {
+    // overflow-x: hidden;
+}
+
 .lv-page {
-    overflow: hidden; // prevents transforms busting out of scrolled containers
+    // overflow-x: hidden; // prevents transforms busting out of scrolled containers
+    // overflow-y: visible;
 }
 
 //-----------------------------------------------------------------
@@ -29,7 +34,7 @@
 
     // Creates RHS colour to hide width change during sliding animation (ipad)
     &:after {
-        content: "";
+        // content: "";
         position: absolute;
         top: 0;
         left: 100%;
@@ -62,10 +67,30 @@
 // iframe Loader
 //-----------------------------------------------------------------
 
-// .lv-iframe-loader {
-//     border: 0;
-//     -webkit-overflow-scrolling: touch;
-// }
+.lv-iframe-loader {
+    position: absolute;
+    top: $lv-topbar-height-small;
+    left: 0;
+    width: 100%;
+    height: calc(100% - #{$lv-topbar-height-small});
+    border: 0;
+    background: $gray-light;
+    -webkit-overflow-scrolling: touch; // keep incase
+
+    @include media-breakpoint-up(md) {
+        top: $lv-topbar-height-medium;
+        height: calc(100% - #{$lv-topbar-height-medium} - #{$lv-stage-top-offset});
+    }
+}
+
+// Technical debt
+.has-closed-menu {
+    .lv-iframe-loader {
+        height: calc(100% - #{$lv-topbar-height-medium});
+    }
+}
+
+
 
 //-----------------------------------------------------------------
 //

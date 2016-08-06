@@ -1,5 +1,5 @@
 /*
-    MAIN.JS - Last updated: 27.10.15
+    MAIN.JS - Last updated: 04.08.16
 */
 //-----------------------------------------------------------------
 // Variables
@@ -11,13 +11,66 @@
 $(document).ready(function() {
     NProgress.start(); // Start preloader bar
     $('input, textarea').placeholder(); // IE9 Patch
+
+    //-----------------------------------------------------------------
+    // HTML5 Video
+    //-----------------------------------------------------------------
+
+    if ($(window).width() > 1024) {
+        var sources = $("video source");
+
+        sources.each(function(){
+            $this = $(this);
+            var source = $this.attr('data-src');
+            $(this).attr('src', source);
+        });
+    }
+
+    //-----------------------------------------------------------------
+    // Manage
+    //-----------------------------------------------------------------
+
+    key('⌘+shift+m, ctrl+shift+m', function(){
+      window.location = '/manage/';
+    });
+
+    //-----------------------------------------------------------------
+    // Carousel
+    //-----------------------------------------------------------------
+
+    $('.carousel').bxSlider({
+        auto: true,
+        mode: 'horizontal', // fade (much have fixed height or won't work)
+        adaptiveHeight: true,
+        responsive: true,
+        touchEnabled: true,
+        speed: 2000,
+        pause: 8000,
+        slideMargin: 0,
+        minSlides: 1,
+        controls: false,
+        nextText: "&#xf105;",
+        prevText: "&#xf104;",
+        infiniteLoop: false,
+        useCSS: true,
+        pager: true
+    });
+
 });
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
 
 $(window).load(function() {
     NProgress.done();
 
     // H5F.setup(document.getElementById("form")); // Patch IE9 for form validation
     $('.carousel').carousel();
+
+    $('video').load();
+
+    $('body').addClass('has-loaded');
 });
 
 //-----------------------------------------------------------------

@@ -11,13 +11,19 @@
 // Hero
 //-----------------------------------------------------------------
 
+.lv-hero-wrapper {
+	@include media-breakpoint-down(sm) {
+	    padding-top: $header-height-sm;
+	}
+}
+
 .lv-hero .lv-hero-item-caption {
 	color: white;
 	text-align: center;
 	padding: rem-calc(30);
 
 	@include media-breakpoint-down(sm) {
-	    background: rgba(black, 0.3);
+	    // background: rgba(black, 0.3);
 	}
 
 	.lv-hero-header {
@@ -65,6 +71,11 @@
 	overflow: hidden;
 }
 
+.lv-hero-caption-wrapper {
+	position: relative;
+	z-index: 1;
+}
+
 .lv-hero video {
 	position: absolute;
 	top: 50%;
@@ -73,11 +84,18 @@
 	min-height: 100%;
 	width: auto;
 	height: auto;
-	// z-index: -100;
 	transform: translateX(-50%) translateY(-50%);
-	// background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
 	background-size: cover;
-	// transition: 1s opacity;
+	transition: 1.5s opacity;
+	opacity: 0;
+
+	@include media-breakpoint-down(lg) {
+	    display: none;
+	}
+}
+
+.has-loaded .lv-hero video {
+	opacity: 1;
 }
 
 video::-webkit-media-controls {

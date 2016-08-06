@@ -5,7 +5,7 @@
 {% assign github_repo = settings.github_repo %}
 {% assign github_repo_commits = github_repo | append: '/commits/master' %}
 {% assign github_pages = github_repo | append: '/tree/gh-pages' %}
-{% assign github_pages_assets = github_pages | append: '/assets' %}
+{% assign github_pages_assets = github_repo | append: '/archive/gh-pages.zip' %}
 
 <nav class="lv-context-menu">
 
@@ -100,8 +100,8 @@
                 <div data-tool-tab-content="site">
                     <ul>
                         <li><a href="{{ github_repo_commits }}" target="_blank"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Changelog</a></li>
-                        <li><a href="{{ github_pages_assets }}" target="_blank"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Download Assets</a></li>
                         <li><a href="{{ github_pages }}" target="_blank"><span class="lv-context-menu-digit"><span class="fa fa-external-link"></span></span>Compiled Branch</a></li>
+                        <li><a href="{{ github_pages_assets }}"><span class="lv-context-menu-digit"><span class="fa fa-download"></span></span>Download Compiled Zip</a></li>
                         <li><a href="{{ github_repo }}" target="_blank" class="btn btn-primary"><span class="fa fa-github"></span>Source Repo</a></li>
                     </ul>
                 </div>
@@ -121,16 +121,18 @@
             </div>
 
             <!-- PREVIEW -->
-            <div data-tool-tab-content="preview" class="lv-context-menu-panel listo">
+            <div data-tool-tab-content="preview" class="lv-context-menu-panel preview-list">
                 <ul>
-                    <li><a href="#/preview/">Home <br><small class="listo-light" style="color: #1FB5C3;">/</small></a></li>
-                    {% assign pages = site.pages | sort: 'title' %}
-                    {% for item in pages | offset: 1 %}
-                        {% unless item.title == null or item.url == "/manage/" or item.url == "/" or item.url == "/404/" or item.type == "development_doc" %}
-                          <li><a href="#/preview{{item.url}}">{{ item.title }} <br><small class="listo-light" style="color: #1FB5C3;">{{ item.url }}</small></a></li>
-                        {% endunless %}
-                    {% endfor %}
-                    <li><a href="#/404/">404 - Page Not Found<br><small class="listo-light" style="color: #1FB5C3;">/404/</small></a></li>
+                    <li><a href="#/preview/">Home <br><small>/</small></a></li>
+                        {% assign pages = site.pages | sort: 'title' %}
+                        {% for item in pages | offset: 1 %}
+                            {% unless item.title == null or item.url == "/manage/" or item.url == "/" or item.url == "/404/" or item.type == "development_doc" %}
+                                <li class="{{ item.status }}">
+                                    <a href="#/preview{{item.url}}">{{ item.title }} <br><small>{{ item.url }}</small></a>
+                                </li>
+                            {% endunless %}
+                        {% endfor %}
+                    <li><a href="#/preview/404/">404 - Page Not Found<br><small>/404/</small></a></li>
                 </ul>
             </div>
 

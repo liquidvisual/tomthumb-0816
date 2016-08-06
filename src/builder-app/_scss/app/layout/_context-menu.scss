@@ -84,7 +84,7 @@ $dark-bg-color: $gray-dark !default; // recently changed this
 
 .lv-context-menu ::-webkit-scrollbar {
     width: 5px;
-    // background: darken($gray-dark, 5%);
+    opacity: 0;
 }
 
 .lv-context-menu ::-webkit-scrollbar-thumb {
@@ -92,10 +92,7 @@ $dark-bg-color: $gray-dark !default; // recently changed this
     background: darken($gray-light, 20%); //lighten($gray-dark, 15%);
 }
 
-.lv-context-menu ::-webkit-scrollbar-thumb:window-inactive {
-	// background: $brand-primary;
-	// background: lighten($gray-dark, 20%);
-}
+// .lv-context-menu ::-webkit-scrollbar-thumb:window-inactive {}
 
 //-----------------------------------------------------------------
 // HEADER
@@ -146,11 +143,14 @@ $dark-bg-color: $gray-dark !default; // recently changed this
 	}
 
 	a {
+		transition: background 150ms ease;
 		display: block;
 		padding: rem-calc(5 0);
 		font-size: rem-calc(22);
 		text-align: center;
 		color: lighten($dark-bg-color, 15%);
+
+		// transform: scale(0.8);
 
 		@include media-breakpoint-down(sm) {
 		    line-height: $app-menu-toolbar-width;
@@ -158,12 +158,16 @@ $dark-bg-color: $gray-dark !default; // recently changed this
 		}
 
 		&:hover {
-			color: lighten($dark-bg-color, 30%);
+			color: white;//lighten($dark-bg-color, 30%);
 		}
 	}
 
 	.active a {
 		color: white;
+		// color: black; //white;//lighten($dark-bg-color, 30%);
+		// background: rgba(white, 0.2);
+		// margin: 0 4px;
+		border-radius: 4px;
 	}
 }
 
@@ -338,56 +342,45 @@ ul.lv-context-menu-site-tools {
 
 
 //-----------------------------------------------------------------
-// temporary fix for preview pane
+// PREVIEW LIST
 //-----------------------------------------------------------------
 
-.listo {
-	> ul > li:nth-child(odd) > a {
-		// border-bottom: 1px solid #1E1E24;
-		// background: #2F2F37;
-		border-radius: 4px;
-	}
+.preview-list {
 
 	> ul > li > a {
-		padding-left: 40px;
 		position: relative;
+		padding-left: 40px;
 
 		&:before {
-			font-family: "FontAwesome";
-			content: "\f110";
-			// content: "\f096";
+			content: "\f1db";
 			position: absolute;
 			left: 10px;
-			top: 20px;
+			top: 15px;
 			color: $brand-secondary;
 			color: #444950;
-			font-weight: bold;
+			font-family: "FontAwesome";
+			font-weight: normal;
 		}
 	}
 
-	> ul > li:nth-child(3n+1) > a {
+	> ul > li.is-complete > a {
 		&:before {
-			content: "\f046";
-			// content: "\f14a";
 			content: "\f00c";
-			// color: #444950;
 			color: $brand-secondary;
-
 		}
 	}
 
-	> ul > li:nth-child(1) > a {
-		// background: $brand-secondary;
-		background: #2F2F37;
+	small {
+		color: lighten($gray-dark, 30%);//#535D63;
 	}
 
-	.listo-light {
-		color: #535D63 !important;
+	> ul > li.active a small {
+		color: lighten($gray-dark, 45%);
 	}
 
-	ul > li > ul {
-		display: none;
-	}
+	// ul > li > ul {
+	// 	display: none;
+	// }
 }
 
 //-----------------------------------------------------------------

@@ -103,6 +103,12 @@ function initTopbarButtons() {
 			$body.addClass('has-open-menu').removeClass('has-closed-menu');
 		}
 	});
+
+
+	$('[data-close-btn]').unbind('click').bind('click touchstart', function(e){
+		e.preventDefault();
+		window.location = "/";
+	})
 	// come back here
 	// var isAnimating = $(".lv-context-menu").is(':animated');
 }
@@ -124,12 +130,12 @@ function setToolTab() {
 
 			// Choose Tab based on URL Hashbang
 			// if level1: settings  OR   if level2: site
-			if (stringId == getHashBang().level1 || stringId == getHashBang().level2) {
+			if (stringId == getHashBang(1,2) || stringId == getHashBang(2,3)) {
 				$this.removeAttr('hidden'); // show selected
 				$('[data-tool-tab*="'+stringId+'"]').addClass('active'); // mark active
 
 				// Don't let [site, docs] change title = always parent title (Development)
-				if (stringId == getHashBang().level1) {
+				if (stringId == getHashBang(1,2)) {
 					toolTabTitle.text(stringId + "  "); // space to remove glitch
 				}
 			}
@@ -143,9 +149,9 @@ function setToolTab() {
 //-----------------------------------------------------------------
 
 function setContextItem() {
-	var level1 = getHashBang().level1; // Eg. content
-	var level2 = getHashBang().level2; // Eg. settings
-	var level3 = getHashBang().level3; // Eg. site (development/site)
+	var level1 = getHashBang(1,2); // Eg. content
+	var level2 = getHashBang(2,3); // Eg. settings
+	var level3 = getHashBang(3,4); // Eg. site (development/site)
 
 	//=========================================
 	// Need to match 'level2' (settings) with '#/content/settings/'

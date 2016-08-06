@@ -4,6 +4,7 @@ layout: internal
 
 {% assign settings = site.data.settings %}
 {% assign contacts = settings.contacts %}
+{% assign case_studies = site.data.case_studies %}
 
 <section class="section-dark is-slim">
 	<div class="container">
@@ -14,18 +15,29 @@ layout: internal
 				</div>
 				<div class="col-md-9">
 					<ul class="block-grid-md-6">
-						<li><a href="">Holding Blocks</a></li>
-						<li><a href="">Red Roosters</a></li>
-						<li><a href="">Living Turf</a></li>
-						<li><a href="">Le Wrap</a></li>
-						<li><a href="">Helm</a></li>
-						<li><a href="">Australian National Prevention</a></li>
+						{% for item in case_studies %}
+						<li><a href="{{ item.url }}">{{ item.title }}</a></li>
+						{% endfor %}
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
+<!-- GALLERY -->
+<ul class="block-grid-xs-1 block-grid-md-3 gallery-grid">
+	{% for i in (1..3) %}
+	<li>
+		<a class="media-tile" href="/case-studies/">
+		    <img width="100%" src="https://placeimg.com/400/200/tech?{{forloop.index}}">
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+
+
+
 
 <section class="section">
 	<div class="container">

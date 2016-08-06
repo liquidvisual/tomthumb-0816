@@ -54,7 +54,7 @@ function playIntro() {
 		$('body').addClass('has-authenticated');
 
 		// Add cache class to prevent login from appearing after animation
-		var cacheDelay = setTimeout(function(){ $('body').addClass('has-authenticated-cached has-animated'); }, 3000);
+		var cacheDelay = setTimeout(function(){ $('body').addClass('has-authenticated-cached has-animated'); }, 2000);
 	}
 }
 

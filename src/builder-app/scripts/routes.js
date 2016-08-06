@@ -18,11 +18,12 @@ function loadRoute() {
 	//-----------------------------------------------------------------
 
 	var path;
-	var level1 = getHashBang().level1; // eg. /development/
-	var level2 = getHashBang().level2; // eg. /development/docs/
-	var level3 = getHashBang().level3; // eg. /development/docs/installation-and-setup/
+	var level1 = getHashBang(1,2); // eg. /development/
+	var level2 = getHashBang(2,3); // eg. /development/docs/
+	var level3 = getHashBang(3,4); // eg. /development/docs/installation-and-setup/
 	var $mainView = $('[data-view]');
-	var hasAuthenticated = $('.has-authenticated').length;
+	var $preview = $('[data-preview]');
+	var hasAuthenticated = $('.has-authenticated, .has-authenticated-cached').length;
 
 	//-----------------------------------------------------------------
 	// SETUP NAVIGATION (ATTEMPT)
@@ -34,10 +35,23 @@ function loadRoute() {
 	// Entering via /manage/
 	///-----------------------------------------------------------------
 
-	if (!level1) {
+	if (level1 == "") {
 		console.log('Defaulting to welcome view...');
 		window.location.replace('#/overview/welcome/');
 		return loadRoute(); // exit and retry with new hash
+	}
+
+	//-----------------------------------------------------------------
+	// IF PREVIEW EXISTS
+	//-----------------------------------------------------------------
+
+	if (hasAuthenticated && level1 == "preview") {
+		console.log("PREVIEW YES");
+		// Load new SRC into iframe
+		var previewURL = '/'+getHashBang(2).join('/');
+		$preview.attr('src', previewURL).removeAttr('hidden');
+		showLoading();
+		return;
 	}
 
 	//-----------------------------------------------------------------
@@ -50,19 +64,13 @@ function loadRoute() {
 	}
 
 	//-----------------------------------------------------------------
-	// IF PREVIEW EXISTS
-	//-----------------------------------------------------------------
-
-	if (hasAuthenticated && level1 == "preview") {
-		console.log("PREVIEW");
-	}
-
-	//-----------------------------------------------------------------
 	//
 	//-----------------------------------------------------------------
 
 	path = '/builder-app/views/'+level1+'/'+level2+'.html';
 	console.log('Preparing path: '+path);
+
+	$preview.attr('hidden', ''); // hide preview iframe - not needed
 
 	//-----------------------------------------------------------------
 	// LOAD MODULE
@@ -95,25 +103,19 @@ function loadRoute() {
 // UTILITY: Get Hashbang
 //-----------------------------------------------------------------
 
-function getHashBang() {
+function getHashBang(start, end) {
 	var hashBang_arr = window.location.hash.split('/');
-	var hashBang = {};
-		hashBang.level1  = hashBang_arr[1];
-		hashBang.level2  = hashBang_arr[2];
-		hashBang.level3  = hashBang_arr[3];
-		hashBang.level4  = hashBang_arr[4];
-		hashBang.level5  = hashBang_arr[5];
-		hashBang.level6  = hashBang_arr[6];
-		hashBang.level7  = hashBang_arr[7];
-		hashBang.level8  = hashBang_arr[8];
-		hashBang.level9  = hashBang_arr[9];
-		return hashBang;
+	return hashBang_arr.slice(start, end);
 }
 
 //-----------------------------------------------------------------
-// LOAD INCLUDES
+// UTILITY: SHOW LOADING
 //-----------------------------------------------------------------
 
-//=========================================
-// Trigger "AppMode" if 'Preview' selected
-// if (getHashBang().level1 !== 'preview' ) {
+function showLoading() {
+	$('body').addClass('is-loading');
+
+	$('[data-preview]').ready(function() {
+		$('body').removeClass('is-loading');
+	});
+}

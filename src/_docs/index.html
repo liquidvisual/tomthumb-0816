@@ -2,7 +2,7 @@
 layout: internal/text_page
 title: Docs
 permalink: /docs/
-hero: "/img/content/hero/iStock_11752432_LARGE_CountryTripleRoadTrain.jpg"
+hero: /img/content/hero/hero-ocean.jpg
 ---
 
 {% assign breakpoints = site.data.settings.breakpoints %}
@@ -11,11 +11,12 @@ hero: "/img/content/hero/iStock_11752432_LARGE_CountryTripleRoadTrain.jpg"
 
 	<h2>Readily Browsable Templates for {{ site.data.settings.title }}</h2>
 	<ul class="triangle-list check-list">
-	  {% for item in site.pages | offset: 1 %}
-	  {% unless item.title == null or item.url == "/manage/" %}
-	    <li><a href="{{ item.url }}">{{ item.title }}</a> <small>({{ item.url }})</small></li>
+	{% assign pages = site.pages | sort: 'title' %}
+	{% for item in pages | offset: 1 %}
+	  {% unless item.title == null or item.url == "/manage/" or item.url == "/" or item.url == "/404/" or item.type == "development_doc" %}
+	    <li><a href="{{item.url}}">{{ item.title }}</a> <small>{{ item.url }}</small></li>
 	  {% endunless %}
-	  {% endfor %}
+	{% endfor %}
 	</ul>
 
 	<br>

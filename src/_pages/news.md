@@ -1,9 +1,8 @@
 ---
 layout: internal/text_page
-title: About Us
-permalink: /about-us/
+title: Hello World
+permalink: /news/december/2016/hello-world/
 hero: /img/content/hero/hero-ocean.jpg
-status: is-complete
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
