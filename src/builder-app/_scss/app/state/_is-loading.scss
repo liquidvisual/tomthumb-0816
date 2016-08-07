@@ -12,8 +12,9 @@
     display: none;
 }
 
-.has-authenticated.is-loading {
-	display: inherit;
+.has-authenticated.is-loading,
+.has-authenticated.has-loaded {
+	display: block;
 
 	.lv-stage:after {
 		content: "";
@@ -22,19 +23,26 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: aqua; //$gray-light;
+		background: $gray-light;
 		z-index: 10000000;
 		opacity: 1;
+		transition: opacity 200ms;
 	}
 }
 
-
-.has-authenticated:not('is-loading') .lv-stage:after {
-	opacity: 0;
-	transition: opacity 2s;
+.has-authenticated.has-loaded {
+	.lv-stage:after {
+		@keyframes fadeInPreview {
+		    from {
+		        opacity: 1;
+		    } to {
+		        opacity: 0;
+		        visibility: hidden; // destroy it
+		    }
+		}
+		animation: fadeInPreview 0.4s ease 0s alternate 1 forwards;
+	}
 }
-
-
 
 //-----------------------------------------------------------------
 //

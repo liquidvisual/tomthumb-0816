@@ -123,7 +123,7 @@
             <!-- PREVIEW -->
             <div data-tool-tab-content="preview" class="lv-context-menu-panel preview-list">
                 <ul>
-                    <li><a href="#/preview/">Home <br><small>/</small></a></li>
+                    <li><a href="#/preview/home/">Home <br><small>/</small></a></li>
                         {% assign pages = site.pages | sort: 'title' %}
                         {% for item in pages | offset: 1 %}
                             {% unless item.title == null or item.url == "/manage/" or item.url == "/" or item.url == "/404/" or item.type == "development_doc" %}

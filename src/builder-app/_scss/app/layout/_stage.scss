@@ -11,13 +11,8 @@
 // DO NOT REMOVE
 //-----------------------------------------------------------------
 
-body {
-    // overflow-x: hidden;
-}
-
 .lv-page {
-    // overflow-x: hidden; // prevents transforms busting out of scrolled containers
-    // overflow-y: visible;
+    overflow: hidden; // prevents transforms busting out of scrolled containers
 }
 
 //-----------------------------------------------------------------
@@ -34,7 +29,7 @@ body {
 
     // Creates RHS colour to hide width change during sliding animation (ipad)
     &:after {
-        // content: "";
+        content: "";
         position: absolute;
         top: 0;
         left: 100%;
@@ -46,7 +41,7 @@ body {
     @include media-breakpoint-up(lg) {
         width: calc(100% - #{$app-menu-width-medium}); // animation too heavy
         padding-top: $lv-topbar-height-medium;
-        padding-bottom: $spacer-y * 2; // bottom gutter
+        // padding-bottom: $spacer-y * 2; // bottom gutter   ********* BRING THIS BACK - push into state ********
     }
 }
 
@@ -67,26 +62,33 @@ body {
 // iframe Loader
 //-----------------------------------------------------------------
 
+.lv-main {
+    // display: none;
+}
+
+
 .lv-iframe-loader {
-    position: absolute;
-    top: $lv-topbar-height-small;
+    position: relative;
+    // top: $lv-topbar-height-small;
     left: 0;
     width: 100%;
-    height: calc(100% - #{$lv-topbar-height-small});
+    height: 100%;
+    height: 500px;
+    // height: calc(100% - #{$lv-topbar-height-small});
     border: 0;
     background: $gray-light;
     -webkit-overflow-scrolling: touch; // keep incase
 
     @include media-breakpoint-up(md) {
-        top: $lv-topbar-height-medium;
-        height: calc(100% - #{$lv-topbar-height-medium} - #{$lv-stage-top-offset});
+        // top: $lv-topbar-height-medium;
+        // height: calc(100% - #{$lv-topbar-height-medium} - #{$lv-stage-top-offset});
     }
 }
 
 // Technical debt
 .has-closed-menu {
     .lv-iframe-loader {
-        height: calc(100% - #{$lv-topbar-height-medium});
+        // height: calc(100% - #{$lv-topbar-height-medium});
     }
 }
 

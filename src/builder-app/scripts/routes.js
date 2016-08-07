@@ -23,7 +23,8 @@ function loadRoute() {
 	var level3 = getHashBang(3,4); // eg. /development/docs/installation-and-setup/
 	var $mainView = $('[data-view]');
 	var $preview = $('[data-preview]');
-	var hasAuthenticated = $('.has-authenticated, .has-authenticated-cached').length;
+	var hasAuthenticated = $('.has-authenticated').length;
+	var hasAuthenticatedCached = $('.has-authenticated-cached').length;
 
 	//-----------------------------------------------------------------
 	// SETUP NAVIGATION (ATTEMPT)
@@ -32,7 +33,7 @@ function loadRoute() {
 	setupNavigation();
 
 	//-----------------------------------------------------------------
-	// Entering via /manage/
+	// 01. ENTERING VIA /manage/
 	///-----------------------------------------------------------------
 
 	if (level1 == "") {
@@ -42,35 +43,69 @@ function loadRoute() {
 	}
 
 	//-----------------------------------------------------------------
-	// IF PREVIEW EXISTS
+	// 02. TAB SWITCHING
 	//-----------------------------------------------------------------
 
-	if (hasAuthenticated && level1 == "preview") {
-		console.log("PREVIEW YES");
+	if (hasAuthenticated && level1 !== "" && level2 == "") {
+		console.log('Switching Tabs ('+'level_1: '+level1+' level_2: '+level2+')');
+		return;
+	}
+
+	//-----------------------------------------------------------------
+	// 03. DEVELOPMENT
+	//-----------------------------------------------------------------
+
+	if (hasAuthenticated && level1 == "development") {
+		console.log("Development reached. Do nothing.");
+		return;
+	}
+
+	//-----------------------------------------------------------------
+	// 04. PREVIEW MODE
+	//-----------------------------------------------------------------
+
+	if (level1 == "preview" && level2 !== "") {
+		console.log("Preview Mode activated");
 		// Load new SRC into iframe
 		var previewURL = '/'+getHashBang(2).join('/');
+
+		console.log('what is hashbang 2?: '+getHashBang(2));
+
+		if (getHashBang(2,3) == "home") previewURL = "/"; // redirect home, because slash is hard to interpret
+
+
 		$preview.attr('src', previewURL).removeAttr('hidden');
+		$mainView.attr('hidden', 'true');
+
+		if (hasAuthenticatedCached || !hasAuthenticated) playIntro();
+
+		//----
+		lastHeight = 0;
+		curHeight = 0;
+		$frame = $preview;
+		setInterval(function(){
+			curHeight = $frame.contents().find('body').height();
+			if ( curHeight != lastHeight ) {
+				$frame.css('height', (lastHeight = curHeight) + 'px' );
+			}
+		}, 300);
+		//----
+
 		showLoading();
+
 		return;
 	}
 
 	//-----------------------------------------------------------------
-	// Tab Switching
-	//-----------------------------------------------------------------
-
-	if (hasAuthenticated && level1 && !level2) {
-		console.log('Switching Tabs');
-		return;
-	}
-
-	//-----------------------------------------------------------------
-	//
+	// 05. Load Mode - ie. Anything other than 'Preview'
 	//-----------------------------------------------------------------
 
 	path = '/builder-app/views/'+level1+'/'+level2+'.html';
+	// path = '/builder-app/views/'+getHashBang(1).join('/') +'.html';
 	console.log('Preparing path: '+path);
 
 	$preview.attr('hidden', ''); // hide preview iframe - not needed
+	$mainView.removeAttr('hidden');
 
 	//-----------------------------------------------------------------
 	// LOAD MODULE
@@ -113,9 +148,18 @@ function getHashBang(start, end) {
 //-----------------------------------------------------------------
 
 function showLoading() {
-	$('body').addClass('is-loading');
+	$('body').removeClass('has-loaded').addClass('is-loading');
 
-	$('[data-preview]').ready(function() {
-		$('body').removeClass('is-loading');
+	$('[data-preview]').load(function() {
+		$('body').removeClass('is-loading').addClass('has-loaded');
 	});
 }
+
+
+
+
+
+
+
+
+
