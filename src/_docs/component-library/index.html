@@ -1,5 +1,5 @@
 ---
-layout: internal/text_page
+layout: child_layout/text_page
 title: Component Library
 permalink: /docs/component-library/
 hero: /img/content/hero/hero-ocean.jpg
@@ -74,7 +74,7 @@ hero: /img/content/hero/hero-ocean.jpg
 					<p><strong>Usage:</strong> {{ item.usage }}</p>
 				{% endif %}
 				{% if item.scss %}
-					<p class="m-b-0"><strong>SCSS partial:</strong> <a target="_blank" href="{{ settings.github_repo }}{{ item.scss }}">{{ item.scss }}</a></p>
+					<p class="m-b-0"><strong>SCSS partial:</strong> <a target="_blank" href="{{ settings.github_repo | append: "/tree/master" }}{{ item.scss }}">{{ item.scss }}</a></p>
 				{% endif %}
 			</div>
 		</header>
@@ -84,10 +84,13 @@ hero: /img/content/hero/hero-ocean.jpg
 			{{ item.content }}
 		</div>
 
-		<!-- HTML -->
-		<strong>The HTML:</strong>
-		<div class="component-code">
-			{% highlight html %}{{ item.content }}{% endhighlight %}
+		<div class="hidden-sm-down">
+			<!-- HTML -->
+			<strong>The HTML:</strong>
+			<div class="component-code">
+				{% highlight html %}{{ item.content }}{% endhighlight %}
+			</div>
 		</div>
+
 	</section>
 {% endfor %}

@@ -9,7 +9,7 @@
 //-----------------------------------------------------------------
 
 $(document).ready(function() {
-    NProgress.start(); // Start preloader bar
+    // NProgress.start(); // Start preloader bar
     $('input, textarea').placeholder(); // IE9 Patch
 
     //-----------------------------------------------------------------
@@ -56,6 +56,19 @@ $(document).ready(function() {
         pager: true
     });
 
+    //-----------------------------------------------------------------
+    // Magnific Popup
+    //-----------------------------------------------------------------
+
+    $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+        // disableOn: 700,
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false
+    });
+
 });
 
 //-----------------------------------------------------------------
@@ -63,7 +76,7 @@ $(document).ready(function() {
 //-----------------------------------------------------------------
 
 $(window).load(function() {
-    NProgress.done();
+    // NProgress.done();
 
     // H5F.setup(document.getElementById("form")); // Patch IE9 for form validation
     $('.carousel').carousel();

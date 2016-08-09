@@ -306,11 +306,24 @@ button {
     top: 1px;
   }
 }
+
+// Added by request 23.02.15
 .mfp-close-btn-in {
   .mfp-close {
-    color: $mfp-inner-close-icon-color;
+    color: $mfp-inner-close-icon-color !important;
+    // font-size: rem-calc(40);
+    cursor: pointer;
+
+    &:after {
+      content: "Close";
+      font-size: rem-calc(16);
+      position: relative;
+      top: -4px;
+      padding-left: 2px;
+    }
   }
 }
+
 .mfp-image-holder,
 .mfp-iframe-holder {
   .mfp-close {

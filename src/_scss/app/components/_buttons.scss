@@ -1,0 +1,43 @@
+/*
+    BUTTONS.CSS
+
+    - Last updated: 00.00.00
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// BUTTONS
+//-----------------------------------------------------------------
+
+.btn {
+	text-transform: uppercase;
+	min-width: rem-calc(170);
+	font-size: rem-calc(18);
+}
+
+//-----------------------------------------------------------------
+// BUTTONS
+//-----------------------------------------------------------------
+
+.btn-outline {
+	background: none;
+	border-radius: 0;
+	border: 3px solid white;
+	text-transform: uppercase;
+	font-size: rem-calc(21);
+	font-weight: bold;
+	padding: rem-calc(9 30);
+
+	&:hover {
+		background: white;
+		color: #222;
+		border-color: inherit;
+	}
+}
+
+//=========================================
+//
+//=========================================
+

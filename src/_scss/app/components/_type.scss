@@ -27,6 +27,11 @@ html {
 // 	margin-bottom: rem-calc(24); // requested - should be in bootstrap
 // }
 
+.intro-text {
+	color: white;
+	font-size: rem-calc(20);
+}
+
 //-----------------------------------------------------------------
 // Spacer
 //-----------------------------------------------------------------
@@ -34,6 +39,44 @@ html {
 .spacer {
 	width: 1px;
 	height: 1px;
+}
+
+//-----------------------------------------------------------------
+// Headings
+//-----------------------------------------------------------------
+
+.text-transform-inherit {
+	text-transform: inherit;
+}
+
+h2 {
+	text-transform: uppercase;
+}
+
+// .h1,
+// .h3, .h4, .h5, .h6 {
+// 	text-transform: inherit;
+// }
+
+.anchor-link {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.subtle-link {
+	color: $body-color;
+}
+
+blockquote cite {
+	font-style: normal;
+}
+
+.is-quote {
+	&:before,
+	&:after {
+		content: '"';
+		display: inline;
+	}
 }
 
 //-----------------------------------------------------------------

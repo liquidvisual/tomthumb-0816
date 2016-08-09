@@ -1,0 +1,28 @@
+---
+layout: base__page
+---
+
+{% assign supporting_image = page.supporting_image %}
+
+<!-- BANNER TEXT -->
+<section class="section-dark is-slim">
+	<div class="container">
+		<p class="intro-text m-b-0 text-xs-center">{{ page.tagline }}</p>
+	</div>
+</section>
+
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				{{ content }}
+				<div class="spacer m-b-2 hidden-md-up"></div>
+			</div>
+			<div class="col-md-5">
+			{% if supporting_image %}
+				<p><img width="100%" src="{{ supporting_image }}" alt="Image"></p>
+			{% endif %}
+			</div>
+		</div>
+	</div>
+</section>

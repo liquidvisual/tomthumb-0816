@@ -1,0 +1,52 @@
+---
+layout: base__page
+---
+
+{% assign supporting_image = page.supporting_image %}
+{% assign news = site.data.news %}
+
+<!-- BANNER TEXT -->
+<section class="section-dark is-slim">
+	<div class="container">
+		<p class="intro-text m-b-0 text-xs-center">{{ page.tagline }}</p>
+	</div>
+</section>
+
+<!-- NEWS FEED -->
+<section class="section">
+	<div class="container">
+		<h1 class="m-b-2 text-uppercase">{{ page.title }}</h1>
+		<div class="row">
+			<div class="col-md-7">
+
+				{% for item in news %}
+					{% assign currentdate = item.date | date: "%Y" %}
+						{% if currentdate != date %}
+							<h2 class="subtle-link m-b-3" id="y{{currentdate}}">{{ currentdate }}</h2>
+							{% assign date = currentdate %}
+						{% endif %}
+						<article>
+							<h3 class="m-b-0">{{ item.title }}</h3>
+							<p><date>{{ item.date }}</date></p>
+							{{ item.body | markdownify }}
+						</article>
+						<hr class="m-y-2">
+				{% endfor %}
+				<div class="spacer m-b-2 hidden-md-up"></div>
+
+			</div>
+			<div class="col-md-offset-1 col-md-4">
+				<h4 class="h3 m-b-1 text-uppercase">Jump to year</h4>
+				<ul class="list-group">
+					{% for item in news %}
+						{% assign currentdate = item.date | date: "%Y" %}
+							{% if currentdate != date %}
+								<li class="list-group-item"><a href="#y{{currentdate}}">{{ currentdate }}</a></li>
+								{% assign date = currentdate %}
+							{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

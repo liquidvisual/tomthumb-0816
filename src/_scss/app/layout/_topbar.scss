@@ -115,7 +115,7 @@ $dropdowns-have-anchor-borders : true !default;
     cursor: pointer;
 
     &:hover {
-        background: $primary-color; //lighten($top-parent-anchor-bg-color, 10%);
+        background: rgba(black, 0.3); //lighten($top-parent-anchor-bg-color, 10%);
         color: white;
     }
 
@@ -141,7 +141,7 @@ $dropdowns-have-anchor-borders : true !default;
 //-----------------------------------------------------------------
 
 .topbar .has-dropdown:hover > .top-parent-anchor {
-    background: $top-parent-anchor-bg-color;
+    background: rgba(black, 0.3);; //$top-parent-anchor-bg-color;
     color: white;
 }
 
@@ -269,6 +269,7 @@ $dropdowns-have-anchor-borders : true !default;
     background: #eee;
     // background: lighten($primary-color, 2%); //#eee;
     // color: white;
+    background: rgba(black, 0.3);
 }
 
 //=========================================

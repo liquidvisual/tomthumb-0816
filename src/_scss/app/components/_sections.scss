@@ -22,7 +22,11 @@
 .section-dark {
 	background: $brand-primary;
 	padding: rem-calc(40 0);
-	color: white;
+	color: #f2f2f2;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #fefeff;
+	}
 
 	a {
 		color: white;

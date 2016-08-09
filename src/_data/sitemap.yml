@@ -9,12 +9,36 @@
 - title: Case Studies
   url: /case-studies/
   include_children_in_nav: true
-  children: null
+  children:
+    - title: Helm
+      url: /case-studies/helm/
+    - title: Stellar Asia Pacific
+      url: /case-studies/
+    - title: Starting Blocks
+      url: /case-studies/starting-blocks/
+    - title: QSRH
+      url: /case-studies/qsrh/
+    - title: Le Wrap
+      url: /case-studies/le-wrap/
+    - title: Living Turf
+      url: /case-studies/living-turf/
 
 - title: About Us
   url: /about-us/
-  include_children_in_nav: true
-  children: null
+  include_children_in_nav: false
+  children:
+    - title: team
+      url: /about-us/team/
+      include_children_in_nav: false
+      children:
+        - title: Ben Perry
+          url: /about-us/team/ben-perry/
+        - title: Briony Evans
+          url: /about-us/team/briony-evans/
+        - title: Chris Bierton
+          url: /about-us/team/chris-bierton/
+        - title: Lucy Purcess
+          url: /about-us/team/lucy-purcess/
 
 - title: Contact
   url: /contact/

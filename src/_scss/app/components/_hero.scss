@@ -22,9 +22,15 @@
 	text-align: center;
 	padding: rem-calc(30);
 
-	@include media-breakpoint-down(sm) {
-	    // background: rgba(black, 0.3);
+	h1, h2, h3, h4, h5, h6 {
+		color: white;
 	}
+
+	// @include media-breakpoint-down(sm) {
+	//     // background: rgba(black, 0.3);
+	// }
+
+
 
 	.lv-hero-header {
 		font-weight: bold;
@@ -44,21 +50,6 @@
 
 		@include media-breakpoint-up(md) {
 		    width: 56%;
-		}
-	}
-
-	.btn {
-		background: none;
-		border-radius: 0;
-		border: 3px solid white;
-		text-transform: uppercase;
-		font-size: rem-calc(21);
-		font-weight: bold;
-		padding: rem-calc(9 30);
-
-		&:hover {
-			background: white;
-			color: #222;
 		}
 	}
 }

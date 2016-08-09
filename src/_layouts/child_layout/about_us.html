@@ -1,0 +1,76 @@
+---
+layout: base__page
+---
+
+{% assign settings = site.data.settings %}
+{% assign team_members = site.pages | where: 'data_type', 'team_member' %}
+{% assign testimonials = site.data.testimonials %}
+
+<!-- DOWNLOAD CASE STUDIES -->
+<section class="section-dark is-slim">
+	<div class="container">
+		<div class="container text-xs-center">
+			<div class="intro-text m-b-0 text-xs-center">
+				<span class="text">Download our case studies</span>
+				<span class="spacer m-r-1 hidden-sm-down"></span>
+				<div class="spacer m-b-1 hidden-md-up"></div>
+				<a class="btn btn-outline" href="/">Download</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="section">
+	<div class="container">
+		<h2 class="text-xs-center m-b-3">How we Work</h2>
+		<a href="/"><img width="100%" src="/img/content/our-process.png"></a>
+	</div>
+</section>
+
+<!-- ABOUT US -->
+<section class="section section-dark">
+	<div class="container">
+		<h2 class="m-b-1">About Us</h2>
+		<div class="row">
+			<div class="col-md-6">
+				{{ page.body_col_1 }}
+			</div>
+			<div class="col-md-6">
+				{{ page.body_col_2 }}
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- TEAM MEMBERS -->
+<section class="section">
+	<div class="container">
+		<ul class="block-grid-xs-1 block-grid-md-2 block-grid-lg-4">
+			{% for item in team_members %}
+			<li>
+				<p><a href="{{ item.url }}"><img width="100%" src="{{ item.image }}" alt="{{ item.title }}"></a></p>
+				<h3 class="m-b-1">{{ item.title }} - {{ item.job_title }}</h3>
+				{{ item.content | markdownify | truncate: 250 }}
+				<p><a class="anchor-link" href="{{ item.url }}">MORE <i class="fa fa-angle-right"></i></a></p>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
+
+ <!-- TESTIMONIALS -->
+ <section class="section section-light">
+ 	<div class="container">
+ 		<h2 class="m-b-1">Testimonials</h3>
+ 		<div class="carousel">
+ 			{% for item in testimonials | limit: 8 %}
+ 			<blockquote>
+				<p class="lead is-quote">{{ item.body }}</p>
+				<p><cite>{{ item.cite }}</cite></p>
+				<div class="spacer m-b-1"></div>
+ 			</blockquote>
+ 			{% endfor %}
+ 		</div>
+ 	</div>
+ </section>

@@ -1,0 +1,81 @@
+---
+layout: base__page
+---
+
+{% assign settings = site.data.settings %}
+{% assign case_study = page.media %}
+{% assign case_studies = site.pages | where: 'data_type', 'case_study' %}
+{% assign testimonial = site.data.testimonials[page.testimonial_id] %}
+{% assign case_desc = page.case_desc %}
+
+<!-- CASE STUDIES -->
+<section class="section-dark is-slim">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-xl-3 text-xs-center text-xl-left">
+				<h1 class="h2 text-transform-inherit">{{ page.title }}</h1>
+			</div>
+			<div class="col-md-12 col-xl-9 text-md-right">
+				<nav class="nav nav-inline nav-list text-xs-center text-xl-right">
+					{% for item in case_studies %}
+						{% unless item.title == page.title %}
+							<a class="nav-link" href="{{ item.url }}">{{ item.title }}</a>
+						{% endunless %}
+					{% endfor %}
+				</nav>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- GALLERY -->
+<ul class="block-grid-xs-1 block-grid-md-3 gallery-grid">
+	{% for item in case_study | limit: 3 %}
+	<li>
+		{% if item.src contains 'youtube' %}
+			<a class="popup-youtube" href="http://www.youtube.com/watch?v=ScMzIvxBSi4">
+				<img width="100%" src="/img/layout/video-placeholder@2x.png" alt="Case Study Video Thumbnail">
+			</a>
+		{% else %}
+			<img width="100%" src="{{ item.src }}" alt="Case Study Thumbnail">
+		{% endif %}
+	</li>
+	{% endfor %}
+</ul>
+
+<!-- VISION / STRATEGY -->
+<section class="section">
+	<div class="container">
+
+		{% if case_desc %}
+			{{ case_desc }}
+		{% endif %}
+
+		<div class="spacer m-b-2 hidden-sm-down"></div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Vision</h2>
+				{{ page.vision }}
+			</div>
+			<div class="col-md-6">
+				<h2>Strategy &amp; Execution</h2>
+				{{ page.strategy_execution }}
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- TESTIMONIAL -->
+{% if testimonial %}
+	<section class="section section-light">
+		<div class="container">
+			<h2 class="m-b-1">Testimonial</h3>
+			<blockquote>
+				<p class="lead is-quote">{{ testimonial.body }}</p>
+				<p><cite>{{ testimonial.cite }}</cite></p>
+				<div class="spacer m-b-1"></div>
+			</blockquote>
+		</div>
+	</section>
+{% endif %}

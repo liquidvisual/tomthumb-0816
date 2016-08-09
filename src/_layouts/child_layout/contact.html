@@ -1,0 +1,51 @@
+---
+layout: base__page
+---
+
+{% assign settings = site.data.settings %}
+{% assign contacts = settings.contacts %}
+{% assign address = settings.offices[0].address %}
+{% assign google_map_key = settings.google_map_key  %}
+
+<!-- BANNER TEXT -->
+<section class="section-dark is-slim">
+	<div class="container">
+		<p class="intro-text m-b-0 text-xs-center">Our goal is to partner with business leaders who believe what we believe and work together so we can all succeed. We look forward to meeting you.</p>
+	</div>
+</section>
+
+<!-- GOOGLE MAP -->
+<iframe class="lv-google-map"
+        width="100%"
+        height="320"
+        frameborder="0"
+        src="https://maps.google.com/maps?hl=en&q={{address | strip_html }}&z=21&ie=UTF8&t=roadmap&z=16&iwloc=A&output=embed">
+</iframe>
+
+<!-- CONTACT -->
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<p><img src="/img/content/logo-dark.png" alt="{{ settings.company_title }}"></p>
+				<div class="spacer m-b-2"></div>
+				<p class="h6 m-b-2">{{ settings.offices[0].address }}</p>
+
+				<ul class="block-grid-md-2">
+					{% for person in contacts %}
+					<li>
+						<h4 class="h6">{{ person.name }}</h4>
+						<p>Email: <a class="subtle-link" href="mailto:{{ person.email }}">{{ person.email }}</a><br>
+						Phone: <a class="subtle-link" href="tel:{{ person.mob }}">{{ person.mob }}</a></p>
+					</li>
+					{% endfor %}
+				</ul>
+				<div class="spacer m-b-1"></div>
+
+			</div>
+			<div class="col-md-6">
+				{% include form_contact.html %}
+			</div>
+		</div>
+	</div>
+</section>

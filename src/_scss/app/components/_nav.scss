@@ -1,0 +1,38 @@
+/*
+    NAV.CSS
+
+    - Last updated: 00.00.00
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// NAV
+//-----------------------------------------------------------------
+
+.lv-super .nav-list {
+	@include media-breakpoint-up(md) {
+	    position: relative;
+	    top: 6px;
+	}
+	a {
+		display: block;
+		padding: 0 15px 15px 0;
+		color: $brand-quinary;
+
+		@include media-breakpoint-up(md) {
+		    display: inline-block;
+		}
+
+		&:hover {
+			@include media-breakpoint-up(md) {
+			    color: white;
+			}
+		}
+	}
+}
+
+//=========================================
+//
+//=========================================

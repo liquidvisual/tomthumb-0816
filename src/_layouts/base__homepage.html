@@ -1,0 +1,60 @@
+---
+layout: base
+---
+
+{% assign settings = site.data.settings %}
+{% include hero.html %}
+{% assign case_studies = site.data.case_studies %}
+{% assign news = site.data.news %}
+
+<!-- TEXT -->
+<section class="section-dark">
+	<div class="container">
+		<p class="intro-text m-b-0 text-xs-center">Our goal is to build trust and develop the working relationship with our clients that will inspire results.<br>
+		We know the more we learn and improve the greater our clients' success will be.</p>
+	</div>
+</section>
+
+<!-- GALLERY -->
+<ul class="block-grid-xs-1 block-grid-md-3 gallery-grid">
+	{% for item in case_studies %}
+	<li>
+		<a class="media-tile" href="/case-studies/">
+		    <img width="100%" src="{{ item.image }}">
+		    <div class="media-tile-overlay">
+		        <div class="display-table">
+		            <div class="display-table-cell">
+		            	<p><img width="100" src="/img/layout/logo-mark-white@2x.png"></p>
+		                <h4 class="media-tile-header">{{ item.title }}</h4>
+		            </div>
+		        </div>
+		    </div>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+
+<!-- LATEST NEWS -->
+<section class="section">
+	<div class="container">
+		<div class="carousel">
+			{% for item in news | limit: 8 %}
+				<div class="carousel-slide">
+					<div class="row">
+						<div class="col-md-8 col-lg-7">
+							<a href="/news/"><h2 class="m-b-2">Latest News</h2></a>
+							<article>
+								<h3 class="subtle-link">{{ item.date }} - {{ item.title }}</h4>
+								<p class="lead m-b-2">{{ item.body  | truncate: 180 }}</p>
+								<p><a href="/news/" class="anchor-link">MORE <i class="fa fa-angle-right"></i></a></p>
+							</article>
+						</div>
+						<div class="col-md-4 col-lg-offset-1 hidden-sm-down">
+							<img width="100%" src="http://placehold.it/370x245">
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

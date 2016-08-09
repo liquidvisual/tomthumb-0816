@@ -28,6 +28,11 @@
 		color: white;
 		transition: transform 200ms ease;
 
+		h1, h2, h3, h4, h5, h6 {
+			color: white;
+			text-transform: uppercase;
+		}
+
 		@include media-breakpoint-up(md) {
 		    transform: translateY(100%);
 		    background: rgba(#2339a4, 0.8);
