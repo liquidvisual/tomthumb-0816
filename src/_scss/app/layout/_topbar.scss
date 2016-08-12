@@ -1,9 +1,8 @@
 /*
     TOPBAR.CSS
 
-    - Last updated: 27.01.16
+    - Last updated: 12.08.16
     - liquidvisual.com
-    - Updated dropdowns to be more reliable
 */
 //-----------------------------------------------------------------
 // Variables
@@ -111,7 +110,7 @@ $dropdowns-have-anchor-borders : true !default;
     padding: rem-calc(0 $lv-nav-padding);
     line-height: rem-calc($lv-nav-height);
     // background: $top-parent-anchor-bg-color;
-    color: $gray-light;
+    color: white; //$gray-light;
     cursor: pointer;
 
     &:hover {
@@ -141,7 +140,7 @@ $dropdowns-have-anchor-borders : true !default;
 //-----------------------------------------------------------------
 
 .topbar .has-dropdown:hover > .top-parent-anchor {
-    background: rgba(black, 0.3);; //$top-parent-anchor-bg-color;
+    background: rgba(black, 0.3); //$top-parent-anchor-bg-color;
     color: white;
 }
 
@@ -185,7 +184,7 @@ $dropdowns-have-anchor-borders : true !default;
 
 .topbar .dropdown {
     @include transition('opacity');
-    display: block;
+    display: none; // OPT IN DESIGN
     position: absolute;
     opacity: 0;
     height: 0; // so hit areas aren't triggered
@@ -204,9 +203,13 @@ $dropdowns-have-anchor-borders : true !default;
 }
 
 // Prevent far-right dropdown from exceeding page width
-.topbar .right-align .dropdown {
+.topbar .has-dropdown-right-aligned .dropdown {
     right: 0;
     left: auto;
+}
+
+.topbar .dropdown.is-nav-included {
+    display: block;
 }
 
 //=========================================
@@ -220,7 +223,7 @@ $dropdowns-have-anchor-borders : true !default;
 }
 
 // Prevent far-right 'nested' dropdown from exceeding page width
-.topbar .right-align .dropdown .dropdown {
+.topbar .has-dropdown-right-aligned .dropdown .dropdown {
     left: -100%;
 }
 

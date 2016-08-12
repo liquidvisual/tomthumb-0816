@@ -3,8 +3,6 @@
 
 - title: Our Model
   url: /our-model/
-  include_children_in_nav: true
-  children: null
 
 - title: Case Studies
   url: /case-studies/
@@ -27,9 +25,8 @@
   url: /about-us/
   include_children_in_nav: false
   children:
-    - title: team
-      url: /about-us/team/
-      include_children_in_nav: false
+    - title: Team
+      url: /about-us/
       children:
         - title: Ben Perry
           url: /about-us/team/ben-perry/

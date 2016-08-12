@@ -84,7 +84,7 @@ module.exports = function (grunt) {
           ghostMode: {
               clicks: false,
               forms: true,
-              scroll: true
+              scroll: false
           },
           // Don't send any file-change events to browsers
           codeSync: true,
@@ -177,7 +177,7 @@ module.exports = function (grunt) {
         //imagePath: '',
         includePaths: ['<%= yeoman.app %>/_bower_components/bootstrap/scss',
                        '<%= yeoman.app %>/_bower_components/foundation/scss',
-                       '<%= yeoman.app %>/_bower_components/jQuery.mmenu/src/scss']
+                       '<%= yeoman.app %>/_bower_components/jQuery.mmenu/src/css']
       },
       dist: {
         files: [{

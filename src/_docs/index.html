@@ -3,6 +3,7 @@ layout: child_layout/text_page
 title: Docs
 permalink: /docs/
 hero: /img/content/hero/hero-ocean.jpg
+theme: theme-light-hero
 ---
 
 {% assign breakpoints = site.data.settings.breakpoints %}
@@ -11,6 +12,7 @@ hero: /img/content/hero/hero-ocean.jpg
 
 	<h2>Readily Browsable Templates for {{ site.data.settings.title }}</h2>
 	<ul class="triangle-list check-list">
+		<li><a href="/">Home</a> <small>/</small></li>
 	{% assign pages = site.pages | sort: 'title' | sort: 'url' %}
 	{% for item in pages | offset: 1 %}
 	  {% unless item.title == null or item.url == "/manage/" or item.url == "/" or item.url == "/404/" or item.type == "development_doc" %}
@@ -51,5 +53,24 @@ hero: /img/content/hero/hero-ocean.jpg
 	<p>This site uses font icons in some places including the side nav, you can change the icons by using classes shown here:</p>
 
 	<p><a href="http://fontawesome.io/cheatsheet/">http://fontawesome.io/cheatsheet/</a></p>
+
+	<br>
+
+	<h2>Themes</h2>
+
+	<p>Navigation text can be changed (lighter or darker) based on what hero image is being displayed. This is controlled manually by placing a theme class on the <code>&lt;body&gt;</code></p>
+
+	<table class="table breakpoints-table" style="max-width: 600px;">
+		<tbody>
+			<tr>
+				<td><code>.theme-home-hero</code></td>
+				<td>Applies light gray to page nav anchors.</td>
+			</tr>
+			<tr>
+				<td><code>.theme-light-hero</code></td>
+				<td>Applies dark gray to page nav anchors.</td>
+			</tr>
+		</tbody>
+	</table>
 
 </div>

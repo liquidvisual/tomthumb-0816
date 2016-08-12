@@ -1,0 +1,271 @@
+/*
+    OFF-CANVAS.CSS
+
+    - Last updated: 11.08.16
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+
+$body-bg: white !default;
+$menu-bg-color: #111;
+$menu-width-xs: 260px;
+$menu-width-md: 350px;
+$hamburger-width: 30px;
+$hamburger-height: $hamburger-width - $hamburger-width/5;
+$hamburger-slit-height: 4px;
+
+//-----------------------------------------------------------------
+// LV PAGE
+//-----------------------------------------------------------------
+
+.lv-page {
+	position: relative; // need for z-index
+	background: $body-bg; // prevent sliding from having showing 'gaps'
+	transition: transform ease 300ms;
+	z-index: 1;
+}
+
+//-----------------------------------------------------------------
+// OFF CANVAS
+//-----------------------------------------------------------------
+
+.lv-off-canvas {
+	position: fixed;
+	top: 0;
+	right: 100%;
+	background: $menu-bg-color;
+	width: $menu-width-xs;
+	height: 100%;
+	overflow: hidden;
+	transition: right 0ms ease 300ms; // for hiding
+
+	@include media-breakpoint-up(md) {
+	    width: $menu-width-md;
+	}
+}
+
+//-----------------------------------------------------------------
+// LISTS
+//-----------------------------------------------------------------
+
+.lv-off-canvas,
+.lv-dynamic-menu {
+	ul {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		list-style: none;
+		padding: 0 0 50px 0;
+		margin: 0;
+		font-size: rem-calc(16);
+		overflow: hidden;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+
+		&:first-child {
+			padding-top: 10px;
+		}
+	}
+
+	// TRUNCATE TEXT
+	.text {
+		display: inline-block;
+		width: $menu-width-xs - 80px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+
+		@include media-breakpoint-up(md) {
+		    width: $menu-width-md - 80px;
+		}
+	}
+
+	// NEXT ARROW .has-dropdown > a > .text::after
+
+	.has-dropdown > a > .submenu-trigger {
+		content: "\f105";
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 50px;
+		height: 100%;
+		border-left: 1px solid rgba(white, 0.1);
+		// background: $menu-bg-color;
+		font-family: "FontAwesome";
+		font-size: 25px;
+		font-weight: normal;
+		color: darken(white, 50%);
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.dropdown.is-open {
+		transform: translateX(0);
+	}
+
+	li {
+		border-bottom: 1px solid rgba(white, 0.1);
+		margin-left: 20px;
+	}
+
+	a {
+		position: relative;
+		display: block;
+		color: white;
+		padding: 0 40px 0 0;
+		height: 50px;
+		line-height: 50px;
+	}
+}
+
+//-----------------------------------------------------------------
+// DROPDOWNS
+//-----------------------------------------------------------------
+
+.lv-off-canvas,
+.lv-dynamic-menu {
+	.dropdown {
+		position: fixed;
+		top: 0;
+		left: auto;
+		right: 0;
+		width: $menu-width-xs;
+		height: 100%;
+		background: $menu-bg-color;
+		transform: translateX(100%);
+		overflow: hidden;
+		overflow-y: auto;
+		transition: transform ease 350ms;
+		z-index: 10000;
+
+		@include media-breakpoint-up(md) {
+		    width: $menu-width-md;
+		}
+
+		&::before,
+		&::after {
+			cursor: pointer;
+			content: "\f104";
+			display: block;
+			position: absolute;
+			top: -9px;
+			width: auto;
+			padding: 26px 20px 15px 20px;
+			font-family: "FontAwesome";
+			font-size: 25px;
+			text-transform: uppercase;
+		}
+
+		&::before {
+
+			content: attr(data-parent);
+			position: static;
+			padding-left: 40px;
+			background: darken($menu-bg-color, 5%);
+			font-family: inherit;
+			font-size: inherit;
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// STATE
+//-----------------------------------------------------------------
+
+.has-open-menu {
+	overflow: hidden; // just for desktop
+
+	.lv-off-canvas,
+	.lv-dynamic-menu {
+		right: 0;
+		transition: none; // clever
+	}
+
+	.lv-page { // Slide the page across
+		transform: translateX(-$menu-width-xs);
+		position: fixed;
+		right: 0;
+
+		@include media-breakpoint-up(md) {
+		    transform: translateX(-$menu-width-md);
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// HAMBURGER TRIGGER
+//-----------------------------------------------------------------
+
+.lv-hamburger {
+	position: relative;
+	display: inline-block;
+	width: $hamburger-width;
+	height: $hamburger-height;
+	cursor: pointer;
+	// background: aqua;
+
+	&:hover .lv-hamburger-top,
+	&:hover .lv-hamburger-middle,
+	&:hover .lv-hamburger-bottom {
+		// background: white;
+	}
+
+	.lv-hamburger-top,
+	.lv-hamburger-middle,
+	.lv-hamburger-bottom {
+		position: absolute;
+		width: 100%;
+		height: $hamburger-slit-height;
+		background: #444;
+
+		@include media-breakpoint-up(md) {
+		    background: white;
+		}
+	}
+
+	.lv-hamburger-middle {
+		top: calc(50% - #{$hamburger-slit-height}/2);
+	}
+
+	.lv-hamburger-bottom {
+		bottom: 0;
+	}
+}
+
+//=========================================
+// HAS MENU OPEN - STATE
+//=========================================
+
+.has-open-menu {
+	.lv-hamburger-top,
+	.lv-hamburger-middle,
+	.lv-hamburger-bottom {
+		transition: transform ease 300ms 300ms;
+	}
+
+	.lv-hamburger-top {
+		transform: rotate(45deg);
+		top: calc(50% - #{$hamburger-slit-height/2});
+	}
+
+	.lv-hamburger-bottom {
+		transform: rotate(-45deg);
+		top: calc(50% - #{$hamburger-slit-height/2});
+	}
+
+	.lv-hamburger-middle {
+		display: none;
+		background: red; //rgba(black, 0.5);
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 1;
+	}
+}
+

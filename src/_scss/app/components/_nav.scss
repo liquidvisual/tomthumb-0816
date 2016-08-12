@@ -11,7 +11,7 @@
 // NAV
 //-----------------------------------------------------------------
 
-.lv-super .nav-list {
+.lv-page .nav-list {
 	@include media-breakpoint-up(md) {
 	    position: relative;
 	    top: 6px;

@@ -9,7 +9,6 @@
 //-----------------------------------------------------------------
 
 $(document).ready(function() {
-    // NProgress.start(); // Start preloader bar
     $('input, textarea').placeholder(); // IE9 Patch
 
     //-----------------------------------------------------------------
@@ -25,6 +24,33 @@ $(document).ready(function() {
             $(this).attr('src', source);
         });
     }
+
+    //-----------------------------------------------------------------
+    // Menu Toggle
+    //-----------------------------------------------------------------
+
+    var $submenuTrigger = $('<span class="submenu-trigger"><i class="fa fa-angle-right"></i></span>');
+
+    $('[data-menu-toggle]').click(function(){
+        $('html').toggleClass('has-open-menu');
+    });
+
+    $submenuTrigger.click(function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        $(this).parent().next('.dropdown').addClass('is-open');
+
+    });
+
+    // INIT
+    $('.lv-off-canvas .has-dropdown > a').append($submenuTrigger);
+
+
+    // BACK
+    $('.lv-off-canvas .dropdown').click(function(event){
+        $(this).removeClass('is-open');
+        event.stopPropagation();
+    });
 
     //-----------------------------------------------------------------
     // Manage
@@ -76,27 +102,9 @@ $(document).ready(function() {
 //-----------------------------------------------------------------
 
 $(window).load(function() {
-    // NProgress.done();
-
-    // H5F.setup(document.getElementById("form")); // Patch IE9 for form validation
     $('.carousel').carousel();
-
     $('video').load();
-
     $('body').addClass('has-loaded');
-});
-
-//-----------------------------------------------------------------
-// Off Canvas Menu
-//-----------------------------------------------------------------
-
-var $offCanvasMenu = $("[data-off-canvas-menu]");
-
-$offCanvasMenu.mmenu({ "offCanvas": { "position": "right" }});
-
-$('.hamburger').bind('click', function(e) {
-    e.preventDefault();
-    $offCanvasMenu.trigger('open.mm');
 });
 
 //==================================================
