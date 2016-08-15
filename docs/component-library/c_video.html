@@ -1,54 +1,50 @@
+<script src=//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js></script>
+
 <!-- HTML5 VIDEO -->
-<video width="100%" autoplay loop muted>
-	<source data-src="/assets/img/content/video/video-1.webm" type="video/webm">
-	<source data-src="/assets/img/content/video/video-1.mp4" type="video/mp4">
+<video width=100% autoplay loop muted>
+    <source data-src=/assets/video/video-1.webm type=video/webm></source>
+    <source data-src=/assets/video/video-1.mp4 type=video/mp4></source>
 </video>
 
 <!-- JAVASCRIPT -->
 <script>
-	$(document).ready(function() {
-	    if ($(window).width() > 1024) {
-	        var sources = $("video source");
-
-	        sources.each(function(){
-	            $this = $(this);
-	            var source = $this.attr('data-src');
-	            $(this).attr('src', source);
-	        });
-	    }
-	});
-
-	$(window).load(function() {
-	    $('video').load();
-	    $('body').addClass('has-loaded');
-	});
+$(document).ready(function() {
+    if ($(window).width() > 1024) {
+        var sources = $("video source");
+        sources.each(function() {
+            $this = $(this);
+            var source = $this.attr('data-src');
+            $(this).attr('src', source);
+        });
+    }
+});
+$(window).on('load', function() {
+    $('html').addClass('has-loaded');
+});
 </script>
 
 <!-- REFERENCE SCSS ONLY -->
 <style>
-	the video {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		min-width: 100%;
-		min-height: 100%;
-		width: auto;
-		height: auto;
-		transform: translateX(-50%) translateY(-50%);
-		background-size: cover;
-		transition: 1.5s opacity;
-		opacity: 0;
-
-		@include media-breakpoint-down(lg) {
-		    display: none;
-		}
-	}
-
-	.has-loaded video {
-		opacity: 1;
-	}
-
-	video::-webkit-media-controls {
-	    display: none !important; // hacky
-	}
+the video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    transition: 1.5s opacity;
+    opacity: 0;
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}
+.has-loaded video {
+    opacity: 1;
+}
+video::-webkit-media-controls {
+    display: none !important; // hacky
+}
 </style>
