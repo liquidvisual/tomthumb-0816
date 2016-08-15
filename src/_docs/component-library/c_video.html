@@ -1,14 +1,16 @@
 ---
 title: Video
 type: component
-scss: /src/_scss/app/components/_hero.scss
+scss: /src/assets/_scss/app/components/_hero.scss
 usage: HTML5 video only displays and loads on screens above 1024px (desktops)
 ---
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
 <!-- HTML5 VIDEO -->
 <video width="100%" autoplay loop muted>
-	<source data-src="{{site.assets}}/img/content/video/video-1.webm" type="video/webm">
-	<source data-src="{{site.assets}}/img/content/video/video-1.mp4" type="video/mp4">
+	<source data-src="/assets/video/video-1.webm" type="video/webm">
+	<source data-src="/assets/video/video-1.mp4" type="video/mp4">
 </video>
 
 <!-- JAVASCRIPT -->
@@ -25,9 +27,8 @@ usage: HTML5 video only displays and loads on screens above 1024px (desktops)
 	    }
 	});
 
-	$(window).load(function() {
-	    $('video').load();
-	    $('body').addClass('has-loaded');
+	$(window).on('load', function() {
+	    $('html').addClass('has-loaded');
 	});
 </script>
 

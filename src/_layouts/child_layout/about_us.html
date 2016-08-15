@@ -3,7 +3,7 @@ layout: base__page
 ---
 
 {% assign settings = site.data.settings %}
-{% assign team_members = site.pages | where: 'data_type', 'team_member' %}
+{% assign team_members = site.pages | where: 'content_type', 'team_member' %}
 {% assign testimonials = site.data.testimonials %}
 
 <!-- DOWNLOAD CASE STUDIES -->
@@ -24,7 +24,7 @@ layout: base__page
 <section class="section">
 	<div class="container">
 		<h2 class="text-xs-center m-b-3">How we Work</h2>
-		<a href="/"><img width="100%" src="/img/content/our-process.png"></a>
+		<a href="/"><img width="100%" src="/assets/img/content/our-process.png"></a>
 	</div>
 </section>
 
@@ -62,9 +62,9 @@ layout: base__page
  <!-- TESTIMONIALS -->
  <section class="section section-light">
  	<div class="container">
- 		<h2 class="m-b-1">Testimonials</h3>
+ 		<h2 class="m-b-1">Testimonials</h2>
  		<div class="carousel">
- 			{% for item in testimonials | limit: 8 %}
+ 			{% for item in testimonials limit: 8 %}
  			<blockquote>
 				<p class="lead is-quote">{{ item.body }}</p>
 				<p><cite>{{ item.cite }}</cite></p>

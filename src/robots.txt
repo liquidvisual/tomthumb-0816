@@ -1,2 +1,6 @@
+---
+output: true
+---
+
 User-agent: *
-Disallow: /
+{% if site.data.settings.allow_robots %}Allow: /{% else %}Disallow: /{% endif %}

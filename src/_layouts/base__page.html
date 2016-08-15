@@ -2,12 +2,12 @@
 layout: base
 ---
 
-{% assign hero = page.hero | default: "/img/content/hero/hero-default.jpg" | prepend: site.assets %}
+{% assign hero = page.hero | default: "/assets/img/content/hero/hero-default.jpg" %}
 
 <!-- HERO -->
 <div class="lv-hero-wrapper">
     <div class="lv-hero">
-        <div class="lv-hero-item" style="background-image: url('{{ hero }}')" data-background-image="{{ hero }}"></div>
+        <div class="lv-hero-item" style="background-image: url('{{ hero }}')"></div>
     </div>
 </div>
 

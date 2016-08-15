@@ -4,7 +4,7 @@ title: Our Model
 permalink: /our-model/
 
 tagline: We tell stories to communicate. The very best stories are interlaced with emotion and information.
-supporting_image: /img/content/eye-q.png
+supporting_image: /assets/img/content/eye-q.png
 ---
 
 <h2>Like a great novel the emotion draws you in, whereas the information allows you to understand the plot.</h2>

@@ -1,6 +1,4 @@
-# ---------------------
 # GLOBAL SITE SETTINGS
-# ---------------------
 
 cname: tomthumb.yourwebvisual.com
 
@@ -11,6 +9,7 @@ company: "Tom Thumb"
 description: ""
 
 # DEVELOPER
+allow_robots: false
 github_repo: https://github.com/liquidvisual/tomthumb-0816
 
 # CONTACTS
@@ -40,12 +39,11 @@ instagram: "http://instagram.com"
 events: http://tomthumbevents.com.au
 
 # GOOGLE
-google_map: ""
 google_analytics: "UA-XXXXXXXX-X"
 
 # AUTHOR
 author:
   - title: David Sheiles
     url: http://digitalmomentum.com.au
-    logo: /img/ui/digital-momentum-logo.svg
+    logo: /assets/img/ui/digital-momentum-logo.svg
     description: Website by Digital Momentum

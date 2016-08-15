@@ -1,11 +1,19 @@
+{% comment %}
+<!--
+    Updated: 15.08.16
+    Reference:
+    	https://developers.google.com/maps/documentation/embed/start
+-->
+{% endcomment %}
+
 {% assign address = site.data.settings.offices[0].address %}
 
-{% comment %} https://developers.google.com/maps/documentation/embed/start {% endcomment %}
-
 <!-- GOOGLE MAP -->
-<iframe class="lv-google-map"
-        width="100%"
-        height="320"
-        frameborder="0"
-        src="https://maps.google.com/maps?hl=en&q={{address | strip_html }}&z=21&ie=UTF8&t=roadmap&z=16&iwloc=A&output=embed">
-</iframe>
+<div class="lv-google-map">
+	<iframe width="100%"
+	        height="320"
+	        frameborder="0"
+	        style="pointer-events: none;"
+	        src="https://maps.google.com/maps?hl=en&q={{address | strip_html }}&z=21&ie=UTF8&t=roadmap&z=16&iwloc=A&output=embed">
+	</iframe>
+</div>

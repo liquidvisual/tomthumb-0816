@@ -1,23 +1,26 @@
 {% comment %}
+<!--
+    Updated: 15.08.16
+    Basic output:
 
-    Updated: 27.10.15
-
-    - Notes:
-
-    BYO Breadcrumb logic. This composes links by reading the page url. Demo purposes only.
-    https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
-
+        <nav class="breadcrumb">
+          <a class="breadcrumb-item" href="#">Home</a>
+          <a class="breadcrumb-item" href="#">Library</a>
+          <a class="breadcrumb-item" href="#">Data</a>
+          <span class="breadcrumb-item active">Bootstrap</span>
+        </nav>
+-->
 {% endcomment %}
 
 {% assign crumbs = page.url | split: '/' %}
 
-<ol class="breadcrumb">
-    <li><a href="/">Home</a></li>
+<nav class="lv-breadcrumb breadcrumb">
+    <a class="breadcrumb-item" href="/">Home</a>
     {% for crumb in crumbs offset: 1 %}
         {% if forloop.last %}
-            <li class="active">{{ crumb | replace:'-',' ' }}</li>
+            <span class="breadcrumb-item">{{ crumb | replace:'-',' ' }}</span>
         {% else %}
-            <li><a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' }}</a></li>
+            <a class="breadcrumb-item" href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' }}</a>
         {% endif %}
     {% endfor %}
-</ol>
+</nav>

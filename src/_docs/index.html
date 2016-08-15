@@ -2,7 +2,7 @@
 layout: child_layout/text_page
 title: Docs
 permalink: /docs/
-hero: /img/content/hero/hero-ocean.jpg
+hero: /assets/img/content/hero/hero-ocean.jpg
 theme: theme-light-hero
 ---
 
@@ -14,7 +14,7 @@ theme: theme-light-hero
 	<ul class="triangle-list check-list">
 		<li><a href="/">Home</a> <small>/</small></li>
 	{% assign pages = site.pages | sort: 'title' | sort: 'url' %}
-	{% for item in pages | offset: 1 %}
+	{% for item in pages offset: 1 %}
 	  {% unless item.title == null or item.url == "/manage/" or item.url == "/" or item.url == "/404/" or item.type == "development_doc" %}
 	    <li><a href="{{item.url}}">{{ item.title }}</a> <small>{{ item.url }}</small></li>
 	  {% endunless %}
@@ -30,7 +30,7 @@ theme: theme-light-hero
 
 	<h2>Bootstrap 4</h2>
 
-	<p>This codebase is running Bootstrap 4 (Alpha). Despite being an alpha, it's thoroughly tested and solid for a website of this size. It will also be easily upgradable in future.</p>
+	<p>This codebase is running Bootstrap 4 (Alpha v3). Despite being an alpha, it's thoroughly tested and solid for a website of this size. It will also be easily upgradable in future.</p>
 
 	<p><a class="btn btn-warning btn-text" href="http://v4-alpha.getbootstrap.com/getting-started/introduction/" target="_blank">Access Bootstrap Docs <i class="fa fa-angle-right"></i></a></p>
 

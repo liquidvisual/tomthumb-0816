@@ -14,20 +14,14 @@ layout: base__page
 	</div>
 </section>
 
-<!-- GOOGLE MAP -->
-<iframe class="lv-google-map"
-        width="100%"
-        height="320"
-        frameborder="0"
-        src="https://maps.google.com/maps?hl=en&q={{address | strip_html }}&z=21&ie=UTF8&t=roadmap&z=16&iwloc=A&output=embed">
-</iframe>
+{% include snippets/google_map.html %}
 
 <!-- CONTACT -->
 <section class="section">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<p><img src="/img/content/logo-dark.png" alt="{{ settings.company_title }}"></p>
+				<p><img src="/assets/img/content/logo-dark.png" alt="{{ settings.company_title }}"></p>
 				<div class="spacer m-b-2"></div>
 				<p class="h6 m-b-2">{{ settings.offices[0].address }}</p>
 

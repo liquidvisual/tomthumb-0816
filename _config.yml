@@ -7,8 +7,10 @@ name: liquidvisual-boilerplate
 dev_mode_enabled: true # LV responsive tool
 
 # Grunt handles images and assets.
-exclude: ['img', 'css', 'scripts', 'builder-app/scripts', 'fonts',
-          '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
+#exclude: ['img', 'css', 'scripts', 'builder-app/scripts', 'fonts',
+ #         '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
+
+exclude: ['css', 'assets/scripts', 'webvisual-app/scripts']
 
 include: ['.htaccess', '_pages']
 
@@ -25,6 +27,13 @@ collections:
 # If you would like to exclude specific pages/posts from the sitemap set the sitemap flag to false in the front matter for the page/post.
 #
 # sitemap: false
+
+defaults:
+  -
+    scope:
+      path: "webvisual" # an empty string here means all files in the project
+    values:
+      sitemap: false
 
 gems:
   - jekyll-sitemap

@@ -9,9 +9,24 @@ usage: This snippet doesn't require a user key
 {% assign address = settings.offices[0].address %}
 
 <!-- GOOGLE MAP -->
-<iframe class="lv-google-map"
-        width="100%"
-        height="320"
-        frameborder="0"
-        src="https://maps.google.com/maps?hl=en&q={{address | strip_html }}&z=21&ie=UTF8&t=roadmap&z=16&iwloc=A&output=embed">
-</iframe>
+<div class="lv-google-map">
+	<iframe width="100%"
+	        height="320"
+	        frameborder="0"
+	        style="pointer-events: none;"
+	        src="https://maps.google.com/maps?hl=en&q={{address | strip_html }}&z=21&ie=UTF8&t=roadmap&z=16&iwloc=A&output=embed">
+	</iframe>
+</div>
+
+<script>
+	// Prevent scroll trapping
+	var $googleMap = $('.lv-google-map');
+	if ($googleMap.length) {
+	    $googleMap.click(function () {
+	        $googleMap.find('iframe').css('pointer-events', 'auto');
+	    });
+	    $googleMap.mouseleave(function() {
+	      $googleMap.find('iframe').css('pointer-events', 'none');
+	    });
+	}
+</script>
