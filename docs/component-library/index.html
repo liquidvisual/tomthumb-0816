@@ -15,6 +15,7 @@
 
     <!-- CDN -->
     <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js></script>
 
     <!-- FAV ICONS -->
     <link rel=apple-touch-icon-precomposed sizes=144x144 href=/assets/apple-touch-icon-144-precomposed.png>
@@ -730,7 +731,7 @@
                                 <!-- JAVASCRIPT -->
                                 <script>
                                 $(document).ready(function() {
-                                    if ($(window).width() > 1024) {
+                                    if ($(window).width() > 1024 && $('.no-touch').length) {
                                         var sources = $("video source");
                                         sources.each(function() {
                                             $this = $(this);
@@ -786,14 +787,14 @@
 <span class=c>&lt;!-- JAVASCRIPT --&gt;</span>
 <span class=nt>&lt;script&gt;</span>
 	<span class=nx>$</span><span class=p>(</span><span class=nb>document</span><span class=p>).</span><span class=nx>ready</span><span class=p>(</span><span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
-	    <span class=k>if</span> <span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=nb>window</span><span class=p>).</span><span class=nx>width</span><span class=p>()</span> <span class=o>&gt;</span> <span class=mi>1024</span><span class=p>)</span> <span class=p>{</span>
-	        <span class=kd>var</span> <span class=nx>sources</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s2>"video source"</span><span class=p>);</span>
-	        <span class=nx>sources</span><span class=p>.</span><span class=nx>each</span><span class=p>(</span><span class=kd>function</span><span class=p>(){</span>
-	            <span class=nx>$this</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=k>this</span><span class=p>);</span>
-	            <span class=kd>var</span> <span class=nx>source</span> <span class=o>=</span> <span class=nx>$this</span><span class=p>.</span><span class=nx>attr</span><span class=p>(</span><span class=s1>'data-src'</span><span class=p>);</span>
-	            <span class=nx>$</span><span class=p>(</span><span class=k>this</span><span class=p>).</span><span class=nx>attr</span><span class=p>(</span><span class=s1>'src'</span><span class=p>,</span> <span class=nx>source</span><span class=p>);</span>
-	        <span class=p>});</span>
-	    <span class=p>}</span>
+	    <span class=k>if</span> <span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=nb>window</span><span class=p>).</span><span class=nx>width</span><span class=p>()</span> <span class=o>&gt;</span> <span class=mi>1024</span> <span class=o>&amp;&amp;</span> <span class=nx>$</span><span class=p>(</span><span class=s1>'.no-touch'</span><span class=p>).</span><span class=nx>length</span><span class=p>)</span> <span class=p>{</span>
+            <span class=kd>var</span> <span class=nx>sources</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s2>"video source"</span><span class=p>);</span>
+            <span class=nx>sources</span><span class=p>.</span><span class=nx>each</span><span class=p>(</span><span class=kd>function</span><span class=p>(){</span>
+                <span class=nx>$this</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=k>this</span><span class=p>);</span>
+                <span class=kd>var</span> <span class=nx>source</span> <span class=o>=</span> <span class=nx>$this</span><span class=p>.</span><span class=nx>attr</span><span class=p>(</span><span class=s1>'data-src'</span><span class=p>);</span>
+                <span class=nx>$</span><span class=p>(</span><span class=k>this</span><span class=p>).</span><span class=nx>attr</span><span class=p>(</span><span class=s1>'src'</span><span class=p>,</span> <span class=nx>source</span><span class=p>);</span>
+            <span class=p>});</span>
+        <span class=p>}</span>
 	<span class=p>});</span>
 	<span class=nx>$</span><span class=p>(</span><span class=nb>window</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s1>'load'</span><span class=p>,</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
 	    <span class=nx>$</span><span class=p>(</span><span class=s1>'html'</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s1>'has-loaded'</span><span class=p>);</span>
@@ -982,10 +983,6 @@
     <![endif]-->
 
     <!-- **** JAVASCRIPT **** -->
-    <script src=//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js></script>
-    <script src=//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js></script>
-
-    <!-- <script src="/_bower_components/jquery/dist/jquery.min.js"></script> -->
     <script src=/assets/scripts/minified.js></script>
 
     <!-- No Javascript Warning -->

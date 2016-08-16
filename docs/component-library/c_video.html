@@ -9,7 +9,7 @@
 <!-- JAVASCRIPT -->
 <script>
 $(document).ready(function() {
-    if ($(window).width() > 1024) {
+    if ($(window).width() > 1024 && $('.no-touch').length) {
         var sources = $("video source");
         sources.each(function() {
             $this = $(this);
