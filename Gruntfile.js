@@ -50,7 +50,7 @@ module.exports = function (grunt) {
     //-----------------------------------------------------
     watch: {
       sass: {
-        files: ['<%= yeoman.app %>/assets/_scss/**/*.{scss,sass}', '<%= yeoman.app %>/webvisual/assets/_scss/**/*.{scss,sass}'],
+        files: ['<%= yeoman.app %>/assets/_scss/**/*.{scss,sass}', '<%= yeoman.app %>/assets/webvisual/assets/_scss/**/*.{scss,sass}'],
         tasks: ['sass_globbing:dist', 'sass:server'] //'autoprefixer:dist' // slow? remove globbing for speed
       },
       autoprefixer: {
@@ -75,7 +75,7 @@ module.exports = function (grunt) {
             '.jekyll/**/*.html',
             '{.tmp,<%= yeoman.app %>}/css/**/*.css', // .tmp remember?
             '{.tmp,<%= yeoman.app %>}/assets/scripts/**/*.js',
-            '{.tmp,<%= yeoman.app %>}/webvisual/assets/scripts/**/*.js',
+            '{.tmp,<%= yeoman.app %>}/assets/webvisual/assets/scripts/**/*.js',
             '<%= yeoman.app %>/assets/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
           ]
         },
@@ -116,7 +116,7 @@ module.exports = function (grunt) {
             '.jekyll/**/*.html',
             '.tmp/css/**/*.css',
             '{.tmp,<%= yeoman.app %>}/assets/scripts/**/*.js',
-            '{.tmp,<%= yeoman.app %>}/webvisual/assets/scripts/**/*.js',
+            '{.tmp,<%= yeoman.app %>}/assets/webvisual/assets/scripts/**/*.js',
             '{<%= yeoman.app %>}/_bower_components/**/*.js',
             '<%= yeoman.app %>/assets/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
           ]
@@ -190,7 +190,7 @@ module.exports = function (grunt) {
         // LV BUILDER - comment out if not using
         {
           expand: true,
-          cwd: '<%= yeoman.app %>/webvisual/assets/_scss',
+          cwd: '<%= yeoman.app %>/assets/webvisual/assets/_scss',
           src: '**/*.{scss,sass}',
           dest: '.tmp/css',
           ext: '.css'
@@ -213,7 +213,7 @@ module.exports = function (grunt) {
         // LV BUILDER - comment out if not using
         {
           expand: true,
-          cwd: '<%= yeoman.app %>/webvisual/assets/_scss',
+          cwd: '<%= yeoman.app %>/assets/webvisual/assets/_scss',
           src: '**/*.{scss,sass}',
           dest: '.tmp/css',
           ext: '.css'
@@ -400,9 +400,9 @@ module.exports = function (grunt) {
         files: [{
           src: [
             '<%= yeoman.assets %>/scripts/**/*.js',
-            '<%= yeoman.assets %>/webvisual/assets/scripts/**/*.js',
+            '<%= yeoman.assets %>/assets/webvisual/assets/scripts/**/*.js',
             '<%= yeoman.assets %>/css/**/*.css',
-            '<%= yeoman.assets %>/webvisual/assets/css/**/*.css',
+            '<%= yeoman.assets %>/assets/webvisual/assets/css/**/*.css',
             '<%= yeoman.assets %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
             '<%= yeoman.assets %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
           ]
@@ -451,7 +451,7 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/assets/scripts/**/*.js',
-        '<%= yeoman.app %>/webvisual/assets/scripts/**/*.js',
+        '<%= yeoman.app %>/assets/webvisual/assets/scripts/**/*.js',
         'test/spec/**/*.js'
       ]
     },
