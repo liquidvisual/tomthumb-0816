@@ -154,8 +154,8 @@
 
                     <!-- HTML5 VIDEO -->
                     <video autoplay loop muted>
-                        <source src=/assets/video/video-1.webm type=video/webm></source>
-                        <source src=/assets/video/video-1.mp4 type=video/mp4></source>
+                        <source data-src=/assets/video/video-1.webm type=video/webm></source>
+                        <source data-src=/assets/video/video-1.mp4 type=video/mp4></source>
                     </video>
 
                     <!-- CAPTION -->
@@ -603,6 +603,10 @@
     <![endif]-->
 
     <!-- **** JAVASCRIPT **** -->
+    <script src=//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js></script>
+    <script src=//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js></script>
+
+    <!-- <script src="/_bower_components/jquery/dist/jquery.min.js"></script> -->
     <script src=/assets/scripts/minified.js></script>
 
     <!-- No Javascript Warning -->
