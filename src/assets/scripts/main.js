@@ -15,7 +15,7 @@ $(document).ready(function() {
     // HTML5 Video
     //-----------------------------------------------------------------
 
-    if ($(window).width() > 1024) {
+    if ($(window).width() > 1024 && $('.no-touch').length) {
         var sources = $("video source");
 
         sources.each(function(){
@@ -39,12 +39,10 @@ $(document).ready(function() {
         event.preventDefault();
         event.stopPropagation();
         $(this).parent().next('.dropdown').addClass('is-open');
-
     });
 
     // INIT
     $('.lv-off-canvas .has-dropdown > a').append($submenuTrigger);
-
 
     // BACK
     $('.lv-off-canvas .dropdown').click(function(event){
@@ -53,7 +51,7 @@ $(document).ready(function() {
     });
 
     //-----------------------------------------------------------------
-    // Manage
+    // Launch Manage
     //-----------------------------------------------------------------
 
     key('⌘+shift+m, ctrl+shift+m', function(){
@@ -98,18 +96,17 @@ $(document).ready(function() {
 });
 
 //-----------------------------------------------------------------
-//
+// WINDOW LOAD
 //-----------------------------------------------------------------
 
 $(window).on('load', function() {
-    // $('.carousel').carousel();
-    // $('video').load();
+    $('video')[0].load();
     $('html').addClass('has-loaded');
 });
 
-//==================================================
-//
-//==================================================
+//-----------------------------------------------------------------
+// HEADROOM.js
+//-----------------------------------------------------------------
 
 $(".global-header").headroom({
     // vertical offset in px before element is first unpinned
@@ -153,3 +150,7 @@ $(".global-header").headroom({
     // callback when moving away from bottom of page, `this` is headroom object
     onNotBottom : function() {}
 });
+
+//==================================================
+//
+//==================================================

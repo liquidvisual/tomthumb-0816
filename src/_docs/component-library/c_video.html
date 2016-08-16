@@ -16,15 +16,15 @@ usage: HTML5 video only displays and loads on screens above 1024px (desktops)
 <!-- JAVASCRIPT -->
 <script>
 	$(document).ready(function() {
-	    if ($(window).width() > 1024) {
-	        var sources = $("video source");
+	    if ($(window).width() > 1024 && $('.no-touch').length) {
+            var sources = $("video source");
 
-	        sources.each(function(){
-	            $this = $(this);
-	            var source = $this.attr('data-src');
-	            $(this).attr('src', source);
-	        });
-	    }
+            sources.each(function(){
+                $this = $(this);
+                var source = $this.attr('data-src');
+                $(this).attr('src', source);
+            });
+        }
 	});
 
 	$(window).on('load', function() {
