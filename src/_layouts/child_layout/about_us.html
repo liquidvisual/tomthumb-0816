@@ -66,9 +66,8 @@ layout: base__page
  		<div class="carousel">
  			{% for item in testimonials limit: 8 %}
  			<blockquote>
-				<p class="lead is-quote">{{ item.body }}</p>
-				<p><cite>{{ item.cite }}</cite></p>
-				<div class="spacer m-b-1"></div>
+				<p class="is-quote">{{ item.body }}</p>
+				<p><cite><i>{{ item.cite }}</i></cite></p>
  			</blockquote>
  			{% endfor %}
  		</div>

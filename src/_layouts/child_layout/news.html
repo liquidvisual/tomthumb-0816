@@ -17,7 +17,7 @@ layout: base__page
 	<div class="container">
 		<h1 class="m-b-2 text-uppercase">{{ page.title }}</h1>
 		<div class="row">
-			<div class="col-md-7">
+			<div class="col-lg-8">
 
 				{% for item in news %}
 					{% assign currentdate = item.date | date: "%Y" %}
@@ -26,16 +26,26 @@ layout: base__page
 							{% assign date = currentdate %}
 						{% endif %}
 						<article>
-							<h3 class="m-b-0">{{ item.title }}</h3>
-							<p><date>{{ item.date }}</date></p>
-							{{ item.body | markdownify }}
+							<div class="media">
+								{% if item.image %}
+									<span class="media-left p-r-1 hidden-sm-down">
+									  <img width="150" class="media-object" src="{{ item.image }}" alt="Thumbnail">
+									</span>
+								{% endif %}
+
+							  <div class="media-body">
+							    <h3 class="media-heading m-b-0">{{ item.title }}</h3>
+							    <p><date>{{ item.date }}</date></p>
+							    {{ item.body | markdownify }}
+							  </div>
+							</div>
 						</article>
 						<hr class="m-y-2">
 				{% endfor %}
 				<div class="spacer m-b-2 hidden-md-up"></div>
 
 			</div>
-			<div class="offset-md-1 col-md-4">
+			<div class="offset-lg-1 col-lg-3">
 				<h4 class="h3 m-b-1 text-uppercase">Jump to year</h4>
 				<ul class="list-group">
 					{% for item in news %}
