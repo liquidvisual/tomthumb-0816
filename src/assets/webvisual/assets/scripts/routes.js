@@ -9,6 +9,12 @@
 */
 //-----------------------------------------------------------------
 
+var iframePoller;
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+
 function loadRoute() {
 
 	console.log('Loading main view...');
@@ -49,6 +55,8 @@ function loadRoute() {
 	if (hasAuthenticated && level1 !== "" && level2 == "") {
 		console.log('Switching Tabs ('+'level_1: '+level1+' level_2: '+level2+')');
 		return;
+	} else {
+		clearInterval(iframePoller); // catch early
 	}
 
 	//-----------------------------------------------------------------
@@ -65,39 +73,30 @@ function loadRoute() {
 	//-----------------------------------------------------------------
 
 	if (level1 == "preview" && level2 !== "") {
+
 		console.log("Preview Mode activated");
+
 		// Load new SRC into iframe
 		var previewURL = '/'+getHashBang(2).join('/');
-
-		console.log('what is hashbang 2?: '+getHashBang(2));
+		// console.log('what is hashbang 2?: '+getHashBang(2));
 
 		if (getHashBang(2,3) == "home") previewURL = "/"; // redirect home, because slash is hard to interpret
 
-
 		$preview.attr('src', previewURL).removeAttr('hidden');
+
 		$mainView.attr('hidden', 'true');
 
 		if (hasAuthenticatedCached || !hasAuthenticated) playIntro();
 
-		//----
-		lastHeight = 0;
-		curHeight = 0;
-		$frame = $preview;
-		setInterval(function(){
-			curHeight = $frame.contents().find('body').height();
-			if ( curHeight != lastHeight ) {
-				$frame.css('height', (lastHeight = curHeight) + 'px' );
-			}
-		}, 300);
-		//----
+		resizeIframe($preview); // start polling
 
-		showLoading();
+		//showLoading();
 
 		return;
 	}
 
 	//-----------------------------------------------------------------
-	// 05. Load Mode - ie. Anything other than 'Preview'
+	// 05. LOAD MODE - ie. Anything other than 'Preview'
 	//-----------------------------------------------------------------
 
 	path = '/assets/webvisual/views/'+level1+'/'+level2+'.html';
@@ -155,6 +154,37 @@ function showLoading() {
 		// add timeout here - not load but onReady
 	});
 }
+
+//-----------------------------------------------------------------
+// UTILITY: RESIZE IFRAME
+//-----------------------------------------------------------------
+
+function resizeIframe($target) {
+
+	previousHeight = 0;
+	currentHeight = 0;
+
+	iframePoller = setInterval(function(){
+		console.log('iframe polling started');
+		currentHeight = $target.contents().find('body').height();
+
+		console.log('wowowowo: '+$target.attr('src'));
+
+		if (currentHeight != previousHeight) {
+			$target.css('height', (previousHeight = currentHeight) +'px');
+		}
+	}, 600);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -15,7 +15,7 @@ $(document).ready(function() {
     // HTML5 Video
     //-----------------------------------------------------------------
 
-    if ($(window).width() > 1024 && $('.no-touch').length) {
+    if ($(window).width() > 1024) {
         var sources = $("video source");
 
         sources.each(function(){
@@ -100,7 +100,13 @@ $(document).ready(function() {
 //-----------------------------------------------------------------
 
 $(window).on('load', function() {
-    $('video')[0].load();
+
+    try {
+        $('video')[0].load();
+    } catch(err) {
+
+    }
+
     $('html').addClass('has-loaded');
 });
 

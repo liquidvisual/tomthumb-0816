@@ -3,6 +3,9 @@ layout: child_layout/case_studies_item
 title: Starting Blocks
 permalink: /case-studies/starting-blocks/
 content_type: case_study
+featured_on_homepage: true
+feature_order: 3
+feature_image: /assets/img/content/case-studies/starting-blocks@2x.jpg
 
 vision: <p>ACECQA is Australia’s national Authority on early childhood supported by the Federal and all State Governments. The Authority had a problem communicating with their stakeholders, allied industries and parents. Parents were unaware of ACECQA and had difficulty spelling the name and the information provided was complicated. Their board wanted to develop a parent centric brand that could overcome these issues.</p>
 
@@ -11,7 +14,7 @@ strategy_execution: <p>Working with senior management, stakeholders, staff and t
 testimonial_id: null
 
 media:
-  - src: /assets/img/content/gallery-1@2x.jpg
-  - src: /assets/img/content/gallery-2@2x.jpg
-  - src: /assets/img/content/gallery-3@2x.jpg
+  - src: /assets/img/content/case-studies/starting-blocks@2x.jpg
+  - src: /assets/img/content/case-studies/placeholder@2x.jpg
+  - src: /assets/img/content/case-studies/placeholder@2x.jpg
 ---

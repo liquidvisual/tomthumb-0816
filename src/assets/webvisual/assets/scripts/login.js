@@ -15,6 +15,8 @@ var loggedIn = localStorage.getItem("loggedIn");
 function authenticate() {
 	console.log('Authenticating...');
 
+	$('body').removeClass('is-loading');
+
 	if (loggedIn) {
 		console.log('Authentication passed - bypassing login.');
 		$('body').addClass('has-authenticated-cached'); // one off

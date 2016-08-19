@@ -10,7 +10,7 @@ dev_mode_enabled: true # LV responsive tool
 #exclude: ['img', 'css', 'scripts', 'builder-app/scripts', 'fonts',
  #         '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
 
-exclude: ['css', 'assets/scripts', 'webvisual-app/scripts']
+exclude: ['css', 'assets/scripts', 'assets/webvisual/assets/scripts']
 
 include: ['.htaccess', '_pages']
 

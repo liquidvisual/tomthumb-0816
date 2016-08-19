@@ -3,6 +3,9 @@ layout: child_layout/case_studies_item
 title: Helm
 permalink: /case-studies/helm/
 content_type: case_study
+featured_on_homepage: true
+feature_order: 1
+feature_image: /assets/img/content/case-studies/helm@2x.jpg
 
 vision: <p>Helm is a leading Sydney property developer providing a lasting social legacy through the delivery of architecturally designed buildings that are balanced and beautifully proportioned. Their vision is to create luxury residences that are spacious, livable, functional and of extremely high quality.</p>
 
@@ -11,7 +14,7 @@ strategy_execution: <p>We worked with the Helm executive team to choose the name
 testimonial_id: 4
 
 media:
-  - src: /assets/img/content/gallery-1@2x.jpg
-  - src: /assets/img/content/gallery-2@2x.jpg
-  - src: /assets/img/content/gallery-3@2x.jpg
+  - src: /assets/img/content/case-studies/helm@2x.jpg
+  - src: /assets/img/content/case-studies/placeholder@2x.jpg
+  - src: /assets/img/content/case-studies/placeholder@2x.jpg
 ---

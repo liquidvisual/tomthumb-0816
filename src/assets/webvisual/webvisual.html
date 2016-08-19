@@ -4,9 +4,9 @@ permalink: /manage/
 ---
 
 <!DOCTYPE html>
-<!--[if lt IE 9]>       <html class="no-js lt-ie9"> <![endif]-->
-<!--[if IE 9]>          <html class="no-js lt-ie10"> <![endif]-->
-<!--[if gt IE 9]><!-->  <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 9]>       <html class="lt-ie9"> <![endif]-->
+<!--[if IE 9]>          <html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->  <html> <!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
@@ -33,20 +33,18 @@ permalink: /manage/
 
 </head>
 <body class="is-loading">
-    <div class="lv-super">
-        <div class="lv-page">
+    <div class="lv-page">
 
-            <div id="lv-context-menu" data-include="/assets/webvisual/includes/context_menu.html"></div>
-            <div id="lv-topbar" data-include="/assets/webvisual/includes/topbar.html"></div>
-            <div id="lv-login" data-include="/assets/webvisual/includes/login.html"></div>
+        <div id="lv-context-menu" data-include="/assets/webvisual/includes/context_menu.html"></div>
+        <div id="lv-topbar" data-include="/assets/webvisual/includes/topbar.html"></div>
+        <div id="lv-login" data-include="/assets/webvisual/includes/login.html"></div>
 
-            <div class="lv-stage">
-                <main class="lv-main" data-view></main>
-                <iframe scrolling="no" class="lv-iframe-loader" data-preview></iframe>
-            </div>
+        <div class="lv-stage">
+            <main class="lv-main" data-view></main>
+            <iframe scrolling="no" class="lv-iframe-loader" data-preview></iframe>
+        </div>
 
-        </div> <!-- /.lv-page -->
-    </div> <!-- /.lv-super -->
+    </div> <!-- /.lv-page -->
 
     <!--[if lt IE 9]>
         <div class="lv-alert-bar">

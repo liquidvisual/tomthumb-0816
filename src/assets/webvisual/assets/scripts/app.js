@@ -44,7 +44,6 @@ function loadIncludes() {
 
 function init() {
 	console.log('Initialising...');
-	$('body').removeClass('is-loading');
 	initLoginButtons();
 	initTopbarButtons(); // moved here
 	authenticate();
@@ -167,6 +166,11 @@ function setContextItem() {
 	if (level2) {
 		// Locates the anchor which matches browser URL
 		$('[data-tool-tab-content="'+level1+'"] a[href="#/'+level1+'/'+level2+'/"]').parent().addClass('active');
+	}
+
+	if (level3) {
+		// Locates the anchor which matches browser URL
+		$('[data-tool-tab-content="'+level1+'"] a[href="#/'+level1+'/'+level2+'/'+level3+'/"]').parent().addClass('active');
 	}
 }
 

@@ -3,25 +3,24 @@ layout: base
 ---
 
 {% assign settings = site.data.settings %}
-{% assign case_studies = site.data.case_studies %}
+{% assign case_studies = site.pages | where: 'content_type', 'case_study' | where: 'featured_on_homepage', true | sort: 'feature_order' %}
 {% assign news = site.data.news %}
 
 {% include hero.html %}
 
 <!-- TEXT -->
 <section class="section-dark">
-	<div class="container">
-		<p class="intro-text m-b-0 text-xs-center">Our goal is to build trust and develop the working relationship with our clients that will inspire results.<br>
-		We know the more we learn and improve the greater our clients' success will be.</p>
+	<div class="container" style="max-width: 70%;">
+		<p class="intro-text m-b-0 text-xs-center">{{ settings.site_tagline }}</p>
 	</div>
 </section>
 
 <!-- GALLERY -->
 <ul class="block-grid-xs-1 block-grid-md-3 gallery-grid">
-	{% for item in case_studies %}
+	{% for item in case_studies  %}
 	<li>
-		<a class="media-tile" href="/case-studies/">
-		    <img width="100%" src="{{ item.image }}">
+		<a class="media-tile" href="{{ item.url }}">
+		    <img width="100%" src="{{ item.feature_image }}">
 		    <div class="media-tile-overlay">
 		        <div class="display-table">
 		            <div class="display-table-cell">
@@ -50,8 +49,8 @@ layout: base
 								<p><a href="/news/" class="anchor-link">MORE <i class="fa fa-angle-right"></i></a></p>
 							</article>
 						</div>
-						<div class="col-md-4 offset-md-1  hidden-sm-down">
-							<img width="100%" src="http://placehold.it/370x245">
+						<div class="col-md-4 offset-lg-1 hidden-sm-down">
+							<img width="100%" src="{{ item.image }}">
 						</div>
 					</div>
 				</div>

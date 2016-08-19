@@ -8,6 +8,9 @@ seo_title: "Tom Thumb: Inspirational Ideas. Exceptional Results."
 company: "Tom Thumb"
 description: ""
 
+# SITE DEFAULTS
+site_tagline: "We build brands. We develop inspiring ideas to weave throughout our client’s communications, promise and culture."
+
 # DEVELOPER
 allow_robots: false
 github_repo: https://github.com/liquidvisual/tomthumb-0816
@@ -33,7 +36,7 @@ offices:
 facebook: "..."
 linked_in: "..."
 google_plus: "..."
-instagram: "http://instagram.com"
+instagram: https://www.instagram.com/tomthumbau/
 
 # LINKS
 events: http://tomthumbevents.com.au

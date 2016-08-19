@@ -62,37 +62,15 @@
 // iframe Loader
 //-----------------------------------------------------------------
 
-.lv-main {
-    // display: none;
-}
-
-
 .lv-iframe-loader {
     position: relative;
-    // top: $lv-topbar-height-small;
-    left: 0;
     width: 100%;
-    height: 100%;
-    height: 500px;
-    // height: calc(100% - #{$lv-topbar-height-small});
     border: 0;
-    background: $gray-light;
+    display: block; // removes bottom space glitch
+    min-height: 100%; // savior
+    background: $gray-light; // needs a BG otherwise transparency gaps
     -webkit-overflow-scrolling: touch; // keep incase
-
-    @include media-breakpoint-up(md) {
-        // top: $lv-topbar-height-medium;
-        // height: calc(100% - #{$lv-topbar-height-medium} - #{$lv-stage-top-offset});
-    }
 }
-
-// Technical debt
-.has-closed-menu {
-    .lv-iframe-loader {
-        // height: calc(100% - #{$lv-topbar-height-medium});
-    }
-}
-
-
 
 //-----------------------------------------------------------------
 //

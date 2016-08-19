@@ -3,6 +3,9 @@ layout: child_layout/case_studies_item
 title: QSRH
 permalink: /case-studies/qsrh/
 content_type: case_study
+featured_on_homepage: true
+feature_order: 4
+feature_image: /assets/img/content/case-studies/QSRH@2x.jpg
 
 case_desc: <h2>Quick Service Restaurants Holding</h2><p class="lead">Internal communications, Design and Motion</p>Internal communications, Design and Motion<p>We have been working with the QSRH executive team since our conception.  We came in as they were launching Red Roosters new brand and significant change was happening in Oporto and Chicken Treat. Our role has been to help these brands develop strategies to communicate effectively to their franchise partners as well as strategies to help change their customer service offering.  The following is one example of this work.</p>
 
@@ -13,7 +16,7 @@ strategy_execution: <p>Our role in this was to work out a way that we could info
 testimonial_id: 2
 
 media:
-  - src: /assets/img/content/gallery-1@2x.jpg
-  - src: /assets/img/content/gallery-2@2x.jpg
-  - src: /assets/img/content/gallery-3@2x.jpg
+  - src: /assets/img/content/case-studies/QSRH@2x.jpg
+  - src: /assets/img/content/case-studies/placeholder@2x.jpg
+  - src: /assets/img/content/case-studies/placeholder@2x.jpg
 ---

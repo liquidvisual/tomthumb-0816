@@ -3,6 +3,9 @@ layout: child_layout/case_studies_item
 title: Stellar Asia Pacific
 permalink: /case-studies/
 content_type: case_study
+featured_on_homepage: true
+feature_order: 2
+feature_image: /assets/img/content/case-studies/stellar@2x.jpg
 
 vision: <p>Stellar is Australia’s largest multi-channel customer contact centre group and the most awarded business in their sector looking after a large number of Australia’s most recognised brands across government and commercial enterprise. With 4,500 employees across the region and a rapid growth strategy, their executive team believed their brand did not reflect the evolving organisation and where the business needed to be positioned for the future.</p>
 
@@ -12,6 +15,6 @@ testimonial_id: 1
 
 media:
   - src: http://www.youtube.com/watch?v=ScMzIvxBSi4
-  - src: /assets/img/content/gallery-2@2x.jpg
-  - src: /assets/img/content/gallery-3@2x.jpg
+  - src: /assets/img/content/case-studies/stellar@2x.jpg
+  - src: /assets/img/content/case-studies/stellar-women@2x.jpg
 ---

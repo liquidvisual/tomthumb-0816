@@ -11,8 +11,8 @@
 //-----------------------------------------------------------------
 
 $hero-height-small:           auto; //rem-calc(266); // default: auto // IMPORTANT: if carousel slides, you need a fixed height
-$hero-height-medium:          rem-calc(570);
-$hero-height-medium-fixed:    rem-calc(286);
+$hero-height-medium:          rem-calc(575);
+$hero-height-medium-fixed:    rem-calc(575);
 $hero-height-large:           rem-calc(690); //rem-calc(570);
 $hero-carousel-bullet-size:   rem-calc(16);
 
@@ -62,9 +62,14 @@ $hero-carousel-bullet-size:   rem-calc(16);
     //=========================================
 
     &.has-fixed-height {
-        height: $hero-height-small;
+        height: rem-calc(150); //$hero-height-small;
+        background-position: center center;
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(md) { // added - refactor
+           height: rem-calc(300);
+        }
+
+        @include media-breakpoint-up(xl) {
            height: $hero-height-medium-fixed;
         }
     }
