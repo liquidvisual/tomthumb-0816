@@ -13,6 +13,9 @@
 <loc>/about-us/</loc>
 </url>
 <url>
+<loc>/case-studies/agri-business-association/</loc>
+</url>
+<url>
 <loc>/assets/webvisual/views/content/assets.html</loc>
 </url>
 <url>
@@ -29,9 +32,6 @@
 </url>
 <url>
 <loc>/about-us/team/briony-evans/</loc>
-</url>
-<url>
-<loc>/case-studies/</loc>
 </url>
 <url>
 <loc>/assets/webvisual/views/development/docs/getting-started/compatibility.html</loc>
@@ -82,9 +82,6 @@
 <loc>/assets/webvisual/views/development/docs/basics/layouts.html</loc>
 </url>
 <url>
-<loc>/case-studies/le-wrap/</loc>
-</url>
-<url>
 <loc>/assets/webvisual/views/development/docs/basics/libraries.html</loc>
 </url>
 <url>
@@ -125,6 +122,9 @@
 </url>
 <url>
 <loc>/case-studies/starting-blocks/</loc>
+</url>
+<url>
+<loc>/case-studies/</loc>
 </url>
 <url>
 <loc>/assets/webvisual/views/design/styleguide.html</loc>
