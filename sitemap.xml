@@ -13,9 +13,6 @@
 <loc>/about-us/</loc>
 </url>
 <url>
-<loc>/manage/</loc>
-</url>
-<url>
 <loc>/assets/webvisual/views/content/assets.html</loc>
 </url>
 <url>
@@ -143,6 +140,9 @@
 </url>
 <url>
 <loc>/assets/webvisual/views/development/docs/miscellaneous/upgrading.html</loc>
+</url>
+<url>
+<loc>/manage/</loc>
 </url>
 <url>
 <loc>/assets/webvisual/views/overview/welcome.html</loc>

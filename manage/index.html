@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<!--[if lt IE 9]>       <html class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 9]>       <html class="lt-ie9"> <![endif]-->
 
-<!--[if IE 9]>          <html class="no-js lt-ie10"> <![endif]-->
-<!--[if gt IE 9]><!--><html class=no-js>
+<!--[if IE 9]>          <html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--><html>
 
 <!--<![endif]-->
 <head>
@@ -27,21 +27,17 @@
     <script src=//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js></script>
 </head>
 <body class=is-loading>
-    <div class=lv-super>
-        <div class=lv-page>
-            <div id=lv-context-menu data-include=/assets/webvisual/includes/context_menu.html></div>
-            <div id=lv-topbar data-include=/assets/webvisual/includes/topbar.html></div>
-            <div id=lv-login data-include=/assets/webvisual/includes/login.html></div>
-            <div class=lv-stage>
-                <main class=lv-main data-view></main>
-                <iframe scrolling=no class=lv-iframe-loader data-preview></iframe>
-            </div>
+    <div class=lv-page>
+        <div id=lv-context-menu data-include=/assets/webvisual/includes/context_menu.html></div>
+        <div id=lv-topbar data-include=/assets/webvisual/includes/topbar.html></div>
+        <div id=lv-login data-include=/assets/webvisual/includes/login.html></div>
+        <div class=lv-stage>
+            <main class=lv-main data-view></main>
+            <iframe scrolling=no class=lv-iframe-loader data-preview></iframe>
         </div>
+    </div>
 
-        <!-- /.lv-page -->
-        </div>
-
-    <!-- /.lv-super -->
+    <!-- /.lv-page -->
     
 <!--[if lt IE 9]><div class="lv-alert-bar">
             <p>You're using an outdated browser. Please <a title="Click me, you know you want to." href="http://outdatedbrowser.com">upgrade</a> to improve your experience.</p>
