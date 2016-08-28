@@ -219,6 +219,11 @@ ul.lv-context-menu-site-tools {
 	    margin-left: $app-menu-toolbar-width; // locked
 	}
 
+	li {
+		// border-bottom: 1px solid lighten($dark-bg-color, 5%);
+		margin-left: 15px;
+	}
+
 	//=========================================
 	// Anchors
 	//=========================================
@@ -227,8 +232,8 @@ ul.lv-context-menu-site-tools {
 	h3 {
 		display: block;
 		padding: rem-calc(15 20);
-		border-bottom: 1px solid lighten($dark-bg-color, 5%);
-		margin: rem-calc(0 15);
+
+		margin: rem-calc(0 15 0 0);
 		line-height: 1.4;
 		color: white;
 		transition: none;
@@ -280,7 +285,7 @@ ul.lv-context-menu-site-tools {
 }
 
 .lv-context-menu .btn {
-	margin: $spacer 30px 30px 30px;
+	margin: $spacer 30px 30px 15px;
 
 	.fa {
 		position: relative;
@@ -332,56 +337,6 @@ ul.lv-context-menu-site-tools {
 	list-style: none;
 	margin: 0; // failsafe
 	padding: 0; // failsafe
-}
-
-
-
-
-
-
-
-
-
-//-----------------------------------------------------------------
-// PREVIEW LIST
-//-----------------------------------------------------------------
-
-.preview-list {
-
-	> ul > li > a {
-		position: relative;
-		padding-left: 40px;
-
-		&:before {
-			content: "\f1db";
-			position: absolute;
-			left: 10px;
-			top: 15px;
-			color: $brand-secondary;
-			color: #444950;
-			font-family: "FontAwesome";
-			font-weight: normal;
-		}
-	}
-
-	> ul > li.is-complete > a {
-		&:before {
-			content: "\f00c";
-			color: $brand-secondary;
-		}
-	}
-
-	small {
-		color: lighten($gray-dark, 30%);//#535D63;
-	}
-
-	> ul > li.active a small {
-		color: lighten($gray-dark, 45%);
-	}
-
-	// ul > li > ul {
-	// 	display: none;
-	// }
 }
 
 //-----------------------------------------------------------------

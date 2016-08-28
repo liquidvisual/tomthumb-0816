@@ -19,17 +19,6 @@
 @import "bootstrap/bootstrap";
 
 //-----------------------------------------------------------------
-// LIQUDIVISUAL
-//-----------------------------------------------------------------
-
-@import "liquidvisual/components/alert-bar";
-@import "liquidvisual/components/block-grid";
-// @import "liquidvisual/components/breadcrumb";
-// @import "liquidvisual/components/hero";
-@import "liquidvisual/components/toolbox";
-@import "liquidvisual/vendor/syntax-highlighting";
-
-//-----------------------------------------------------------------
 // BASE
 //-----------------------------------------------------------------
 
@@ -77,6 +66,18 @@
 @import "app/helpers/special";
 @import "app/helpers/themes";
 @import "app/helpers/ie9"; // last for now
+
+//-----------------------------------------------------------------
+// LIQUDIVISUAL
+//-----------------------------------------------------------------
+
+@import "liquidvisual/components/alert-bar";
+@import "liquidvisual/components/block-grid";
+// @import "liquidvisual/components/breadcrumb";
+// @import "liquidvisual/components/hero";
+@import "liquidvisual/components/toolbox";
+@import "liquidvisual/components/off-canvas";
+@import "liquidvisual/vendor/syntax-highlighting";
 
 //-----------------------------------------------------------------
 // VENDOR ??

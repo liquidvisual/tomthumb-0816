@@ -151,6 +151,7 @@ function setContextItem() {
 	var level1 = getHashBang(1,2); // Eg. content
 	var level2 = getHashBang(2,3); // Eg. settings
 	var level3 = getHashBang(3,4); // Eg. site (development/site)
+	var path = getHashBang(1).join('/');
 
 	//=========================================
 	// Need to match 'level2' (settings) with '#/content/settings/'
@@ -168,9 +169,13 @@ function setContextItem() {
 		$('[data-tool-tab-content="'+level1+'"] a[href="#/'+level1+'/'+level2+'/"]').parent().addClass('active');
 	}
 
-	if (level3) {
-		// Locates the anchor which matches browser URL
-		$('[data-tool-tab-content="'+level1+'"] a[href="#/'+level1+'/'+level2+'/'+level3+'/"]').parent().addClass('active');
+	//=========================================
+	// If preview match with node (refactor)
+	//=========================================
+
+	if (level1 == "preview") {
+		console.log('PREVIEW MATE: '+'a[href="#/'+path+'"]');
+		$('[data-tool-tab-content="'+level1+'"] a[href="#/'+path+'"]').parent().addClass('active');
 	}
 }
 

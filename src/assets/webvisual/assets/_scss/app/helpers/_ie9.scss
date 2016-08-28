@@ -8,7 +8,7 @@
 // Variables
 //-----------------------------------------------------------------
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// 01. ANIMATE OVERLAY
+// 01. ANIMATE OVERLAY (IE9)
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 .no-cssanimations .has-authenticated .lv-login-overlay {
@@ -17,7 +17,7 @@
 }
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// 02. ANIMATE TOOLBAR
+// 02. ANIMATE TOOLBAR (IE9)
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 .no-cssanimations .has-authenticated .lv-context-menu-toolbar {
@@ -25,7 +25,7 @@
 }
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// 03. PAGE STRIP (SUBTLE EFFECT)
+// 03. PAGE STRIP (SUBTLE EFFECT) (IE9)
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 .no-cssanimations .has-authenticated .lv-context-menu-top-strip {
@@ -34,7 +34,7 @@
 }
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// 04. CONTEXT MENU
+// 04. CONTEXT MENU (IE9)
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 .no-cssanimations .has-authenticated .lv-context-menu-header,
@@ -44,7 +44,7 @@
 }
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// 05. STAGE ANIMATION *********************
+// 05. STAGE ANIMATION ********************* (IE9)
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 .no-cssanimations .has-authenticated .lv-stage {
@@ -53,7 +53,7 @@
 }
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// 06. TOPBAR ANIMATION
+// 06. TOPBAR ANIMATION (IE9)
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 .no-cssanimations .has-authenticated .lv-topbar {
@@ -62,5 +62,44 @@
 }
 
 //-----------------------------------------------------------------
-//
+// (IE9)
 //-----------------------------------------------------------------
+
+@media screen and (min-width:0\0) and (min-resolution: .001dpcm) {
+    .lv-page .lv-dynamic-menu .dropdown {
+        transform: translateX($app-menu-width-medium + $app-menu-toolbar-width);
+        opacity: 0.99; // hack works!
+
+        .dropdown {
+            top: $lv-topbar-height-medium + $lv-stage-top-offset;
+            left: $app-menu-toolbar-width;
+        }
+    }
+}
+
+//-----------------------------------------------------------------
+// (IE9+)
+//-----------------------------------------------------------------
+
+@media screen and (min-width:0\0) and (min-resolution: +72dpi) {
+    .lv-page .lv-dynamic-menu .dropdown {
+        transform: translateX($app-menu-width-medium + $app-menu-toolbar-width);
+        opacity: 0.99; // hack works!
+
+        .dropdown {
+            top: $lv-topbar-height-medium + $lv-stage-top-offset;
+            left: $app-menu-toolbar-width;
+        }
+    }
+}
+
+
+// ie10-11
+// @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+// $menu-width-xs: $app-menu-width-small; //260px;
+// $menu-width-md: $app-menu-width-medium; //350px;
+
+// $app-menu-width-small: 280px;
+// $app-menu-width-medium: 330px; ////320px; //370px;
+// $app-menu-toolbar-width: 60px; //50px;

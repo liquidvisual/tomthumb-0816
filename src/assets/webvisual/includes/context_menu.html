@@ -121,18 +121,129 @@
 
             <!-- PREVIEW -->
             <div data-tool-tab-content="preview" class="lv-context-menu-panel preview-list">
-                <ul>
-                    <li><a href="#/preview/home/">Home <br><small>/</small></a></li>
-                        {% assign pages = site.pages | sort: 'title' | sort: 'url' %}
-                        {% for item in pages offset: 1 %}
+
+                <div class="lv-dynamic-menu">
+                    {% assign sitemap = site.data.sitemap %}
+
+                    <ul>
+                        <li>
+                            <a class="top-parent-anchor" href="#/preview/home/">
+                                <span class="text">
+                                    <span class="lv-context-menu-digit">
+                                        <span class="fa fa-file"></span>
+                                    </span>
+                                    Home
+                                </span>
+                                <small class="preview-list-path">/</small>
+                            </a>
+                        </li>
+
+                        {% for item in sitemap offset: 1 %}
+
+                            {% capture parent_classes %}
+                                {% if item.children %} has-dropdown {% endif %}
+                            {% endcapture %}
+
+                            {% capture icon_classes %}
+                                {% if item.children %} fa fa-folder-o {% else %} fa fa-file {% endif %}
+                            {% endcapture %}
+
+                            {% capture submenu_trigger %}
+                                {% if item.children %} <span class="submenu-trigger" data-submenu-trigger><i class="fa fa-angle-right"></i></span> {% endif %}
+                            {% endcapture %}
+
                             {% unless item.title == null or item.url == "/manage/" or item.url == "/" or item.url == "/404/" or item.type == "development_doc" %}
-                                <li class="{{ item.status }}">
-                                    <a href="#/preview{{item.url}}">{{ item.title }} <br><small>{{ item.url }}</small></a>
+
+                                <li class="{{ parent_classes }}{{ item.status }}">
+
+                                    <a class="top-parent-anchor" href="#/preview{{item.url}}">
+                                        <span class="text">
+                                            <span class="lv-context-menu-digit">
+                                                <span class="{{ icon_classes }}"></span>
+                                            </span>
+                                            {{ item.title }}
+                                        </span>
+                                        <small class="preview-list-path">{{ item.url }}</small>
+                                        {{ submenu_trigger }}
+                                    </a>
+
+                                    {% comment %}
+                                    <!-----------------------------------------------------------------
+                                    SECOND LEVEL
+                                    ------------------------------------------------------------------>
+                                    {% endcomment %}
+
+                                    {% if item.children %}
+                                        <ul class="dropdown" data-parent="{{ item.title }}">
+
+                                            {% for item in item.children %}
+
+                                                {% capture icon_classes %}
+                                                    {% if item.children %} fa fa-folder-o {% else %} fa fa-file {% endif %}
+                                                {% endcapture %}
+
+                                                {% capture submenu_trigger %}
+                                                    {% if item.children %} <span class="submenu-trigger" data-submenu-trigger><i class="fa fa-angle-right"></i></span> {% endif %}
+                                                {% endcapture %}
+
+                                                <li class="{% if item.children %} has-dropdown {% endif %}">
+                                                    <a href="#/preview{{item.url}}">
+                                                        <span class="text">
+                                                            <span class="lv-context-menu-digit"><span class="{{ icon_classes }}"></span></span>
+                                                            {{ item.title }}
+                                                        </span>
+                                                        <small class="preview-list-path">{{ item.url }}</small>
+                                                        {{ submenu_trigger }}
+                                                    </a>
+
+                                                    {% comment %}
+                                                    <!-----------------------------------------------------------------
+                                                    THIRD LEVEL
+                                                    ------------------------------------------------------------------>
+                                                    {% endcomment %}
+
+                                                    {% if item.children %}
+                                                        <ul class="dropdown" data-parent="{{ item.title }}">
+                                                            {% for item in item.children %}
+
+                                                                {% capture icon_classes %}
+                                                                    {% if item.children %} fa fa-folder-o {% else %} fa fa-file {% endif %}
+                                                                {% endcapture %}
+
+                                                                {% capture submenu_trigger %}
+                                                                    {% if item.children %} <span class="submenu-trigger" data-submenu-trigger><i class="fa fa-angle-right"></i></span> {% endif %}
+                                                                {% endcapture %}
+
+                                                                <li>
+                                                                    <a href="#/preview{{item.url}}">
+                                                                        <span class="text">
+                                                                            <span class="lv-context-menu-digit"><span class="{{ icon_classes }}"></span></span>
+                                                                            {{ item.title }}
+                                                                        </span>
+                                                                        <small class="preview-list-path">{{ item.url }}</small>
+                                                                        {{ submenu_trigger }}
+                                                                    </a>
+                                                                </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    {% endif %}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
                                 </li>
                             {% endunless %}
+
                         {% endfor %}
-                    <li><a href="#/preview/404/">404 - Page Not Found<br><small>/404/</small></a></li>
-                </ul>
+
+                        <li>
+                            <a class="top-parent-anchor" href="#/preview/404/">
+                                <span class="text"><span class="lv-context-menu-digit"><span class="fa fa-file"></span></span>404 - Page Not Found</span>
+                                <small class="preview-list-path">/404/</small>
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- /.lv-dynamic-menu -->
             </div>
 
         </div> <!-- /.lv-context-menu-body -->

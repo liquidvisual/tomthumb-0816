@@ -1,0 +1,165 @@
+/*
+    OFF-CANVAS.CSS
+
+    - Last updated: 28.08.16
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+
+$body-bg: white !default;
+$menu-bg-color: $gray-dark;
+$menu-width-xs: $app-menu-width-small; //260px;
+$menu-width-md: $app-menu-width-medium; //350px;
+
+//-----------------------------------------------------------------
+// LISTS
+//-----------------------------------------------------------------
+
+.lv-dynamic-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	clip: rect(0, auto, auto, 0);
+
+	ul {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		list-style: none;
+		padding: 0 0 50px 0;
+		margin: 0;
+		// font-size: rem-calc(14);
+		overflow: hidden;
+		// overflow-y: auto;
+		// -webkit-overflow-scrolling: touch;
+
+		@include media-breakpoint-up(md) {
+			left: $app-menu-toolbar-width;
+		    width: calc(100% - #{$app-menu-toolbar-width});
+		}
+
+		&:first-child {
+			padding-top: 20px;
+		}
+
+		// ul > li:first-child {
+		// 	padding-top: 20px;
+		// }
+	}
+
+	// TRUNCATE TEXT
+	.text {
+		display: inline-block;
+		width: $menu-width-xs - 70px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+
+		@include media-breakpoint-up(md) {
+		    width: $menu-width-md - 150px; // the arrows pushing
+		}
+	}
+
+	.preview-list-path {
+		display: block;
+		color: lighten($dark-bg-color, 30%);
+		padding-left: 25px;
+	}
+
+	.fa-file {
+		color: lighten($dark-bg-color, 15%);
+	}
+
+	// NEXT ARROW .has-dropdown > a > .text::after
+
+	.has-dropdown .submenu-trigger {
+		content: "\f105";
+		position: absolute;
+		top: 1px;
+		right: 0;
+		width: 50px;
+		height: 100%;
+		font-family: "FontAwesome";
+		font-size: 25px;
+		font-weight: normal;
+		color: lighten($dark-bg-color, 15%);
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.dropdown.is-open {
+		transform: translateX(0);
+		display: block;
+	}
+
+	// li {
+	// 	// border-bottom: 1px solid rgba(white, 0.1);
+	// 	// margin-left: 20px;
+	// }
+
+	a {
+		position: relative;
+	}
+}
+
+//-----------------------------------------------------------------
+// DROPDOWNS
+//-----------------------------------------------------------------
+
+.lv-dynamic-menu {
+	.dropdown {
+		position: fixed;
+		top: $lv-topbar-height-medium + $lv-stage-top-offset;
+		// left: auto; // LEFT OMITTED
+		width: $menu-width-xs;
+		height: 100%;
+		background: $menu-bg-color;
+		overflow: hidden;
+		overflow-y: auto;
+		transform: translateX(100%);
+		transition: transform ease 350ms;
+		z-index: 10000;
+
+		@include media-breakpoint-up(md) {
+		    width: $menu-width-md - $app-menu-toolbar-width;
+		}
+
+		.dropdown {
+			top: 0;
+			left: 0;
+		}
+
+		&::before,
+		&::after {
+			cursor: pointer;
+			content: "\f104";
+			display: block;
+			position: absolute;
+			top: -9px;
+			width: auto;
+			padding: 26px 20px 15px 20px;
+			font-family: "FontAwesome";
+			font-size: 25px;
+			text-transform: uppercase;
+			color: lighten($dark-bg-color, 15%);
+		}
+
+		&::before {
+			content: attr(data-parent);
+			position: static;
+			padding-left: 40px;
+			// background: darken($menu-bg-color, 4%);
+			font-family: inherit;
+			font-size: inherit;
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------

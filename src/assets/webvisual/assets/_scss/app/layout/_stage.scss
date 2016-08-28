@@ -63,13 +63,17 @@
 //-----------------------------------------------------------------
 
 .lv-iframe-loader {
-    position: relative;
-    width: 100%;
-    border: 0;
     display: block; // removes bottom space glitch
-    min-height: 100%; // savior
+    position: relative;
+    width: 100vw; // this works for ios mobile
+    height: 100%;
+    border: 0;
     background: $gray-light; // needs a BG otherwise transparency gaps
     -webkit-overflow-scrolling: touch; // keep incase
+
+    @include media-breakpoint-up(md) {
+        width: 100%; // fallback
+    }
 }
 
 //-----------------------------------------------------------------

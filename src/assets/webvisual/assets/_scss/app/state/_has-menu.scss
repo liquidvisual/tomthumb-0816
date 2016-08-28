@@ -74,12 +74,12 @@ $subtle-toggle-animation: true !default;
 // A: Context Menu subtle animation
 //=========================================
 
-.has-open-menu .lv-context-menu-header,
-.has-open-menu .lv-context-menu-scroller {
-    @include media-breakpoint-up(md) {
-        transform: translateX(0);
-    }
-}
+// .has-open-menu .lv-context-menu-header,
+// .has-open-menu .lv-context-menu-scroller {
+//     @include media-breakpoint-up(md) {
+//         transform: translate(0, 0);
+//     }
+// }
 
 //-----------------------------------------------------------------
 // MENU IS CLOSED
@@ -97,14 +97,14 @@ $subtle-toggle-animation: true !default;
 // B: Reset context menu - give slight animation
 //=========================================
 
-@if $subtle-toggle-animation == false {
-    .has-closed-menu .lv-context-menu-header,
-    .has-closed-menu .lv-context-menu-scroller {
-        @include media-breakpoint-up(md) {
-            transform: translateX(-30px);
-        }
-    }
-}
+// @if $subtle-toggle-animation == true {
+//     .has-closed-menu .lv-context-menu-header,
+//     .has-closed-menu .lv-context-menu-scroller {
+//         @include media-breakpoint-up(md) {
+//             transform: translateX(-30px);
+//         }
+//     }
+// }
 
 // Small gutters on mobile only
 .has-closed-menu .lv-main {

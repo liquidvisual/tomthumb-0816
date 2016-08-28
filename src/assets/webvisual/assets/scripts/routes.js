@@ -92,6 +92,8 @@ function loadRoute() {
 
 		//showLoading();
 
+		setupPreviewMenu();
+
 		return;
 	}
 
@@ -165,10 +167,10 @@ function resizeIframe($target) {
 	currentHeight = 0;
 
 	iframePoller = setInterval(function(){
-		console.log('iframe polling started');
+		// console.log('iframe polling started');
 		currentHeight = $target.contents().find('body').height();
 
-		console.log('wowowowo: '+$target.attr('src'));
+		// console.log('wowowowo: '+$target.attr('src'));
 
 		if (currentHeight != previousHeight) {
 			$target.css('height', (previousHeight = currentHeight) +'px');
