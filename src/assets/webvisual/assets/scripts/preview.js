@@ -8,7 +8,7 @@
 //
 //-----------------------------------------------------------------
 
-function setupPreviewMenu() {
+function initPreviewMode() {
 
 	// var $submenuTrigger = $('<span class="submenu-trigger" data-submenu-trigger><i class="fa fa-angle-right"></i></span>');
 	$submenuTrigger = $('[data-submenu-trigger]');

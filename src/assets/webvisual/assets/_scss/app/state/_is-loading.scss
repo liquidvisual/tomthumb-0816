@@ -19,6 +19,10 @@
     // visibility: hidden;
 }
 
+.no-js .is-loading {
+	display: inherit;
+}
+
 .has-authenticated.has-loaded {
 	display: block;
 

@@ -92,8 +92,6 @@ function loadRoute() {
 
 		//showLoading();
 
-		setupPreviewMenu();
-
 		return;
 	}
 

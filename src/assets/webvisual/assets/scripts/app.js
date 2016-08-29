@@ -46,6 +46,7 @@ function init() {
 	console.log('Initialising...');
 	initLoginButtons();
 	initTopbarButtons(); // moved here
+	initPreviewMode();
 	authenticate();
 }
 

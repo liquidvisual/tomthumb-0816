@@ -34,6 +34,7 @@ noscript {
     background: white;
     text-align: center;
     z-index: 999999999999;
+    font-size: 14px;
 
     @include media-breakpoint-up(sm) {
     	width: 370px;
