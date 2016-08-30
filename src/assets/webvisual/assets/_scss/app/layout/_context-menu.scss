@@ -239,6 +239,11 @@ ul.lv-context-menu-site-tools {
 		color: white;
 		transition: none;
 
+		@include media-breakpoint-up(md) {
+	    	padding: rem-calc(10 15);
+	        border: 0;
+		}
+
 		.lv-context-menu-digit {
 			font-family: 'Oswald', sans-serif;
 			color: lighten($dark-bg-color, 15%);
@@ -248,9 +253,11 @@ ul.lv-context-menu-site-tools {
 			display: inline-block;
 		}
 
-		@include media-breakpoint-up(md) {
-	    	padding: rem-calc(10 15);
-	        border: 0;
+		&:hover {
+			@include media-breakpoint-up(xl) {
+			    background: lighten($dark-bg-color, 2%);
+			    border-radius: $border-radius-sm;
+			}
 		}
 	}
 
@@ -270,14 +277,6 @@ ul.lv-context-menu-site-tools {
 	.active > a {
 		background: lighten($dark-bg-color, 8%);
 		border-radius: $border-radius-sm;
-
-		// @keyframes bounceIn { from { transform: scale(0.0); } to { transform: scale(1.0); } }
-
-		// transform: scale(0.0);  /* make things invisible upon start */
-		// animation: bounceIn ease-out 1;
-		// animation-fill-mode: forwards;
-		// animation-duration: 0.2s;
-		// animation-delay: 0.05s;
 
 		.fa,
 		.lv-context-menu-digit {
