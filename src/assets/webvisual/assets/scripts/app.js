@@ -114,6 +114,7 @@ function initTopbarButtons() {
 	$('[data-notes-btn]').unbind('click').bind('click touchstart', function(e){
 		e.preventDefault();
 		$('body').toggleClass('has-open-notes');
+		getPageNotes(); // also in routes
 	});
 	// come back here
 	// var isAnimating = $(".lv-context-menu").is(':animated');

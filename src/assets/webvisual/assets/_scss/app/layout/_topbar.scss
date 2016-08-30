@@ -153,7 +153,7 @@ $lv-topbar-height-medium: 75px !default;
 }
 
 .lv-topbar-close-btn,
-.lv-topbar-alert-btn {
+.lv-topbar-note-btn {
     position: relative;
     display: block;
     width: 50px;
@@ -177,7 +177,17 @@ $lv-topbar-height-medium: 75px !default;
     }
 }
 
-.lv-topbar-alert-number {
+// Cancel weird effect on touch devices
+.touch .lv-topbar-close-btn,
+.touch .lv-topbar-note-btn {
+    &:hover {
+        @include media-breakpoint-down(lg) {
+            background: inherit;
+        }
+    }
+}
+
+.lv-topbar-note-number {
     position: absolute;
     top: 16%;
     right: 16%;

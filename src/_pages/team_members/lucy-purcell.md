@@ -2,7 +2,7 @@
 layout: child_layout/team_item
 title: Lucy Purcell
 job_title: Events
-permalink: /about-us/team/lucy-percell/
+permalink: /about-us/team/lucy-purcell/
 hero: null
 image: /assets/img/ui/no-face.png
 content_type: team_member

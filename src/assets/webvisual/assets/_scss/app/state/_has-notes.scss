@@ -1,0 +1,47 @@
+/*
+    HAS-NOTES.CSS
+
+    - Last updated: 29.07.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+
+// .has-open-notes .lv-topbar-note-btn::after {
+//     transform: scale(1.0);
+// }
+
+// .lv-topbar-note-btn::after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     border: 5px solid white;
+//     border-top: 10px solid white;
+//     border-bottom: 10px solid white;
+//     border-radius: 100%;
+//     background: $gray-light;
+//     z-index: -1;
+//     transform: scale(0.0);
+//     transition: transform 250ms ease;
+// }
+
+.has-open-notes .lv-topbar-note-btn {
+    // border-color: white;
+    color: darken($gray-light, 60%);
+    // transition: border-color 250ms ease-out;
+    transition: background 200ms ease, color 200ms ease;
+    background: lighten(rgba(229, 231, 233, 1), 2%) !important;
+}
+
+//=========================================
+//
+//=========================================

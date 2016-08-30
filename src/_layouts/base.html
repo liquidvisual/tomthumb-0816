@@ -121,5 +121,11 @@
         </div>
     </noscript>
 
+    <!-- DELETE BELOW FOR PRODUCTION -->
+    <script>
+        localStorage.setItem("pageURL", "{{ page.url }}");
+        localStorage.setItem("pageNotes", JSON.stringify({{ page.notes | jsonify }}));
+    </script>
+
 </body>
 </html>
