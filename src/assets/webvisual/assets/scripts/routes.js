@@ -54,6 +54,12 @@ function loadRoute() {
 
 	if (hasAuthenticated && level1 !== "" && level2 == "") {
 		console.log('Switching Tabs ('+'level_1: '+level1+' level_2: '+level2+')');
+
+		//$('#sfx-click--soft')[0].play(); // SOUND
+
+		// mySound = new MediaElement('sfx-click--soft');
+		// mySound.play();
+
 		return;
 	} else {
 		clearInterval(iframePoller); // catch early

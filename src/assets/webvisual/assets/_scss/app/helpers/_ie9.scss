@@ -62,27 +62,11 @@
 }
 
 //-----------------------------------------------------------------
-// (IE9)
-//-----------------------------------------------------------------
-
-@media screen and (min-width:0\0) and (min-resolution: .001dpcm) {
-    .lv-page .lv-dynamic-menu .dropdown {
-        transform: translateX($app-menu-width-medium + $app-menu-toolbar-width);
-        opacity: 0.99; // hack works!
-
-        .dropdown {
-            top: $lv-topbar-height-medium + $lv-stage-top-offset;
-            left: $app-menu-toolbar-width;
-        }
-    }
-}
-
-//-----------------------------------------------------------------
 // (IE9+)
 //-----------------------------------------------------------------
 
 @media screen and (min-width:0\0) and (min-resolution: +72dpi) {
-    .lv-page .lv-dynamic-menu .dropdown {
+    .lv-dynamic-menu .dropdown {
         transform: translateX($app-menu-width-medium + $app-menu-toolbar-width);
         opacity: 0.99; // hack works!
 
@@ -93,6 +77,21 @@
     }
 }
 
+//-----------------------------------------------------------------
+// (IE9)
+//-----------------------------------------------------------------
+
+// @media screen and (min-width:0\0) and (min-resolution: .001dpcm) {
+//     .lv-page .lv-dynamic-menu .dropdown {
+//         transform: translateX($app-menu-width-medium + $app-menu-toolbar-width);
+//         opacity: 0.99; // hack works!
+
+//         .dropdown {
+//             top: $lv-topbar-height-medium + $lv-stage-top-offset;
+//             left: $app-menu-toolbar-width;
+//         }
+//     }
+// }
 
 // ie10-11
 // @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {

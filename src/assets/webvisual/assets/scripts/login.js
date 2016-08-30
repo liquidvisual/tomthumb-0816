@@ -57,6 +57,10 @@ function playIntro() {
 
 		// Add cache class to prevent login from appearing after animation
 		var cacheDelay = setTimeout(function(){ $('body').addClass('has-authenticated-cached has-animated'); }, 2000);
+
+		// setTimeout(function(){
+		// 	$('#sfx-login')[0].play(); // SOUND
+		// }, 900);
 	}
 }
 

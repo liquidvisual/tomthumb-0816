@@ -11,7 +11,7 @@
 function initPreviewMode() {
 
 	// var $submenuTrigger = $('<span class="submenu-trigger" data-submenu-trigger><i class="fa fa-angle-right"></i></span>');
-	$submenuTrigger = $('[data-submenu-trigger]');
+	var $submenuTrigger = $('[data-submenu-trigger]');
 
 	$('[data-menu-toggle]').click(function(){
 	    $('html').toggleClass('has-open-menu');
@@ -32,6 +32,9 @@ function initPreviewMode() {
 	    event.stopPropagation();
 	});
 
+	$('.lv-dynamic-menu a').click(function(event){
+	    event.stopPropagation();
+	});
 }
 
 //-----------------------------------------------------------------

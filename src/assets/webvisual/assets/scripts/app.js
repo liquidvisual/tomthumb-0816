@@ -108,7 +108,13 @@ function initTopbarButtons() {
 	$('[data-close-btn]').unbind('click').bind('click touchstart', function(e){
 		e.preventDefault();
 		window.location = "/";
-	})
+	});
+
+	// NOTES
+	$('[data-notes-btn]').unbind('click').bind('click touchstart', function(e){
+		e.preventDefault();
+		$('body').toggleClass('has-open-notes');
+	});
 	// come back here
 	// var isAnimating = $(".lv-context-menu").is(':animated');
 }

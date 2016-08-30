@@ -18,6 +18,13 @@
 	transform: translateX(-10000px);
 }
 
+.lv-topbar-btns {
+	@include media-breakpoint-up(lg) {
+	    transform: translateX(-($app-menu-width-medium));
+	    transition: transform 280ms ease;
+	}
+}
+
 //-----------------------------------------------------------------
 // MENU BUTTON
 //-----------------------------------------------------------------

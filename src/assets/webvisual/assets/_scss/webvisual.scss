@@ -23,7 +23,6 @@
 //-----------------------------------------------------------------
 
 @import "app/base/variables";
-@import "app/helpers/mixins";
 @import "app/base/global";
 
 //=========================================
@@ -32,6 +31,7 @@
 
 @import "app/components/buttons";
 @import "app/components/dynamic-menu";
+@import "app/components/notes";
 @import "app/components/type";
 
 //=========================================
@@ -63,6 +63,7 @@
 // HELPERS
 //=========================================
 
+@import "app/helpers/fonts";
 @import "app/helpers/no-script";
 @import "app/helpers/special";
 @import "app/helpers/themes";
