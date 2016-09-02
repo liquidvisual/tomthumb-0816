@@ -167,7 +167,7 @@ $dark-bg-color: $gray-dark !default; // recently changed this
 		// color: black; //white;//lighten($dark-bg-color, 30%);
 		// background: rgba(white, 0.2);
 		// margin: 0 4px;
-		border-radius: 4px;
+		// border-radius: 4px;
 	}
 }
 
@@ -204,6 +204,44 @@ ul.lv-context-menu-site-tools {
 			display: none;
 		}
 	}
+}
+
+//=========================================
+// TOOL TAB PREVIEW
+// Style it differently to highligh different behavior
+//=========================================
+
+.tool-tab-preview {
+	height: 65px;
+	margin: 30px 12px 12px 12px;
+	border: 1px solid lighten($dark-bg-color, 0%);
+	border-top: 0;
+	border-radius: 30px;
+	background: black;
+
+	a {
+		line-height: 24px;
+		// border: 2px solid black;
+		// border-bottom: 2px solid darken(desaturate($brand-secondary, 60%), 20%);
+		border-radius: 30px;
+		background: desaturate($brand-secondary, 60%);
+		font-size: 18px;
+		color: darken(desaturate($brand-secondary, 60%), 20%) !important;
+		box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
+		transition: transform 300ms ease, background 300ms ease;
+	}
+}
+
+.is-mode-preview .tool-tab-preview a {
+	background: $brand-secondary;
+	color: rgba(black, 0.45) !important;
+	cursor: default;
+	transform: translateY(31px);
+	// box-shadow: 0px 0px 5px 0px $brand-secondary;
+}
+
+.is-mode-preview .lv-context-menu .lv-context-menu-body .fa {
+	// color: white;
 }
 
 //-----------------------------------------------------------------

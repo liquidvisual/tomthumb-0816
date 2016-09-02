@@ -1,0 +1,267 @@
+/*
+    IFRAME-LOADER.CSS
+
+    - Last updated: 23.07.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+
+// Desktop
+$scroller-mask-width: 8px;
+$device-desktop-screen-border-x: 22px;
+$device-desktop-screen-border-y: 22px;
+$device-desktop-width: 510px - $scroller-mask-width + $device-desktop-screen-border-x * 2;
+$device-desktop-height: 280px + $device-desktop-screen-border-y * 2;
+$device-desktop-scale: scale(0.3181);
+$device-desktop-resolution-width: 1600px;
+$device-desktop-resolution-height: 880px;
+
+// Laptop
+$scroller-mask-width: 4px;
+$device-laptop-screen-border-x: 18px;
+$device-laptop-screen-border-y: 18px;
+$device-laptop-width: 354px - $scroller-mask-width + $device-laptop-screen-border-x * 2;
+$device-laptop-height: 222px + $device-laptop-screen-border-y * 2;
+$device-laptop-scale: scale(0.277);
+$device-laptop-resolution-width: 1280px;
+$device-laptop-resolution-height: 802px;
+
+// Tablet
+$scroller-mask-width: 4px;
+$device-tablet-screen-border-x: 12px;
+$device-tablet-screen-border-y: 17px;
+$device-tablet-width: 168px - $scroller-mask-width + $device-tablet-screen-border-x * 2;
+$device-tablet-height: 224px + $device-tablet-screen-border-y * 2;
+$device-tablet-scale: scale(0.219);
+$device-tablet-resolution-width: 768px;
+$device-tablet-resolution-height: 1024px;
+
+// Mobile
+$scroller-mask-width: 4px;
+$device-mobile-screen-border-x: 6px;
+$device-mobile-screen-border-y: 18px;
+$device-mobile-width: 70px - $scroller-mask-width + $device-mobile-screen-border-x * 2;
+$device-mobile-height: 105px + $device-mobile-screen-border-y * 2;
+$device-mobile-scale: scale(0.219);
+$device-mobile-resolution-width: 320px;
+$device-mobile-resolution-height: 480px;
+
+//-----------------------------------------------------------------
+// IFRAME LOADER
+//-----------------------------------------------------------------
+
+.lv-iframe-loader {
+    display: block; // removes bottom space glitch
+    position: relative;
+    width: 100vw; // this works for ios mobile
+    height: 100%;
+    border: 0;
+    background: $gray-light; // needs a BG otherwise transparency gaps
+    -webkit-overflow-scrolling: touch; // keep incase
+
+    @include media-breakpoint-up(md) {
+        width: 100%; // fallback
+    }
+}
+
+//-----------------------------------------------------------------
+// COMMON
+//-----------------------------------------------------------------
+
+.device-desktop,
+.device-laptop,
+.device-tablet,
+.device-mobile {
+    position: absolute;
+    background: #222;
+    background: $brand-secondary;
+
+    .device-screen {
+        overflow: hidden;
+    }
+
+    .lv-iframe-loader {
+        // display: none;
+        top: 0;
+        left: 0;
+        transform-origin: top left;
+        background: #222;
+        min-height: 0 !important;
+    }
+}
+
+//-----------------------------------------------------------------
+// DESKTOP
+//-----------------------------------------------------------------
+
+.device-desktop {
+    width: $device-desktop-width;
+    height: $device-desktop-height;
+    // top: 0;
+    left: calc(50% - #{$device-desktop-width}/2);
+    border: $device-desktop-screen-border-x solid #151519;
+    border-radius: 15px 15px 0 0;
+
+    .lv-iframe-loader {
+        width: $device-desktop-resolution-width;
+        height: $device-desktop-resolution-height;
+        transform: $device-desktop-scale;
+    }
+
+    .device-desktop-base {
+        position: absolute;
+        top: calc(100% + #{$device-desktop-screen-border-y});
+        left: calc(-#{$device-desktop-screen-border-x});
+        width: calc(100% + #{$device-desktop-screen-border-x * 2});
+        height: 50px;
+        border-radius: 0 0 20px 20px;
+        background: darken(#e9ecf1, 6%);
+    }
+
+    .device-desktop-stand {
+        position: absolute;
+        top: 100%;
+        left: calc(50% - 140px/2);
+        width: 110px;
+        height: 50px;
+        background: darken(#e9ecf1, 8%);
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 5px;
+            background: darken(#e9ecf1, 13%);
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: -36px;
+            left: calc(50% - 22px/2);
+            width: 22px;
+            height: 22px;
+            background: darken(#e9ecf1, 16%);
+            border-radius: 100%;
+        }
+
+        // STAND FOOT
+
+        .device-desktop-stand-foot-left,
+        .device-desktop-stand-foot-right {
+            position: absolute;
+            top: 100%;
+            width: 110px;
+            height: 25px;
+            background: darken(#e9ecf1, 12%);
+        }
+
+        .device-desktop-stand-foot-left {
+            left: -15px;
+            border-radius: 0 0 0 20px/10px;
+            transform: skewx(-50deg);
+        }
+
+        .device-desktop-stand-foot-right {
+            left: 15px;
+            border-radius: 0 0 20px/10px 0;
+            transform: skewx(50deg);
+        }
+    }
+}
+
+//-----------------------------------------------------------------
+// LAPTOP
+//-----------------------------------------------------------------
+
+.device-laptop {
+    width: $device-laptop-width;
+    height: $device-laptop-height;
+    top: 465px;
+    left: calc(50% + 100px);
+    border: $device-laptop-screen-border-x solid #151519;
+    border-top-width: $device-laptop-screen-border-y;
+    border-bottom-width: $device-laptop-screen-border-y;
+    border-radius: 13px 13px 0 0;
+    // box-shadow: 0 0 0px 1px rgba(#d6dce5, 0.5);
+
+    .lv-iframe-loader {
+        width: $device-laptop-resolution-width;
+        height: $device-laptop-resolution-height;
+        transform: $device-laptop-scale;
+    }
+
+    .device-laptop-base {
+        position: absolute;
+        top: calc(100% + #{$device-laptop-screen-border-y});
+        left: calc(-#{$device-laptop-screen-border-x} - 80px/2);
+        width: calc(100% + #{$device-laptop-screen-border-x * 2} + 80px);
+        height: 8px;
+        border-top: 4px solid darken(#e9ecf1, 20%);
+        border-radius: 4px 4px 100px 100px;
+        background: darken(#e9ecf1, 6%);
+        box-sizing: content-box;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: calc(50% - 70px/2);
+            width: 70px;
+            height: 4px;
+            background: darken(#e9ecf1, 30%);
+            border-radius: 0 0 30px 30px;
+        }
+    }
+}
+
+//-----------------------------------------------------------------
+// TABLET
+//-----------------------------------------------------------------
+
+.device-tablet {
+    width: $device-tablet-width;
+    height: $device-tablet-height;
+    top: 400px;
+    left: calc(50% - 380px);
+    border: $device-tablet-screen-border-x solid #151519;
+    border-top-width: $device-tablet-screen-border-y;
+    border-bottom-width: $device-tablet-screen-border-y;
+    border-radius: 10px;
+    // box-shadow: 0 0 0px 1px rgba(#d6dce5, 0.5);
+
+    .lv-iframe-loader {
+        width: $device-tablet-resolution-width;
+        height: $device-tablet-resolution-height;
+        transform: $device-tablet-scale;
+    }
+}
+
+//-----------------------------------------------------------------
+// MOBILE
+//-----------------------------------------------------------------
+
+.device-mobile {
+    width: $device-mobile-width;
+    height: $device-mobile-height;
+    top: 595px;
+    left: calc(50% - 180px);
+    border: $device-mobile-screen-border-x solid #151519;
+    border-top-width: $device-mobile-screen-border-y;
+    border-bottom-width: $device-mobile-screen-border-y;
+    border-radius: 10px;
+    // box-shadow: 0 0 0px 1px rgba(#d6dce5, 0.5);
+
+    .lv-iframe-loader {
+        width: $device-mobile-resolution-width;
+        height: $device-mobile-resolution-height;
+        transform: $device-mobile-scale;
+    }
+}
+
+//=========================================
+//
+//=========================================

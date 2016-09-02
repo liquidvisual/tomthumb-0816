@@ -1,33 +1,90 @@
 ---
 ---
 
+{% assign static_files = site.static_files | sort: 'path' %}
+
 <style>
 	.icon-font {
 		background: white;
-		height: 200px;
+		height: 150px;
 		line-height: 200px;
 		padding: 10px;
 		overflow: hidden;
 		text-align: center;
+	}
+
+	.asset {
+		position: relative;
+		background: white;
+		padding-bottom: 10px;
+		border-radius: 3px;
+		box-shadow: 0 0 5px rgba(0,0,0,0.1);
+		overflow: hidden;
+	}
+
+	.asset-title {
+		font-size: 16px;
+		font-weight: bold;
+		padding: 10px;
+		margin: 0;
+		text-align: center;
+	}
+
+	.asset-thumbnail {
+		display: block;
+		height: 150px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
 	}
 </style>
 
 
 <h2>Assets</h2><br>
 
-<h3>Fonts</h3>
+<h3 class="m-b-2">Images</h3>
 
-<ul class="block-grid-lg-5 mobile-grid">
-	{% for item in site.static_files %}
-		<li>
-			<div class="icon-font"><div class="fa fa-font"></div></div>{{ item.path }}
-			<img width="100%" src="{{ item.path }}">
-		</li>
+<ul class="block-grid-xs-3 block-grid-xl-5 mobile-grid">
+	{% for item in static_files %}
+		{% if item.extname == '.jpg' or
+			  item.extname == '.jpeg' or
+			  item.extname == '.png' or
+			  item.extname == '.ico' %}
+			<li>
+				<div class="asset">
+					<a target="_blank" href="{{ item.path }}" class="asset-thumbnail" style="background-image: url({{ item.path }})"></a>
+					<p class="asset-title">
+						<small><b>{% assign path = item.path | split: '/' %}{{ path.last }}</b></small>
+						<br>
+						<small>{{ item.modified_time | date: '%B %d, %Y' }}</small>
+					</p>
+				</div>
+			</li>
+		{% endif %}
 	{% endfor %}
 </ul>
 
+<div class="spacer m-y-3"></div>
+
+<h3 class="m-b-2">Fonts</h3>
+
+<ul class="block-grid-lg-6 mobile-grid">
+	{% for item in static_files %}
+		{% if item.extname == '.eot' or
+			  item.extname == '.woff' or
+			  item.extname == '.ttf' %}
+			<li>
+				<div class="asset">
+					<div class="icon-font"><div class="fa fa-font"></div></div>
+					<p class="asset-title"><small>{% assign path = item.path | split: '/' %}{{ path.last }}</small></p>
+				</div>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
 
 <!-- https://codepen.io/herschel666/post/scaling-iframes-css-transforms -->
+
 
 {% comment %}
 

@@ -58,24 +58,6 @@
     }
 }
 
-//*****************************************************************
-// iframe Loader
-//-----------------------------------------------------------------
-
-.lv-iframe-loader {
-    display: block; // removes bottom space glitch
-    position: relative;
-    width: 100vw; // this works for ios mobile
-    height: 100%;
-    border: 0;
-    background: $gray-light; // needs a BG otherwise transparency gaps
-    -webkit-overflow-scrolling: touch; // keep incase
-
-    @include media-breakpoint-up(md) {
-        width: 100%; // fallback
-    }
-}
-
 //-----------------------------------------------------------------
 //
 //-----------------------------------------------------------------

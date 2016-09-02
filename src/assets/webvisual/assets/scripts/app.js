@@ -13,6 +13,14 @@ $(function(){
 });
 
 //-----------------------------------------------------------------
+// TRACE
+//-----------------------------------------------------------------
+
+function trace(value) {
+	// console.log(value);
+}
+
+//-----------------------------------------------------------------
 // LOAD INCLUDES
 //-----------------------------------------------------------------
 
@@ -21,13 +29,13 @@ function loadIncludes() {
 	var totalIncludes = $includes.length;
 	var includesLoaded = 0;
 
-	console.log('Includes loading...');
+	trace('Includes loading...');
 
 	// When all includes have loaded, safe to INIT
 	function registerInclude() {
 		includesLoaded ++;
 		if (includesLoaded == totalIncludes) {
-			console.log('Includes loaded successfully'); // ==> INIT on success
+			trace('Includes loaded successfully'); // ==> INIT on success
 			init();
 		}
 	}
@@ -43,7 +51,7 @@ function loadIncludes() {
 //-----------------------------------------------------------------
 
 function init() {
-	console.log('Initialising...');
+	trace('Initialising...');
 	initLoginButtons();
 	initTopbarButtons(); // moved here
 	initPreviewMode();
@@ -67,7 +75,7 @@ $(window).on('hashchange', function(){
 //-----------------------------------------------------------------
 
 function setupNavigation() {
-	console.log('Rendering Page...');
+	trace('Rendering Page...');
 	setToolTab();
 	setContextItem();
 }
@@ -77,12 +85,12 @@ function setupNavigation() {
 //-----------------------------------------------------------------
 
 function initTopbarButtons() {
-	console.log('Binding buttons');
+	trace('Binding buttons');
 
 	// Menu Button
 	$('[data-menu-btn]').unbind('click').bind('click ontouchstart', function(e){
 		e.preventDefault();
-		console.log('Menu button is triggering.');
+		trace('Menu button is triggering.');
 
 		// Menu is either toggled open. Or open by default (body has neither class)
 		var $body = $('body');
@@ -182,7 +190,7 @@ function setContextItem() {
 	//=========================================
 
 	if (level1 == "preview") {
-		console.log('PREVIEW MATE: '+'a[href="#/'+path+'"]');
+		trace('PREVIEW MATE: '+'a[href="#/'+path+'"]');
 		$('[data-tool-tab-content="'+level1+'"] a[href="#/'+path+'"]').parent().addClass('active');
 	}
 }
@@ -192,7 +200,7 @@ function setContextItem() {
 //-----------------------------------------------------------------
 
 function applyGradientHeader(target) {
-	console.log('Applying header gradient');
+	trace('Applying header gradient');
 
 	$(target).removeClass('sn-pxg').pxgradient({
 	  step: 10, // Step Color. The smaller the number, the greater the load. Default: 10

@@ -13,16 +13,16 @@ var loggedIn = localStorage.getItem("loggedIn");
 //-----------------------------------------------------------------
 
 function authenticate() {
-	console.log('Authenticating...');
+	trace('Authenticating...');
 
 	$('body').removeClass('is-loading');
 
 	if (loggedIn) {
-		console.log('Authentication passed - bypassing login.');
+		trace('Authentication passed - bypassing login.');
 		$('body').addClass('has-authenticated-cached'); // one off
 		loadRoute();
 	} else {
-		console.log('No login cookie detected. Initialise login buttons...');
+		trace('No login cookie detected. Initialise login buttons...');
 	}
 }
 
@@ -31,17 +31,17 @@ function authenticate() {
 //-----------------------------------------------------------------
 
 function initLoginButtons() {
-	console.log('Login buttons initialising...');
+	trace('Login buttons initialising...');
 
 	$('[data-login]').click(function(event){
-		console.log('Login Pressed');
+		trace('Login Pressed');
 		event.preventDefault();
 		setLogin(true);
 		loadRoute();  // <<<<<<<<<======================
 	});
 
 	$('[data-logout]').click(function(event){
-		console.log('Logout Pressed');
+		trace('Logout Pressed');
 	    setLogin(false);
 	    // will redirect to /manage/
 	});
@@ -81,9 +81,9 @@ function setLogin(value) {
 
 	if (typeof(Storage) != "undefined") {
 		localStorage.setItem("loggedIn", value);
-		console.log('Setting loggedIn to: '+value);
+		trace('Setting loggedIn to: '+value);
 	} else {
-		console.log('Oops! Local Storage not supported.');
+		trace('Oops! Local Storage not supported.');
 	}
 }
 

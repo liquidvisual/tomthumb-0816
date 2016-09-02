@@ -1,5 +1,5 @@
 /*
-    ROUTES.JS - Last updated: 21.07.16
+    ROUTES.JS - Last updated: 01.09.16
 */
 //-----------------------------------------------------------------
 /*
@@ -9,28 +9,38 @@
 */
 //-----------------------------------------------------------------
 
+var PATH_DEFAULT = '#/overview/welcome/';
+var PATH_WELCOME = '/assets/webvisual/views/overview/welcome.html';
+var PATH_404 = '/assets/webvisual/views/overview/404.html';
+var PATH_VIEWS = '/assets/webvisual/views/';
 var iframePoller;
 
 //-----------------------------------------------------------------
-//
+// LOAD ROUTE
 //-----------------------------------------------------------------
 
 function loadRoute() {
 
-	console.log('Loading main view...');
-
+	var routeCallback = false;
+	var level1       = getHashBang(1,2); // eg. /development/
+	var level2       = getHashBang(2,3); // eg. /development/docs/
+	var level3       = getHashBang(3,4); // eg. /development/docs/installation-and-setup/
 	//-----------------------------------------------------------------
-	// VARIABLES
+	var $body        = $('body');
+	var $mainView    = $('[data-view]');
+	var $preview     = $('[data-preview]');
 	//-----------------------------------------------------------------
+	var hasAuthenticated          = $('.has-authenticated').length;
+	var hasAuthenticatedCached    = $('.has-authenticated-cached').length;
+	var isTabSwitching            = (hasAuthenticated && level1 !== "" && level2 == "");
 
-	var path;
-	var level1 = getHashBang(1,2); // eg. /development/
-	var level2 = getHashBang(2,3); // eg. /development/docs/
-	var level3 = getHashBang(3,4); // eg. /development/docs/installation-and-setup/
-	var $mainView = $('[data-view]');
-	var $preview = $('[data-preview]');
-	var hasAuthenticated = $('.has-authenticated').length;
-	var hasAuthenticatedCached = $('.has-authenticated-cached').length;
+	var isDevelopmentTab          = (level1 == "development");
+	var isPreviewTab              = (isTabSwitching && level1 == "preview");
+	var isPreviewURL              = (level1 == "preview" && level2 !== "");
+
+	trace('Loading main view...');
+
+	// clearInterval(iframePoller); // catch early
 
 	//-----------------------------------------------------------------
 	// SETUP NAVIGATION (ATTEMPT)
@@ -39,105 +49,100 @@ function loadRoute() {
 	setupNavigation();
 
 	//-----------------------------------------------------------------
-	// 01. ENTERING VIA /manage/
+	// Set 'mode' on body. Eg. 'is-preview-mode'
+	//-----------------------------------------------------------------
+
+	$body.attr('class', function(i, c){
+		return c.replace(/(^|\s)is-mode-\S+/g, '');
+	}).addClass('is-mode-'+level1);
+
+	//-----------------------------------------------------------------
+	// ENTERING VIA /manage/
 	///-----------------------------------------------------------------
 
 	if (level1 == "") {
-		console.log('Defaulting to welcome view...');
-		window.location.replace('#/overview/welcome/');
+		trace('Defaulting to welcome view...');
+		window.location.replace(PATH_DEFAULT);
 		return loadRoute(); // exit and retry with new hash
 	}
 
 	//-----------------------------------------------------------------
-	// 02. TAB SWITCHING
+	// PREVIEW MODE
 	//-----------------------------------------------------------------
 
-	if (hasAuthenticated && level1 !== "" && level2 == "") {
-		console.log('Switching Tabs ('+'level_1: '+level1+' level_2: '+level2+')');
+	if (isPreviewURL) {
+		var previewURL = '/'+getHashBang(2).join('/'); // Load new SRC into iframe
 
-		//$('#sfx-click--soft')[0].play(); // SOUND
+		trace("Preview Mode activated");
 
-		// mySound = new MediaElement('sfx-click--soft');
-		// mySound.play();
+		// redirect home, because slash is hard to interpret
+		if (getHashBang(2,3) == "home") previewURL = "/";
+		if (hasAuthenticatedCached || !hasAuthenticated) playIntro(); // Coming in through cookie
 
-		return;
-	} else {
-		clearInterval(iframePoller); // catch early
-	}
-
-	//-----------------------------------------------------------------
-	// 03. DEVELOPMENT
-	//-----------------------------------------------------------------
-
-	if (hasAuthenticated && level1 == "development") {
-		console.log("Development reached. Do nothing.");
-		return;
-	}
-
-	//-----------------------------------------------------------------
-	// 04. PREVIEW MODE
-	//-----------------------------------------------------------------
-
-	if (level1 == "preview" && level2 !== "") {
-
-		console.log("Preview Mode activated");
-
-		// Load new SRC into iframe
-		var previewURL = '/'+getHashBang(2).join('/');
-		// console.log('what is hashbang 2?: '+getHashBang(2));
-
-		if (getHashBang(2,3) == "home") previewURL = "/"; // redirect home, because slash is hard to interpret
-
-		$preview.attr('src', previewURL).removeAttr('hidden');
-
-		$mainView.attr('hidden', 'true');
-
-		if (hasAuthenticatedCached || !hasAuthenticated) playIntro();
-
-		resizeIframe($preview); // start polling
-
-		//showLoading();
-
-		return;
-	}
-
-	//-----------------------------------------------------------------
-	// 05. LOAD MODE - ie. Anything other than 'Preview'
-	//-----------------------------------------------------------------
-
-	path = '/assets/webvisual/views/'+level1+'/'+level2+'.html';
-	// path = '/assets/webvisual/views/'+getHashBang(1).join('/') +'.html';
-	console.log('Preparing path: '+path);
-
-	$preview.attr('hidden', ''); // hide preview iframe - not needed
-	$mainView.removeAttr('hidden');
-
-	//-----------------------------------------------------------------
-	// LOAD MODULE
-	//-----------------------------------------------------------------
-
-    $mainView.load(path, function(response, status, xhr) {
-    	console.log('STATUS: '+status)
-
-    	//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    	// SUCCESS
-    	//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-    	if (status == 'success') {
-    		console.log('Main view loaded successfully. Rendering page...');
-    		playIntro();
-    	}
-    	//=========================================
-    	// 404
-    	//=========================================
-
-		else if (status == "error") {
-			console.log('Failed to load. Attempting to load 404 page.');
-			$(this).load('/assets/webvisual/views/overview/404.html');
-			playIntro();
+		// If iframe exists, don't load the main again
+		var $previewIframe = $('[data-preview]');
+		if ($previewIframe.length) {
+			$previewIframe.attr('src', previewURL); // not ideal
+			return;
 		}
+
+		// Fill the callback to be executed by the final conditions below
+		routeCallback = function(){
+			$('[data-preview]').each(function(){
+				$(this).attr('src', previewURL); // not ideal
+			});
+		}
+
+		// resizeIframe($preview'); // start polling
+	}
+
+	//-----------------------------------------------------------------
+	// Load URL when no tab switching is taking place UNLESS it's dev or prev
+	//-----------------------------------------------------------------
+
+	if ((isTabSwitching && !isPreviewTab) || isDevelopmentTab) {
+		playIntro();
+
+	} else {
+
+		var path = level1 == "preview" ? (PATH_VIEWS + level1 + '/' + level1 + '.html') : (PATH_VIEWS + level1 + '/' + level2 + '.html');
+		console.log('Preparing path: '+path);
+		loadModule($mainView, path, routeCallback);
+	}
+}
+
+//-----------------------------------------------------------------
+// LOAD MODULE
+//-----------------------------------------------------------------
+
+function loadModule(target, path, callback) {
+    target.load(path, function(response, status, xhr) {
+    	trace('STATUS: '+status);
+
+    	// SUCCESS
+    	if (status == 'success') {
+    		trace('Main view loaded successfully. Rendering page...');
+    		if (callback) callback();
+    	}
+
+    	// ERROR
+		else if (status == "error") {
+			trace('Failed to load. Attempting to load 404 page.');
+			// $(this).load(PATH_404);
+			$(this).load(PATH_WELCOME);
+		}
+
+		playIntro(); // keep this here
 	});
 }
+
+
+
+
+
+
+
+
 
 //-----------------------------------------------------------------
 // UTILITY: Get Hashbang
@@ -171,10 +176,10 @@ function resizeIframe($target) {
 	currentHeight = 0;
 
 	iframePoller = setInterval(function(){
-		// console.log('iframe polling started');
+		// trace('iframe polling started');
 		currentHeight = $target.contents().find('body').height();
 
-		// console.log('wowowowo: '+$target.attr('src'));
+		// trace('wowowowo: '+$target.attr('src'));
 
 		if (currentHeight != previousHeight) {
 			$target.css('height', (previousHeight = currentHeight) +'px');
@@ -182,21 +187,6 @@ function resizeIframe($target) {
 	}, 600);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//$('#sfx-click--soft')[0].play(); // SOUND
+// mySound = new MediaElement('sfx-click--soft');
+// mySound.play();
