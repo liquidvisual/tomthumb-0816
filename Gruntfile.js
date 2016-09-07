@@ -225,13 +225,15 @@ module.exports = function (grunt) {
     //-----------------------------------------------------
     autoprefixer: {
       options: {
-        browsers: ['last 2 versions']
+        browsers: ['last 5 versions']
       },
       dist: {
-        expand: true,
-        cwd: '.tmp',
-        src: '**/{css,concat}/*.css',
-        dest: '.tmp'
+        files: [{
+          expand: true,
+          cwd: '.tmp/css',
+          src: '**/{css,concat}/*.css',
+          dest: '.tmp/css'
+        }]
       }
     },
     //-----------------------------------------------------
@@ -568,7 +570,7 @@ module.exports = function (grunt) {
     //'svgmin',
     //'filerev',
     'usemin',
-    'htmlmin', // best not to use this
+    'htmlmin', // best not to use this?
     'prettify',
     ]);
 

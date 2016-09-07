@@ -49,6 +49,44 @@ $device-mobile-resolution-width: 320px;
 $device-mobile-resolution-height: 480px;
 
 //-----------------------------------------------------------------
+// DEVICES
+//-----------------------------------------------------------------
+
+.lv-devices {
+    $devices-width: 860px;
+    $devices-height: 605px;
+
+    display: none; // not on mobile or tablet
+    position: absolute;
+    top: calc(50% - (#{$devices-height}/2 - #{$lv-topbar-height-medium - $lv-stage-top-offset}/2)); // perfect
+    left: calc(50% - #{$devices-width}/2);
+    width: $devices-width;
+    height: $devices-height; //$device-desktop-height;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(lg) {
+        transform: scale(0.7);
+        display: block;
+
+    }
+
+    @include media-breakpoint-up(xl) {
+        transform: scale(1.0);
+    }
+
+    @media (max-height: 855px) {
+        transform: scale(0.7);
+    }
+
+    // Mobile Safari Sucks - this hack at the expense of Android browser and Chrome on iOS etc
+    // calc() is broken on mobile safari for some reason
+    @media only screen and (min-device-width: 481px) and
+    (max-device-width: 1024px) and (orientation:landscape) {
+        top: calc(50% - #{$devices-height}/2); // perfect
+    }
+}
+
+//-----------------------------------------------------------------
 // IFRAME LOADER
 //-----------------------------------------------------------------
 
@@ -66,6 +104,15 @@ $device-mobile-resolution-height: 480px;
     }
 }
 
+// Only shows on menu closed
+.lv-iframe-loader-fullscreen {
+
+
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+
 //-----------------------------------------------------------------
 // COMMON
 //-----------------------------------------------------------------
@@ -76,10 +123,12 @@ $device-mobile-resolution-height: 480px;
 .device-mobile {
     position: absolute;
     background: #222;
-    background: $brand-secondary;
+    // background: $brand-secondary;
+    // box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
 
     .device-screen {
         overflow: hidden;
+        height: 100%; // savior for tablets
     }
 
     .lv-iframe-loader {
@@ -97,12 +146,13 @@ $device-mobile-resolution-height: 480px;
 //-----------------------------------------------------------------
 
 .device-desktop {
+    top: 0;
+    left: 100px;
     width: $device-desktop-width;
     height: $device-desktop-height;
-    // top: 0;
-    left: calc(50% - #{$device-desktop-width}/2);
     border: $device-desktop-screen-border-x solid #151519;
     border-radius: 15px 15px 0 0;
+
 
     .lv-iframe-loader {
         width: $device-desktop-resolution-width;
@@ -140,11 +190,11 @@ $device-mobile-resolution-height: 480px;
         &:after {
             content: "";
             position: absolute;
-            top: -36px;
-            left: calc(50% - 22px/2);
-            width: 22px;
-            height: 22px;
-            background: darken(#e9ecf1, 16%);
+            top: -34px;
+            left: calc(50% - 18px/2);
+            width: 18px;
+            height: 18px;
+            background: #222; //darken(#e9ecf1, 20%);
             border-radius: 100%;
         }
 
@@ -178,10 +228,10 @@ $device-mobile-resolution-height: 480px;
 //-----------------------------------------------------------------
 
 .device-laptop {
+    bottom: 0;
+    right: 0;
     width: $device-laptop-width;
     height: $device-laptop-height;
-    top: 465px;
-    left: calc(50% + 100px);
     border: $device-laptop-screen-border-x solid #151519;
     border-top-width: $device-laptop-screen-border-y;
     border-bottom-width: $device-laptop-screen-border-y;
@@ -223,10 +273,10 @@ $device-mobile-resolution-height: 480px;
 //-----------------------------------------------------------------
 
 .device-tablet {
+    top: 280px;
+    left: 0;
     width: $device-tablet-width;
     height: $device-tablet-height;
-    top: 400px;
-    left: calc(50% - 380px);
     border: $device-tablet-screen-border-x solid #151519;
     border-top-width: $device-tablet-screen-border-y;
     border-bottom-width: $device-tablet-screen-border-y;
@@ -245,10 +295,10 @@ $device-mobile-resolution-height: 480px;
 //-----------------------------------------------------------------
 
 .device-mobile {
+    bottom: -12px;
+    left: 200px;
     width: $device-mobile-width;
     height: $device-mobile-height;
-    top: 595px;
-    left: calc(50% - 180px);
     border: $device-mobile-screen-border-x solid #151519;
     border-top-width: $device-mobile-screen-border-y;
     border-bottom-width: $device-mobile-screen-border-y;

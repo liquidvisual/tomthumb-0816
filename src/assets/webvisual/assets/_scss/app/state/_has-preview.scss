@@ -11,17 +11,29 @@
 // IS MODE PREVIEW
 //-----------------------------------------------------------------
 
-.is-mode-preview.has-closed-menu {
-    .lv-main {
-        padding: 0;
-    }
+.is-mode-preview .lv-main {
+    padding: 0;
 }
 
 .is-mode-preview .lv-stage {
     background: #515764;
-    transition: background 300ms ease;
+    // transition: background 300ms ease;
 }
 
 //=========================================
-//
+// Laptop
 //=========================================
+
+.has-closed-menu .lv-devices {
+    display: none;
+}
+
+//=========================================
+// Show
+//=========================================
+
+.has-closed-menu .lv-iframe-loader-fullscreen {
+    display: block;
+    // display: none;
+}
+

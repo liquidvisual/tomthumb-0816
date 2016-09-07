@@ -206,10 +206,10 @@ ul.lv-context-menu-site-tools {
 	}
 }
 
-//=========================================
-// TOOL TAB PREVIEW
+//========================================= ******************
+// TOOL TAB ** PREVIEW **
 // Style it differently to highligh different behavior
-//=========================================
+//========================================= ******************
 
 .tool-tab-preview {
 	height: 65px;
@@ -234,14 +234,10 @@ ul.lv-context-menu-site-tools {
 
 .is-mode-preview .tool-tab-preview a {
 	background: $brand-secondary;
-	color: rgba(black, 0.45) !important;
+	color: rgba(white, 0.9) !important; //rgba(black, 0.45) !important;
 	cursor: default;
 	transform: translateY(31px);
 	// box-shadow: 0px 0px 5px 0px $brand-secondary;
-}
-
-.is-mode-preview .lv-context-menu .lv-context-menu-body .fa {
-	// color: white;
 }
 
 //-----------------------------------------------------------------

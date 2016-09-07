@@ -49,14 +49,6 @@ function loadRoute() {
 	setupNavigation();
 
 	//-----------------------------------------------------------------
-	// Set 'mode' on body. Eg. 'is-preview-mode'
-	//-----------------------------------------------------------------
-
-	$body.attr('class', function(i, c){
-		return c.replace(/(^|\s)is-mode-\S+/g, '');
-	}).addClass('is-mode-'+level1);
-
-	//-----------------------------------------------------------------
 	// ENTERING VIA /manage/
 	///-----------------------------------------------------------------
 
@@ -104,6 +96,16 @@ function loadRoute() {
 		playIntro();
 
 	} else {
+
+		//-----------------------------------------------------------------
+		// Set 'mode' on body. Eg. 'is-preview-mode'
+		//-----------------------------------------------------------------
+
+		$body.attr('class', function(i, c){
+			return c.replace(/(^|\s)is-mode-\S+/g, '');
+		}).addClass('is-mode-'+level1);
+
+		//-----------------------------------------------------------------
 
 		var path = level1 == "preview" ? (PATH_VIEWS + level1 + '/' + level1 + '.html') : (PATH_VIEWS + level1 + '/' + level2 + '.html');
 		console.log('Preparing path: '+path);

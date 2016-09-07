@@ -26,6 +26,7 @@
     background: $gray-light;
     box-shadow: -4px 0px 7px 0px rgba(0,0,0,0.20); // inset needs visibility
     z-index: 50;
+    // overflow: hidden; // experimental - used to be on MAIN - will interfere with preview (switch off state)
 
     // Creates RHS colour to hide width change during sliding animation (ipad)
     &:after {
@@ -35,7 +36,7 @@
         left: 100%;
         width: 100%;
         height: 100%;
-        background: $gray-light;
+        background: inherit;
     }
 
     @include media-breakpoint-up(lg) {
@@ -50,8 +51,9 @@
 //-----------------------------------------------------------------
 
 .lv-main {
+    @include clearfix(); // fixes absolute children
+    // overflow: hidden; // interfered with absolute children
     padding: rem-calc(30 15);
-    overflow: hidden;
 
     @include media-breakpoint-up(md) {
         padding: rem-calc(50 70);
