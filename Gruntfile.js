@@ -221,21 +221,40 @@ module.exports = function (grunt) {
       }
     },
     //-----------------------------------------------------
-    // AUTOPREFIXER
+    // POST CSS
     //-----------------------------------------------------
-    autoprefixer: {
-      options: {
-        browsers: ['last 5 versions']
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/css',
-          src: '**/{css,concat}/*.css',
-          dest: '.tmp/css'
-        }]
+    postcss: {
+      main: {
+        options: {
+          map: false,
+          processors: [
+            require('autoprefixer')({
+              browsers: 'last 3 versions'
+            })
+          ]
+        },
+        files: {
+          '<%= yeoman.dist %>/assets/css/minified.css': '<%= yeoman.dist %>/assets/css/minified.css',
+          '<%= yeoman.dist %>/assets/webvisual/assets/css/minified.css': '<%= yeoman.dist %>/assets/webvisual/assets/css/minified.css'
+        }
       }
     },
+    //-----------------------------------------------------
+    // AUTOPREFIXER
+    //-----------------------------------------------------
+   // autoprefixer: {
+    //  options: {
+     //   browsers: ['last 5 versions']
+     // },
+     // dist: {
+      //  files: [{
+       //   expand: true,
+        //  cwd: '.tmp/css',
+        //  src: '**/{css,concat}/*.css',
+        //  dest: '.tmp/css'
+       // }]
+     // }
+    //},
     //-----------------------------------------------------
     // JEKYLL
     //-----------------------------------------------------
@@ -564,12 +583,12 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concat',
     'cssmin',
-    'autoprefixer:dist',
     'uglify',
     //'imagemin',
     //'svgmin',
     //'filerev',
     'usemin',
+    'postcss',
     'htmlmin', // best not to use this?
     'prettify',
     ]);

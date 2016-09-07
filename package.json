@@ -3,8 +3,8 @@
   "private": true,
   "version": "",
   "devDependencies": {
+    "autoprefixer": "^6.4.1",
     "grunt": "~0.4.5",
-    "grunt-autoprefixer": "^1.0.1",
     "grunt-browser-sync": "^1.5.3",
     "grunt-build-control": "~0.1.3",
     "grunt-cdnify": "^0.1.0",
@@ -21,6 +21,7 @@
     "grunt-contrib-watch": "0.6.1",
     "grunt-filerev": "~0.2.1",
     "grunt-jekyll": "~0.4.2",
+    "grunt-postcss": "^0.8.0",
     "grunt-prettify": "^0.4.0",
     "grunt-sass": "^1.0.0",
     "grunt-sass-globbing": "^1.4.0",
