@@ -1,0 +1,42 @@
+<h1>Basic Usage</h1>
+<h2 id=referencing-the-build-folder>Referencing the Build Folder</h2>
+<p>The online repo that stores the build folder named
+    <strong>/dist</strong> (generated from /src) can be found on a separate branch - under the
+    <strong>gh-pages</strong> branch of this very repo.</p>
+<p>
+    <a href=https://github.com/liquidvisual/loshift-0516/tree/gh-pages>https://github.com/liquidvisual/loshift-0516/tree/gh-pages</a>
+</p>
+<p>Feel free to use it as a reference. Although, it’s advantageous to know how the
+    <a href=https://github.com/liquidvisual/loshift-0516/tree/master/src>source</a> files are organised since the structure aims to mimic a back-end environment with proper template inheritance. Many templating questions have already been solved and this can be a benefit if you draw from the source as well as the final compiled
+    <strong>build</strong> directory.</p>
+<p>Once you get the hang of reading Jekyll templates - you’ll be able to breeze through, copy-pasting everything and substituting the basic templating syntax for your own.</p>
+<h2 id=quick-start>QUICK START</h2>
+<h3 id=copy-over-assets-directory>01. Copy Over /assets Directory</h3>
+<p>Jump into the
+    <a href=https://github.com/liquidvisual/loshift-0516/tree/gh-pages>dist directory</a> and grab the
+    <em>entire</em>
+    <strong>/assets</strong> folder. Put it into your project’s root directory. This contains all the compiled CSS, fonts, images and JavaScript. This is important as all paths are root relative to the
+    <strong>/assets</strong> folder.</p>
+<p>That’s all you’ll need from the
+    <strong>/dist</strong> directory. From this point on, all the action is in the
+    <strong>/src</strong>.</p>
+<h3 id=access-layoutsmasterhtml>02. Access /_layouts/master.html</h3>
+<p>Start with this and substitute the template logic for your own. When it comes to the assets, they compile into
+    <strong>/assets</strong> on build so you’ll only need to do a bit of substitution.</p>
+<p>You can replace this:</p>
+<div class=highlighter-rouge><pre class=highlight><code>&lt;!-- build:css /assets/css/minified.css --&gt;
+  &lt;link rel="stylesheet" href="/css/some-css-file.css"&gt;
+  &lt;link rel="stylesheet" href="/css/some-css-file.css"&gt;
+  &lt;link rel="stylesheet" href="/css/some-css-file.css"&gt;
+  &lt;link rel="stylesheet" href="/css/some-css-file.css"&gt;
+  &lt;link rel="stylesheet" href="/css/some-css-file.css"&gt;
+&lt;!-- endbuild --&gt;
+</code></pre></div>
+<p>With this:</p>
+<div class=highlighter-rouge><pre class=highlight><code>&lt;link rel="stylesheet" href="/assets/css/minified.css"&gt;
+</code></pre></div>
+<p>The same applies to Javascript. That’s probably the trickiest bit that’s not so obvious. The end result will look like this:</p>
+<div class=highlighter-rouge><pre class=highlight><code>&lt;script src="/assets/scripts/minified.js"&gt;&lt;/script&gt; &lt;!-- Before closing body --&gt;
+</code></pre></div>
+<h3 id=copy-over-partials-in-includes>03. Copy Over Partials in /_includes</h3>
+<p>Templates reference partials from this folder.</p>

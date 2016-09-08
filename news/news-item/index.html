@@ -11,7 +11,7 @@
     <meta http-equiv=X-UA-Compatible content="IE=edge">
     <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=no">
     <meta name=description content="">
-    <title>Contact - Tom Thumb</title>
+    <title>News Item Title Here - Tom Thumb</title>
 
     <!-- CDN -->
     <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
@@ -22,7 +22,7 @@
     <link rel="shortcut icon" href=/assets/favicon.ico>
     <link rel=stylesheet href=/assets/css/minified.css>
 </head>
-<body class=theme-light-hero dev-mode-enabled=false>
+<body class="" dev-mode-enabled=false>
     <div class=lv-page>
 
         <!-- HEADER -->
@@ -136,7 +136,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class=active>
+                        <li class="">
                             <a class=top-parent-anchor href="/contact/">
                                 <span class=text>Contact</span>
                             </a>
@@ -149,120 +149,60 @@
         <!-- HERO -->
         <div class=lv-hero-wrapper>
             <div class="lv-hero has-fixed-height">
-                <div class=lv-hero-item style="background-image: url('/assets/img/content/hero/hero-ocean.jpg')"></div>
+                <div class=lv-hero-item style="background-image: url('/assets/img/content/hero/hero-default.jpg')"></div>
             </div>
         </div>
 
         <!-- BANNER TEXT -->
         <section class="section-dark is-slim">
             <div class=container>
-                <p class="intro-text m-b-0 text-xs-center">Our goal is to partner with business leaders who believe what we believe and work together so we can all succeed. We look forward to meeting you.</p>
+                <p class="intro-text m-b-0 text-xs-center"></p>
             </div>
         </section>
 
-        <!-- GOOGLE MAP -->
-        <div class=lv-google-map>
-            <iframe width=100% height=320 frameborder=0 style="pointer-events: none" src="https://maps.google.com/maps?hl=en&q=7B, 1110 Middle Head Road, Mosman NSW 2088&z=21&ie=UTF8&t=roadmap&z=16&iwloc=A&output=embed"></iframe>
-        </div>
-
-        <!-- CONTACT -->
+        <!-- NEWS FEED -->
         <section class=section>
             <div class=container>
+                <p>
+                    <a class=anchor-link href="/news/">
+                        <i class="fa fa-reply"></i>&nbsp; RETURN</a>
+                </p>
+                <h1 class=text-uppercase>News</h1>
+                <hr>
+                <br>
                 <div class=row>
-                    <div class=col-md-6>
-                        <p>
-                            <img src=/assets/img/content/logo-dark.png alt="">
-                        </p>
-                        <div class="spacer m-b-2"></div>
-                        <p class="h6 m-b-2">7B, 1110 Middle Head Road, Mosman NSW 2088</p>
-                        <ul class=block-grid-md-2>
-                            <li>
-                                <h4 class=h6>Ben Perry</h4>
-                                <p>Email:
-                                    <a class=subtle-link href=mailto:ben@tomthumb.com.au>ben@tomthumb.com.au</a>
-                                    <br>Phone:
-                                    <a class=subtle-link href="tel:0425 324 256">0425 324 256</a>
-                                </p>
+                    <div class=col-lg-8>
+                        <article>
+                            <h3>Tom Thumb Events Launches</h3>
+                            <p class=m-b-2>
+                                <date>15 Jan 2016</date>
+                            </p>
+                            <p>We’re really excited to have a new sister - Tom Thumb Events launched today and will look after all the conferencing, incentives, experiential, festival and brand activation work while we can concentrate on our core branding, marketing and business strategy. Visit the new site at tomthumbevents.com.au or click the link on the home page.</p>
+                            <p class=m-y-2>
+                                <img width=300 src=http://placehold.it/370x245 alt=Thumbnail>
+                            </p>
+                        </article>
+                        <div class="spacer m-b-2 hidden-md-up"></div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-3">
+                        <h4 class="h3 m-b-1 text-uppercase">News Archive</h4>
+                        <ul class=list-group>
+                            <li class=list-group-item>
+                                <a href=/news/#y2016>2016</a>
                             </li>
-                            <li>
-                                <h4 class=h6>Briony Evans</h4>
-                                <p>Email:
-                                    <a class=subtle-link href=mailto:briony@tomthumb.com.au>briony@tomthumb.com.au</a>
-                                    <br>Phone:
-                                    <a class=subtle-link href="tel:0404 730 206">0404 730 206</a>
-                                </p>
+                            <li class=list-group-item>
+                                <a href=/news/#y2015>2015</a>
+                            </li>
+                            <li class=list-group-item>
+                                <a href=/news/#y2014>2014</a>
+                            </li>
+                            <li class=list-group-item>
+                                <a href=/news/#y2013>2013</a>
+                            </li>
+                            <li class=list-group-item>
+                                <a href=/news/#y2012>2012</a>
                             </li>
                         </ul>
-                        <div class="spacer m-b-1"></div>
-                    </div>
-                    <div class=col-md-6>
-
-                        <!-- IF SUCCESS -->
-                        <div class="alert alert-success" hidden>
-                            <h4>Success!</h4>
-                            <p>Your form has been submitted.</p>
-                        </div>
-
-                        <!-- IF FAILURE -->
-                        <div class="alert alert-danger alert-dismissible fade in" role=alert hidden>
-                            <button type=button class=close data-dismiss=alert aria-label=Close>
-                                <span aria-hidden=true>&times;</span>
-                            </button>
-                            <h4>Oops!</h4>
-                            <p>Something went wrong. Please check your details.</p>
-                        </div>
-                        <form data-toggle=validator>
-                            <fieldset>
-                                <div class=row>
-                                    <div class=col-md-6>
-
-                                        <!-- NAME -->
-                                        <div class=form-group>
-                                            <label for=name>Your Name (required)</label>
-                                            <input class=form-control id=name name=Name placeholder="" required>
-                                            <small class=error>Your name is required.</small>
-                                        </div>
-                                    </div>
-                                    <div class=col-md-6>
-
-                                        <!-- EMAIL -->
-                                        <div class=form-group>
-                                            <label for=email>Your Email (required)</label>
-                                            <input class=form-control id=email name=Email type=email placeholder="" required>
-                                            <small class=error>A valid email is required.</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=row>
-                                    <div class=col-md-6>
-
-                                        <!-- WEBSITE URL -->
-                                        <div class=form-group>
-                                            <label for=website-url>Website URL</label>
-                                            <input class=form-control id=website-url name="Website URL" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class=col-md-6>
-
-                                        <!-- SUBJECT -->
-                                        <div class=form-group>
-                                            <label for=subject>Subject</label>
-                                            <input class=form-control id=subject name=Subject placeholder="">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- MESSAGE -->
-                                <div class=form-group>
-                                    <label for=message>Your Message (required)</label>
-                                    <textarea class=form-control id=message name=Message rows=3 placeholder="" required></textarea>
-                                    <small class=error>A message is required.</small>
-                                </div>
-
-                                <!-- SUBMIT -->
-                                <button type=submit class="btn btn-primary">Send</button>
-                            </fieldset>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -388,7 +328,7 @@
                     </li>
                 </ul>
             </li>
-            <li class=active>
+            <li class="">
                 <a class=top-parent-anchor href="/contact/">
                     <span class=text>Contact</span>
                 </a>
@@ -427,32 +367,8 @@
 
     <!-- DELETE BELOW FOR PRODUCTION -->
     <script>
-    localStorage.setItem("pageURL", "/contact/");
-    localStorage.setItem("pageNotes", JSON.stringify([{
-        "title": null,
-        "date": "30 August 2016",
-        "body": "Blah blah blah test"
-    }, {
-        "title": null,
-        "date": "30 August 2016",
-        "body": "Blah blah blah test"
-    }, {
-        "title": null,
-        "date": "30 August 2016",
-        "body": "Blah blah blah test"
-    }, {
-        "title": null,
-        "date": "30 August 2016",
-        "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    }, {
-        "title": null,
-        "date": "30 August 2016",
-        "body": "Blah blah blah test"
-    }, {
-        "title": null,
-        "date": "30 August 2016",
-        "body": "Blah blah blah test ris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    }]));
+    localStorage.setItem("pageURL", "/news/news-item/");
+    localStorage.setItem("pageNotes", JSON.stringify(null));
     </script>
 </body>
 </html>
