@@ -28,7 +28,7 @@ button,
     position: relative;
     display: inline-block;
     min-width: 44px;
-    line-height: 30px;
+    line-height: 28px;
     padding: rem-calc(0 12);
     border: 1px solid darken($lvb-button-color, 2%);
     border-bottom: 2px solid darken($lvb-button-color, 5%);
@@ -36,7 +36,7 @@ button,
     border-radius: 3px; //$global-radius;
     box-shadow: 0 1px 0px rgba(0,0,0,0.04);
     background: $lvb-button-color;
-    font-size: rem-calc(14);
+    font-size: rem-calc(13);
     color: desaturate(darken($lvb-button-color, 35%), 20%);
     outline: none;
     transition: background-color .10s linear;

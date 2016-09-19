@@ -1,9 +1,9 @@
 /*
-    ROUTES.JS - Last updated: 01.09.16
+    ROUTES.JS - Last updated: 07.09.16
 */
 //-----------------------------------------------------------------
 /*
-	/manage/#/development/docs/installation-and-setup/
+	/manage/#/developer/docs/installation-and-setup/
 	/manage/#/content/settings/
 	/manage/#/preview/...
 */
@@ -22,9 +22,10 @@ var iframePoller;
 function loadRoute() {
 
 	var routeCallback = false;
-	var level1       = getHashBang(1,2); // eg. /development/
-	var level2       = getHashBang(2,3); // eg. /development/docs/
-	var level3       = getHashBang(3,4); // eg. /development/docs/installation-and-setup/
+	var path         = getHashBang(1).join('/'); // eg. /developer/docs/installation-and-setup/
+	var level1       = getHashBang(1,2); // eg. /developer/
+	var level2       = getHashBang(2,3); // eg. /developer/docs/
+	var level3       = getHashBang(3,4); // eg. /developer/docs/installation-and-setup/
 	//-----------------------------------------------------------------
 	var $body        = $('body');
 	var $mainView    = $('[data-view]');
@@ -34,13 +35,11 @@ function loadRoute() {
 	var hasAuthenticatedCached    = $('.has-authenticated-cached').length;
 	var isTabSwitching            = (hasAuthenticated && level1 !== "" && level2 == "");
 
-	var isDevelopmentTab          = (level1 == "development");
+	var isDeveloperTab          = (level1 == "developer");
 	var isPreviewTab              = (isTabSwitching && level1 == "preview");
 	var isPreviewURL              = (level1 == "preview" && level2 !== "");
 
 	trace('Loading main view...');
-
-	// clearInterval(iframePoller); // catch early
 
 	//-----------------------------------------------------------------
 	// SETUP NAVIGATION (ATTEMPT)
@@ -92,22 +91,13 @@ function loadRoute() {
 	// Load URL when no tab switching is taking place UNLESS it's dev or prev
 	//-----------------------------------------------------------------
 
-	if ((isTabSwitching && !isPreviewTab) || isDevelopmentTab) {
+	if ((isTabSwitching && !isPreviewTab) ) {
 		playIntro();
+		// clearInterval(iframePoller); // catch early
 
 	} else {
 
-		//-----------------------------------------------------------------
-		// Set 'mode' on body. Eg. 'is-preview-mode'
-		//-----------------------------------------------------------------
-
-		$body.attr('class', function(i, c){
-			return c.replace(/(^|\s)is-mode-\S+/g, '');
-		}).addClass('is-mode-'+level1);
-
-		//-----------------------------------------------------------------
-
-		var path = level1 == "preview" ? (PATH_VIEWS + level1 + '/' + level1 + '.html') : (PATH_VIEWS + level1 + '/' + level2 + '.html');
+		var path = level1 == "preview" ? (PATH_VIEWS + level1 + '/' + level1 + '.html') : (PATH_VIEWS + path.slice(0, -1) + '.html');
 		console.log('Preparing path: '+path);
 		loadModule($mainView, path, routeCallback);
 	}
@@ -125,6 +115,12 @@ function loadModule(target, path, callback) {
     	if (status == 'success') {
     		trace('Main view loaded successfully. Rendering page...');
     		if (callback) callback();
+
+    		// REFACTOR THIS INTO CALLBACK - MAKE IT WORK
+    		// Set 'mode' on body. Eg. 'is-preview-mode'
+    		$('body').attr('class', function(i, c){
+    			return c.replace(/(^|\s)is-mode-\S+/g, '');
+    		}).addClass('is-mode-'+window.location.hash.split('/').slice(1, 2));
     	}
 
     	// ERROR

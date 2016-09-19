@@ -13,7 +13,10 @@ site_tagline: "We build brands. We develop inspiring ideas to weave throughout o
 
 # DEVELOPER
 allow_robots: false
-github_repo: https://github.com/liquidvisual/tomthumb-0816
+github_repo_owner: liquidvisual
+github_repo_path: https://github.com/liquidvisual/tomthumb-0816
+github_repo_name: tomthumb-0816
+jekyll_version: 3.0.3
 
 # CONTACTS
 contacts:

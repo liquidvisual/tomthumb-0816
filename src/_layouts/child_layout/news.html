@@ -34,7 +34,7 @@ layout: base__page
 								{% endif %}
 
 							  <div class="media-body">
-							    <h3 class="media-heading m-b-0">{{ item.title }}</h3>
+							    <a href="/news/news-item/"><h3 class="media-heading m-b-0">{{ item.title }}</h3></a>
 							    <p><date>{{ item.date }}</date></p>
 							    {{ item.body | markdownify }}
 							  </div>

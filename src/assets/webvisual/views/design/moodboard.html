@@ -1,0 +1,44 @@
+---
+---
+
+<h2>Moodboard</h2>
+
+{% comment %}
+
+<ul class="block-grid-md-3">
+
+	{% for item in site.pages %}
+	<li>
+		<h2>{{ item.title }}</h2>
+
+		{% for item in item %}
+
+			    {% unless item[0] == "content" or item[0] == "body" %}
+
+				    <div class="d" style="max-width: 600px;">
+				    	<div class="row">
+				    		<div class="col-md-4">
+				    			<p><strong>{{ item[0] }}</strong>:</p>
+				    		</div>
+				    		<div class="col-md-8">
+
+				    			{% if item[0][1].size > 10 %}
+				    				<textarea style="width: 100%;" value="{{ item[1] }}">
+				    			{% else %}
+				    				<input style="width: 100%;" type="text" value="{{ item[1] }}">
+				    			{% endif %}
+
+				    		</div>
+				    	</div>
+				    </div>
+
+			    {% endunless %}
+		{% endfor %}
+		<hr>
+	</li>
+
+	{% endfor %}
+
+</ul>
+
+{% endcomment %}

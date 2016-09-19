@@ -1,19 +1,3 @@
-// .stage {
-//     // display: flex;
-//     flex-wrap: wrap;
-//     // width: 100%;
-// }
-
-// .stage-header {
-//     // order: 1;
-//     width: 100%;
-// }
-
-// .main {
-//     // order: 2;
-//     width: 100%;
-// }
-
 /* Solarized Dark
 For use with Jekyll and Pygments
 http://ethanschoonover.com/solarized
@@ -21,33 +5,24 @@ SOLARIZED HEX      ROLE
 --------- -------- ------------------------------------------
 */
 
-$common-color: lighten(#7E7B9C, 20%);
+$common-color: #333;
 
-$bg-color: #2A2B31; //  background
-$base01:   #777; //  comments / secondary content
+// $bg-color: #2A2B31; //  background
+$base01:   #888; //  comments / secondary content
 $body:     $common-color; //  body text / default code / primary content
 $orange:   $common-color; //  constants
 $red:      $common-color; //  regex, special keywords
-$blue:     darken($common-color, 30%); //  reserved keywords
+$blue:     darken($gray-light, 50%); //$common-color;//$common-color; //$common-color; //darken($common-color, 30%); //  reserved keywords
 $cyan:     $common-color; //  strings, numbers
 $green:    $common-color; //  operators, other keywords
 
 .highlight {
-    background-color: $bg-color; color: $body;
-    font-weight: 600;
-    font-size: 14px;
-    // border-radius: 10px;
-
-    // padding: rem-calc(20 10 20 20);
-
-    pre {
-        padding: rem-calc(30);
-        color: white;
-    }
-
-    span {
-        font-family: 'Source Code Pro', serif;
-    }
+    font-family: 'Source Code Pro', serif;
+    font-weight: 300;
+    padding: rem-calc(20 25);
+    background: darken($gray-light, 4%); //$gray-light;//darken($gray-light, 6%); //$bg-color; color: $body;
+    border-radius: $border-radius-sm;
+    color: $body;
 
     .c { color: $base01; } /* Comment */
     .err { color: $body; } /* Error */
@@ -118,3 +93,10 @@ $green:    $common-color; //  operators, other keywords
     .vi { color: $blue; } /* Name.Variable.Instance */
     .il { color: $cyan; } /* Literal.Number.Integer.Long */
 }
+
+// .highlight-title {
+//     background: darken($gray-light, 14%); //$bg-color; color: $body;
+//     padding: 10px 20px;
+//     font-weight: bold;
+//     border-radius: 5px 5px 0 0;
+// }

@@ -15,6 +15,10 @@ a {
 	transition: background-color ease 300ms, border-color ease 300ms;
 }
 
+.lv-main a {
+	font-weight: 600;
+}
+
 //-----------------------------------------------------------------
 // Responsive Typography
 //-----------------------------------------------------------------
@@ -27,9 +31,27 @@ html {
 	// @include media-breakpoint-up(xl) { font-size: $font-size-xl; }
 }
 
+code {
+	background: darken($gray-light, 4%);
+	border-radius: 3px;
+	color: darken($brand-primary, 8%); //darken($gray-light, 50%)
+}
+
+h1, h2, h3 {
+	margin-bottom: $spacer-y;
+}
+
+pre {
+	margin-bottom: $spacer-y * 2;
+}
+
 p  {
 	font-size: $font-size-lg;
 	font-weight: 300;
+}
+
+strong, b {
+	font-weight: bold;
 }
 
 // a,

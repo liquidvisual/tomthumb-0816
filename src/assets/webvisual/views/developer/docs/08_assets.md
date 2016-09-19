@@ -1,9 +1,11 @@
 ---
-title: Basic Usage
-type: development_doc
+title: Assets
+group: Basics
+type: developer_doc
+order: '08'
 ---
 
-<h1>Installation &amp; Setup</h1>
+<h1>Assets</h1>
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

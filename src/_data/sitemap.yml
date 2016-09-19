@@ -9,9 +9,9 @@
   include_children_in_nav: true
   children:
     - title: Helm
-      url: /case-studies/helm/
-    - title: Stellar Asia Pacific
       url: /case-studies/
+    - title: Stellar Asia Pacific
+      url: /case-studies/stellar-asia-pacific/
     - title: Starting Blocks
       url: /case-studies/starting-blocks/
     - title: QSRH

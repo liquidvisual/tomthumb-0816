@@ -56,21 +56,26 @@ $lv-topbar-height-medium: 75px !default;
     height: 100%;
     padding: rem-calc(0 15);
     float: left;
-    font-size: rem-calc(22);
+    font-size: rem-calc(20);
     color: #444;
+
+    @include media-breakpoint-up(md) {
+        padding: rem-calc(0 20);
+    }
 
     img { // May or may not appear
         display: none;
         width: auto;
         height: $lv-topbar-height-medium;
-        padding: 15px 0;
-        margin-right: rem-calc(10);
+        padding: 14px 0;
+        margin-right: rem-calc(12);
         box-sizing: border-box;
         border-radius: 4px;
 
         // Unecessary on mobile
         @include media-breakpoint-up(md) {
             display: inline-block;
+            // display: none;
         }
     }
 
@@ -85,7 +90,7 @@ $lv-topbar-height-medium: 75px !default;
 
 .lv-topbar-logo-text {
     display: table-cell;
-    line-height: 20px; // or 1 (?)
+    line-height: 18px; // or 1 (?)
     white-space: nowrap;
     vertical-align: middle;
 }
@@ -104,7 +109,7 @@ $lv-topbar-height-medium: 75px !default;
 }
 
 .lv-topbar-logo-timestamp {
-    font-size: rem-calc(12);
+    font-size: rem-calc(11);
     font-weight: normal;
     padding-top: 10px;
     color: #9A9A9A;
@@ -161,8 +166,8 @@ $lv-topbar-height-medium: 75px !default;
     float: right;
     border: 0;
     background: none;
-    font-size: 20px;
-    // line-height: $lv-topbar-height-medium;
+    font-size: 19px;
+    line-height: 19px; //$lv-topbar-height-medium;
     text-align: center;
     color: desaturate(darken($lvb-button-color, 35%), 20%);
     transition: background 300ms ease;

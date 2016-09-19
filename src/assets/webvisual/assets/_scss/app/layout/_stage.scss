@@ -52,12 +52,20 @@
 
 .lv-main {
     @include clearfix(); // fixes absolute children
-    // overflow: hidden; // interfered with absolute children
+    // overflow: hidden; // WARNING: interfered with absolute children
     padding: rem-calc(30 15);
 
     @include media-breakpoint-up(md) {
-        padding: rem-calc(50 70);
+        padding: rem-calc(50 65);
     }
+
+    @include media-breakpoint-up(lg) {
+        max-width: 1000px;
+    }
+}
+
+.has-closed-menu .lv-main {
+    max-width: none;
 }
 
 //-----------------------------------------------------------------

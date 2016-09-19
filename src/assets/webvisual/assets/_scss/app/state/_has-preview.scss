@@ -15,9 +15,8 @@
     padding: 0;
 }
 
-.is-mode-preview .lv-stage {
+.is-mode-preview:not(.has-closed-menu) .lv-stage {
     background: #515764;
-    // transition: background 300ms ease;
 }
 
 //=========================================
@@ -37,3 +36,14 @@
     // display: none;
 }
 
+//=========================================
+// Close Button
+//=========================================
+
+.is-mode-preview .lv-menu-btn .text:after {
+    content: "Fullscreen";
+}
+
+.is-mode-preview.has-closed-menu .lv-menu-btn .text:after {
+    content: "See more";
+}

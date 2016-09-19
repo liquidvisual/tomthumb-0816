@@ -177,12 +177,20 @@ function setContextItem() {
 	$('.lv-context-menu-panel .active').removeClass('active');
 
 	//=========================================
-	// If second level exists (Eg. '/content/settings')
+	// If second level exists (Eg. '/content/settings') INCL. tabs
 	//=========================================
 
 	if (level2) {
 		// Locates the anchor which matches browser URL
 		$('[data-tool-tab-content="'+level1+'"] a[href="#/'+level1+'/'+level2+'/"]').parent().addClass('active');
+	}
+
+	//=========================================
+	// Third level (last)
+	//=========================================
+
+	if (level3) {
+		$('[data-tool-tab-content="'+level2+'"] a[href="#/'+path+'"]').parent().addClass('active');
 	}
 
 	//=========================================

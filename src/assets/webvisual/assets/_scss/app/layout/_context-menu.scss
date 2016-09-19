@@ -83,13 +83,15 @@ $dark-bg-color: $gray-dark !default; // recently changed this
 //-----------------------------------------------------------------
 
 .lv-context-menu ::-webkit-scrollbar {
-    width: 5px;
-    opacity: 0;
+    width: 6px;
+    // opacity: 0;
 }
 
 .lv-context-menu ::-webkit-scrollbar-thumb {
-    border: 0;
-    background: darken($gray-light, 20%); //lighten($gray-dark, 15%);
+    border: 1px solid rgba(white, 0.5);;
+    border-radius: 10px;
+    background: black;
+    // padding: 10px;
 }
 
 // .lv-context-menu ::-webkit-scrollbar-thumb:window-inactive {}
@@ -146,7 +148,7 @@ $dark-bg-color: $gray-dark !default; // recently changed this
 		transition: background 150ms ease;
 		display: block;
 		padding: rem-calc(5 0);
-		font-size: rem-calc(22);
+		font-size: rem-calc(20);
 		text-align: center;
 		color: lighten($dark-bg-color, 15%);
 
@@ -212,32 +214,43 @@ ul.lv-context-menu-site-tools {
 //========================================= ******************
 
 .tool-tab-preview {
-	height: 65px;
-	margin: 30px 12px 12px 12px;
-	border: 1px solid lighten($dark-bg-color, 0%);
-	border-top: 0;
-	border-radius: 30px;
-	background: black;
+	@include media-breakpoint-up(md) {
+	    height: 60px;
+	    margin: 30px 14px 14px 14px;
+	    border: 1px solid lighten($dark-bg-color, 0%);
+	    border-top: 0;
+	    border-radius: 30px;
+	    background: black;
+	}
 
 	a {
-		line-height: 24px;
-		// border: 2px solid black;
-		// border-bottom: 2px solid darken(desaturate($brand-secondary, 60%), 20%);
-		border-radius: 30px;
-		background: desaturate($brand-secondary, 60%);
-		font-size: 18px;
-		color: darken(desaturate($brand-secondary, 60%), 20%) !important;
-		box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
-		transition: transform 300ms ease, background 300ms ease;
+		@include media-breakpoint-up(md) {
+		    position: relative;
+		    left: -3px;
+		    width: 31px;
+		    line-height: 20px;
+		    // border: 2px solid black;
+		    border-bottom: 2px solid darken(desaturate($brand-secondary, 60%), 20%);
+		    border-radius: 100%;
+		    background: desaturate($brand-secondary, 60%);
+		    font-size: 16px;
+		    color: darken(desaturate($brand-secondary, 60%), 20%) !important;
+		    box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
+		    transition: transform 300ms ease, background 300ms ease;
+		}
 	}
 }
 
 .is-mode-preview .tool-tab-preview a {
-	background: $brand-secondary;
-	color: rgba(white, 0.9) !important; //rgba(black, 0.45) !important;
-	cursor: default;
-	transform: translateY(31px);
-	// box-shadow: 0px 0px 5px 0px $brand-secondary;
+	@include media-breakpoint-up(md) {
+	    background: $brand-secondary;
+	    color: rgba(white, 0.9) !important; //rgba(black, 0.45) !important;
+	    cursor: default;
+	    transform: translateY(30px);
+	    // box-shadow: 0px 0px 5px 0px $brand-secondary;
+	    border: 0;
+	    border-top: 2px solid darken(desaturate($brand-secondary, 60%), 20%);
+	}
 }
 
 //-----------------------------------------------------------------
@@ -304,6 +317,12 @@ ul.lv-context-menu-site-tools {
 		font-size: rem-calc(12);
 		text-transform: uppercase;
 		font-weight: 600;
+		margin-left: 15px;
+		margin-right: 15px;
+
+		&:hover {
+			background: inherit;
+		}
 	}
 
 	// --- ACTIVE ---

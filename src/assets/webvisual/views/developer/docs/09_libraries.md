@@ -1,9 +1,11 @@
 ---
-title: CSS Components
-type: development_doc
+title: Libraries
+group: Basics
+type: developer_doc
+order: '09'
 ---
 
-<h1>Installation &amp; Setup</h1>
+<h1>Libraries</h1>
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

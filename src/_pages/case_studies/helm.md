@@ -1,7 +1,7 @@
 ---
 layout: child_layout/case_studies_item
 title: Helm
-permalink: /case-studies/helm/
+permalink: /case-studies/
 content_type: case_study
 featured_on_homepage: true
 feature_order: 1

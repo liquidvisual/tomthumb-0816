@@ -1,7 +1,7 @@
 ---
 layout: child_layout/case_studies_item
 title: Stellar Asia Pacific
-permalink: /case-studies/
+permalink: /case-studies/stellar-asia-pacific/
 content_type: case_study
 featured_on_homepage: true
 feature_order: 2

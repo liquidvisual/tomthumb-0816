@@ -1,9 +1,11 @@
 ---
-title: Troubleshooting
-type: development_doc
+title: JavaScript
+group: Basics
+type: developer_doc
+order: '11'
 ---
 
-<h1>Installation &amp; Setup</h1>
+<h1>JavaScript</h1>
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

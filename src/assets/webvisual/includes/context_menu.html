@@ -2,7 +2,7 @@
 ---
 
 {% assign settings = site.data.settings %}
-{% assign github_repo = settings.github_repo %}
+{% assign github_repo = settings.github_repo_path %}
 {% assign github_repo_commits = github_repo | append: '/commits/master' %}
 {% assign github_pages = github_repo | append: '/tree/gh-pages' %}
 {% assign github_pages_assets = github_repo | append: '/archive/gh-pages.zip' %}
@@ -35,7 +35,7 @@
             <li data-tool-tab="overview"><a href="#/overview/"><i class="fa fa-dashboard"></i></a></li>
             <li data-tool-tab="content"><a href="#/content/"><i class="fa fa-underline"></i></a></li>
             <li data-tool-tab="design"><a href="#/design/"><i class="fa fa-paint-brush"></i></a></li>
-            <li data-tool-tab="development"><a href="#/development/site/"><i class="fa fa-code"></i></a></li>
+            <li data-tool-tab="developer"><a href="#/developer/site/"><i class="fa fa-code"></i></a></li>
             <li data-tool-tab="preview" class="tool-tab-preview"><a href="#/preview/"><i class="fa fa-eye"></i></a></li>
         </ul>
 
@@ -45,17 +45,6 @@
 
         <!-- BODY -->
         <div class="lv-context-menu-body">
-
-            <!-- ESSENTIAL -->
-            <!-- <div data-tool-tab-content="essential" class="lv-context-menu-panel">
-                <ul>
-                    <li><a href="#/overview/welcome/"><span class="lv-context-menu-digit">01</span>Welcome</a></li>
-                    <li><a href="#/content/settings/"><span class="lv-context-menu-digit">04</span>Settings</a></li>
-                    <li><a href="#/content/sitemap/"><span class="lv-context-menu-digit">05</span>Sitemap</a></li>
-                    <li><a href="#/design/styleguide/"><span class="lv-context-menu-digit">11</span>Styleguide</a></li>
-                    <li><a href="#/design/component-library/"><span class="lv-context-menu-digit">13</span>Component Library</a></li>
-                </ul>
-            </div> -->
 
             <!-- OVERVIEW -->
             <div data-tool-tab-content="overview" class="lv-context-menu-panel">
@@ -68,9 +57,9 @@
             <!-- CONTENT -->
             <div data-tool-tab-content="content" class="lv-context-menu-panel">
                 <ul>
-                    <li><a href="#/content/settings/"><span class="lv-context-menu-digit">04</span>Settings</a></li>
+                    <!-- <li><a href="#/content/settings/"><span class="lv-context-menu-digit">04</span>Settings</a></li> -->
                     <li><a href="#/content/sitemap/"><span class="lv-context-menu-digit">05</span>Sitemap</a></li>
-                    <li><a href="#/content/assets/"><span class="lv-context-menu-digit">06</span>Assets</a></li>
+                    <li><a href="#/content/media/"><span class="lv-context-menu-digit">06</span>Media</a></li>
                     <li><a href="#/content/copywriting/"><span class="lv-context-menu-digit">07</span>Copywriting</a></li>
                     <li><a href="#/content/seo/"><span class="lv-context-menu-digit">08</span>SEO</a></li>
                 </ul>
@@ -87,12 +76,12 @@
                 </ul>
             </div>
 
-            <!-- DEVELOPMENT -->
-            <div data-tool-tab-content="development" class="lv-context-menu-panel">
+            <!-- DEVELOPER -->
+            <div data-tool-tab-content="developer" class="lv-context-menu-panel">
 
                 <ul class="lv-context-menu-panel-tabs-header">
-                    <li data-tool-tab="site"><a href="#/development/site/">Site</a></li>
-                    <li data-tool-tab="docs"><a href="#/development/docs/">Docs</a></li>
+                    <li data-tool-tab="site"><a href="#/developer/site/">Site</a></li>
+                    <li data-tool-tab="docs"><a href="#/developer/docs/">Docs</a></li>
                 </ul>
 
                 <!-- LEVEL 03: SITE -->
@@ -108,13 +97,24 @@
                 <!-- LEVEL 03: DOCS -->
                 <div data-tool-tab-content="docs">
                     <nav>
-                        <h3>Getting Started</h3>
-                        <ul class="m-b-1">
-                            {% assign docs = site.pages | where: "type", "development_doc" %}
-                            {% for item in docs %}
-                                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-                            {% endfor %}
-                        </ul>
+                        {% assign docs = site.pages | where: "type", "developer_doc" %}
+                        {% assign group = null %}
+
+                        {% for item in docs %}
+                            {% if group != item.group %}
+                                {% assign group = item.group %}
+
+                                <h3>{{ item.group }}</h3>
+
+                                <ul class="m-b-1">
+                                    {% for item in docs %}
+                                        {% if item.group == group %}
+                                            <li><a href="#/developer/docs/{{ item.order}}_{{ item.title | slugify }}/">{{ item.title }}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endfor %}
                     </nav>
                 </div>
             </div>
@@ -152,7 +152,7 @@
                                 {% if item.children %} <span class="submenu-trigger" data-submenu-trigger><i class="fa fa-angle-right"></i></span> {% endif %}
                             {% endcapture %}
 
-                            {% unless item.title == null or item.url == "/manage/" or item.url == "/" or item.url == "/404/" or item.type == "development_doc" %}
+                            {% unless item.title == null or item.url == "/manage/" or item.url == "/" or item.url == "/404/" or item.type == "developer_doc" %}
 
                                 <li class="{{ parent_classes }}{{ item.status }}">
 

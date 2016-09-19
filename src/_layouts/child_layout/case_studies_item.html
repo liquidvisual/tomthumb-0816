@@ -8,6 +8,16 @@ layout: base__page
 {% assign testimonial = site.data.testimonials[page.testimonial_id] %}
 {% assign case_desc = page.case_desc %}
 
+{% capture next_case_study_url %}
+	{% for item in case_studies %}
+		{% if item.url == page.url and forloop.last == false %}
+			{{ case_studies[forloop.index].url }}
+		{% elsif item.url == page.url and forloop.last == true %}
+			{{ case_studies[0].url }}
+		{% endif %}
+	{% endfor %}
+{% endcapture %}
+
 <!-- CASE STUDIES -->
 <section class="section-dark is-slim">
 	<div class="container">
@@ -63,6 +73,11 @@ layout: base__page
 				{{ page.strategy_execution }}
 			</div>
 		</div>
+
+		{% unless testimonial %}
+			<p class="text-md-right m-t-1 m-b-0"><a href="{{ next_case_study_url }}">Read our case studies <i class="fa fa-long-arrow-right"></i></a></p>
+		{% endunless %}
+
 	</div>
 </section>
 
@@ -75,6 +90,11 @@ layout: base__page
 				<p class="is-quote">{{ testimonial.body }}</p>
 				<p><cite><i>{{ testimonial.cite }}</i></cite></p>
 			</blockquote>
+
+			{% if testimonial %}
+				<p class="text-md-right"><a href="{{ next_case_study_url }}">Next case study <i class="fa fa-long-arrow-right"></i></a></p>
+			{% endif %}
+
 		</div>
 	</section>
 {% endif %}
