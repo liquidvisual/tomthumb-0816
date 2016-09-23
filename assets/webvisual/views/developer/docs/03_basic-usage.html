@@ -1,27 +1,47 @@
-<h1>Basic Usage</h1>
-<h2 id=referencing-the-build-folder>Referencing the Build Folder</h2>
-<p>The online repo that stores the build folder named
-    <strong>/dist</strong> (generated from /src) can be found on a separate branch - under the
-    <strong>gh-pages</strong> branch of this very repo.</p>
+<h1 id=basic-usage>Basic Usage</h1>
+<hr>
+<div class="spacer m-b-2"></div>
+<h2 id=integrating-into-your-cms>Integrating into your CMS</h2>
+<p>Let’s assume the client has signed off on the design and the front-end implementation. All that’s left now, is to incorporate into your own CMS. In a typical scenario, the third party would be handing over a zipped directory of static files, it’s then the developer’s job to figure out how everything is structured before breaking it down into template files.</p>
+<p>If you prefer that workflow, then by all means continue on as you’re familiar. You can download a zip of that folder here:</p>
 <p>
-    <a href=https://github.com/liquidvisual/loshift-0516/tree/gh-pages>https://github.com/liquidvisual/loshift-0516/tree/gh-pages</a>
+    <a href=https://github.com/liquidvisual/tomthumb-0816/archive/gh-pages.zip target=_blank>https://github.com/liquidvisual/tomthumb-0816/archive/gh-pages.zip</a>
 </p>
-<p>Feel free to use it as a reference. Although, it’s advantageous to know how the
-    <a href=https://github.com/liquidvisual/loshift-0516/tree/master/src>source</a> files are organised since the structure aims to mimic a back-end environment with proper template inheritance. Many templating questions have already been solved and this can be a benefit if you draw from the source as well as the final compiled
-    <strong>build</strong> directory.</p>
-<p>Once you get the hang of reading Jekyll templates - you’ll be able to breeze through, copy-pasting everything and substituting the basic templating syntax for your own.</p>
-<h2 id=quick-start>QUICK START</h2>
-<h3 id=copy-over-assets-directory>01. Copy Over /assets Directory</h3>
+<h3 id=use-the-source-luke>Use the Source, Luke</h3>
+<p>Admittedly it takes a lot of time doing that, and code tends to get soupy. You’re going to have a much better time working with and understanding the source files.
+    <strong>This doesn’t mean you have to learn Jekyll or Ruby.</strong> It also doesn’t mean you need to have anything installed, you can simply work from the Github repo. All you need to understand is how it slots together on a basic level.</p>
+<p>The benefits of working with the source is:</p>
+<ul>
+    <li>HTML partials have already been broken up for you.</li>
+    <li>Template heirarchy has been thought out and organised for you.</li>
+    <li>Basic template logic is already written.</li>
+    <li>Content is separated from the layout.</li>
+</ul>
+<h3 id=liquid-as-a-basic-templating-engine>Liquid as a Basic Templating Engine</h3>
+<p>The only real major difference between this and your CMS of choice is template syntax. Jekyll uses a very basic templating engine called
+    <a href="http://shopify.github.io/liquid/">Liquid</a> which should be transferrable to any environment. Ideally, once you’ve gotten the hang of reading our templates - you’ll be able to breeze through, copy-pasting everything and substituting the basic templating syntax for your own.</p>
+<div class="spacer m-b-2"></div>
+<h3 id=the-output-is-still-there-if-you-need-it>The Output is Still There If You Need It</h3>
+<p>The compiled source files are stored in a directory named
+    <strong>/dist</strong> - which doesn’t come with the cloned repo by default (you would need to run <code class=highlighter-rouge>grunt build</code> to generate this folder locally). You can find the contents of this folder on the
+    <a href=https://github.com/liquidvisual/tomthumb-0816/tree/gh-pages target=_blank>github-pages branch</a>.</p>
+<div class="spacer m-b-2"></div>
+<h2 id=quick-start>Quick Start</h2>
+<div class="spacer m-b-2"></div>
+<h3 id=copy-assets-folder>01. Copy Assets Folder</h3>
 <p>Jump into the
-    <a href=https://github.com/liquidvisual/loshift-0516/tree/gh-pages>dist directory</a> and grab the
-    <em>entire</em>
-    <strong>/assets</strong> folder. Put it into your project’s root directory. This contains all the compiled CSS, fonts, images and JavaScript. This is important as all paths are root relative to the
+    <a href=https://github.com/liquidvisual/tomthumb-0816/tree/gh-pages target=_blank>dist directory</a> and copy the
+    <strong>/assets</strong> folder. This contains all compiled CSS, fonts, images and JavaScript.
+    <strong>Place it into your project’s root directory</strong>. This is important, since all paths are root relative to the
     <strong>/assets</strong> folder.</p>
-<p>That’s all you’ll need from the
-    <strong>/dist</strong> directory. From this point on, all the action is in the
-    <strong>/src</strong>.</p>
-<h3 id=access-layoutsmasterhtml>02. Access /_layouts/master.html</h3>
-<p>Start with this and substitute the template logic for your own. When it comes to the assets, they compile into
+<div class="spacer m-b-2"></div>
+<h3 id=copy-html-partials>02. Copy HTML Partials</h3>
+<p>All partials are found inside
+    <a href=https://github.com/liquidvisual/tomthumb-0816/tree/master/src/_includes target=_blank>src/_includes</a>. Layouts will reference partials from inside this folder so copy them into your environment.</p>
+<div class="spacer m-b-2"></div>
+<h3 id=create-base-layout>03. Create Base Layout</h3>
+<p>You’ll want to start by creating a base layout in your environment. Open
+    <a href=https://github.com/liquidvisual/tomthumb-0816/blob/master/src/_layouts/base.html target=_blank>base.html</a> and copy the contents. Make sure to substitute any template logic for your own. When it comes to assets, they compile into
     <strong>/assets</strong> on build so you’ll only need to do a bit of substitution.</p>
 <p>You can replace this:</p>
 <div class=highlighter-rouge><pre class=highlight><code>&lt;!-- build:css /assets/css/minified.css --&gt;
@@ -35,8 +55,16 @@
 <p>With this:</p>
 <div class=highlighter-rouge><pre class=highlight><code>&lt;link rel="stylesheet" href="/assets/css/minified.css"&gt;
 </code></pre></div>
-<p>The same applies to Javascript. That’s probably the trickiest bit that’s not so obvious. The end result will look like this:</p>
+<p>The same applies to JavaScript. The end result will look like this:</p>
 <div class=highlighter-rouge><pre class=highlight><code>&lt;script src="/assets/scripts/minified.js"&gt;&lt;/script&gt; &lt;!-- Before closing body --&gt;
 </code></pre></div>
-<h3 id=copy-over-partials-in-includes>03. Copy Over Partials in /_includes</h3>
-<p>Templates reference partials from this folder.</p>
+<h3 id=create-child-layouts>04. Create Child Layouts</h3>
+<p>Once your
+    <strong>base.html</strong> is in place and pointing to your assets correctly, you can then move through the child layouts one by one - again, substituting Liquid template syntax for your own. At this stage, you should be able to view your website as it starts taking shape.</p>
+<p>When you’re ready to start integrating editable content fields, you can start pulling data from the markdown files inside
+    <a href=https://github.com/liquidvisual/tomthumb-0816/tree/master/src/_pages target=_blank>_pages</a>. These markdown files contain YAML variables which serve as your content hooks.</p>
+<p class=text-xs-right>
+    <a href="/manage/#/developer/docs/04_directory-structure/">Directory Structure
+        <i class="fa fa-long-arrow-right"></i>
+    </a>
+</p>

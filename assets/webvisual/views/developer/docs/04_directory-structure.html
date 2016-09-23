@@ -1,2 +1,68 @@
-<h1>Directory Structure</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h1 id=directory-structure>Directory Structure</h1>
+<hr>
+<div class="spacer m-b-2"></div>
+<h2 id=root>Root</h2>
+<div class=highlighter-rouge><pre class=highlight><code>root/
+  |--node_modules/
+  |
+  |--src/
+  |  |--[Everything]
+  |
+  |--dist/
+  |  |--[Compiled Directory]
+  |
+  |--Gruntfile.js
+  |--bower.json
+  |--package.json
+  |--README.md
+  |--_config.build.yml
+  |--_config.yml
+  |--Gemfile
+</code></pre></div>
+<p>
+    <strong>NOTE:</strong> The
+    <strong>dist/</strong> folder is not included by default upon cloning and running locally. You would need to run <code class=highlighter-rouge>grunt build</code> to generate it.</p>
+<div class="spacer m-b-2"></div>
+<h3 id=configyml>./config.yml</h3>
+<p>This file instructs Jekyll what to do on compile.</p>
+<h2 id=src>./src</h2>
+<p>As you’ll see below, most directories have subfolders which point towards Checkpoint or Westlaw specific data. In cases where files are shared eg. top layouts, these will reside in a
+    <strong>common/</strong> folder.</p>
+<div class=highlighter-rouge><pre class=highlight><code>src/
+  |--_bower_components/
+  |
+  |--_data/
+  |
+  |--_docs/
+  |  |--[Documention files]
+  |
+  |--_includes/
+  |  |--snippets/
+  |
+  |--_layouts/
+  |  |--child_layouts/
+  |  |--base.html
+  |  |--base__page.html
+  |  |--base__homepage.html
+  |
+  |--assets/
+  |
+  |--_pages/
+  |
+  |--README.md
+  |--robots.txt
+  |--CNAME
+</code></pre></div>
+<h2 id=it-all-starts-with-the-pages-directory>It All Starts with the Pages Directory</h2>
+<p>The way Jekyll processes everything begins with Markdown files (.md) stored inside the
+    <strong>pages/</strong> directory. These files contain front-matter YAML which tell the page what layout to use and the page title. They also pass other data, such as strings - which tell the layout to include certain HTML partials.</p>
+<h2 id=in-a-nutshell>In a Nutshell</h2>
+<p>The two prototypes are controlled by data variables stored inside of
+    <strong>src/data/[name]</strong>. These variables govern colours, navigation and other information that differ between sites.</p>
+<p>
+    <br>
+</p>
+<p class="text-center medium-text-right">
+    <a href="/docs/getting-started/compatibility/">
+        <b>Next Up:</b> Compatibility →</a>
+</p>
