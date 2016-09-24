@@ -230,7 +230,7 @@ ul.lv-context-menu-site-tools {
 		    width: 31px;
 		    line-height: 20px;
 		    // border: 2px solid black;
-		    border-bottom: 2px solid darken(desaturate($brand-secondary, 60%), 20%);
+		    // border-bottom: 2px solid darken(desaturate($brand-secondary, 60%), 20%);
 		    border-radius: 100%;
 		    background: desaturate($brand-secondary, 60%);
 		    font-size: 16px;
@@ -249,7 +249,7 @@ ul.lv-context-menu-site-tools {
 	    transform: translateY(30px);
 	    // box-shadow: 0px 0px 5px 0px $brand-secondary;
 	    border: 0;
-	    border-top: 2px solid darken(desaturate($brand-secondary, 60%), 20%);
+	    // border-top: 2px solid darken(desaturate($brand-secondary, 60%), 20%);
 	}
 }
 

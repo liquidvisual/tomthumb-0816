@@ -32,10 +32,11 @@ $device-laptop-resolution-height: 802px;
 $scroller-mask-width: 4px;
 $device-tablet-screen-border-x: 12px;
 $device-tablet-screen-border-y: 17px;
-$device-tablet-width: 168px - $scroller-mask-width + $device-tablet-screen-border-x * 2;
+// $device-tablet-width: 168px - $scroller-mask-width + $device-tablet-screen-border-x * 2;
+$device-tablet-width: 172px - $scroller-mask-width + $device-tablet-screen-border-x * 2;
 $device-tablet-height: 224px + $device-tablet-screen-border-y * 2;
 $device-tablet-scale: scale(0.219);
-$device-tablet-resolution-width: 768px;
+$device-tablet-resolution-width: 783px; // overcomes bug of 768 - who knows
 $device-tablet-resolution-height: 1024px;
 
 // Mobile

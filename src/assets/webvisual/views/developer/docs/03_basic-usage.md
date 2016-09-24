@@ -69,13 +69,15 @@ You'll want to start by creating a base layout in your environment. Open [base.h
 
 You can replace this:
 
-    <!-- build:css /assets/css/minified.css -->
-      <link rel="stylesheet" href="/css/some-css-file.css">
-      <link rel="stylesheet" href="/css/some-css-file.css">
-      <link rel="stylesheet" href="/css/some-css-file.css">
-      <link rel="stylesheet" href="/css/some-css-file.css">
-      <link rel="stylesheet" href="/css/some-css-file.css">
-    <!-- endbuild -->
+```html
+<!-- build:css /assets/css/minified.css -->
+    <link rel="stylesheet" href="/css/some-css-file.css">
+    <link rel="stylesheet" href="/css/some-css-file.css">
+    <link rel="stylesheet" href="/css/some-css-file.css">
+    <link rel="stylesheet" href="/css/some-css-file.css">
+    <link rel="stylesheet" href="/css/some-css-file.css">
+<!-- endbuild -->
+```
 
 With this:
 

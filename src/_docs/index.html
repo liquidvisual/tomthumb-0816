@@ -15,7 +15,12 @@ theme: theme-light-hero
 		<li><a href="/">Home</a> <small>/</small></li>
 	{% assign pages = site.pages | sort: 'title' | sort: 'url' %}
 	{% for item in pages offset: 1 %}
-	  {% unless item.title == null or item.url == "/manage/" or item.url == "/" or item.url == "/404/" or item.type == "development_doc" %}
+	  {% unless item.title == null or
+	  			item.url contains "/manage/" or
+	  			item.url == "/" or
+	  			item.url == "/404/" or
+	  			item.type == "developer_doc" %}
+
 	    <li><a href="{{item.url}}">{{ item.title }}</a> <small>{{ item.url }}</small></li>
 	  {% endunless %}
 	{% endfor %}

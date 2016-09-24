@@ -23,79 +23,102 @@ This project is built with [Jekyll v{{ settings.jekyll_version }}](http://jekyll
 
 You'll need the following to run the build process and leverage all its features.
 
+* [Git](https://git-scm.com){:target="_blank"}
 * [Ruby](https://www.ruby-lang.org/en/){:target="_blank"} (1.9.3 or above)
-* [RubyGems](https://rubygems.org/pages/download){:target="_blank"}
-* [Bundler](http://bundler.io){:target="_blank"}
 * [NodeJS](https://nodejs.org/){:target="_blank"}
 * [Python](https://www.python.org/downloads/){:target="_blank"} (optional)
 
 <div class="spacer m-b-2"></div>
 
-### 01. Installing Ruby
+### 01. Install Homebrew
 
-Ruby typically comes installed with OSX / MacOS, but we've found the most pain-free way to get it up and running is through [Homebrew](http://brew.sh){:target="_blank"}.
+[Homebrew](http://brew.sh){:target="_blank"} is a package manager for MacOS. We'll use it to install Command Line Tools for [Git](https://git-scm.com){:target="_blank"} now, and later [NodeJS](https://nodejs.org/){:target="_blank"} and [Python](https://www.python.org){:target="_blank"} (optional). Pull up Terminal and paste the following:
 
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-Then using Homebrew to install Ruby:
+Next, add the Homebrew location to your ```$PATH```. We'll create a __.bash_profile__ or edit an existing one.
+
+    touch ~/,bash_profile; open ~/.bash_profile
+
+Then add the following to your file and save. This will allow us to run future commands without giving Administrator access.
+
+    export PATH="/usr/local/bin:$PATH"
+
+### 02. Ruby
+
+Ruby typically comes installed with MacOS, although it's always good to have the latest version. We recommend installing *or updating* Ruby through [RVM](https://rvm.io){:target="_blank"}.
 
     \curl -sSL https://get.rvm.io | bash -s stable --ruby
 
-If successful you should be able to see the version.
+Next, **reboot the terminal window**. If successful you should be able to see the new version number.
 
     ruby -v
 
-### 02. Ruby Gems
+MacOS will have RubyGems installed by default, but we'll grab the latest version.
 
-Simply [download the executable](https://rubygems.org/pages/download){:target="_blank"} at the official website. If successful, you should be able to see the version.
+    gem update --system
 
-    gem -v
-
-Once RubyGems is installed, you can use it to grab [Bundler](http://bundler.io). We use Bundler to install Ruby dependencies such as Jekyll.
+To test your RubyGems install, you can now use it to grab [Bundler](http://bundler.io). We use Bundler to install Ruby dependencies such as [Jekyll](https://jekyllrb.com){:target="_blank"}.
 
     gem install bundler
 
 ### 03. NodeJS
 
-Simply [download the executable](https://nodejs.org/en/){:target="_blank"} at the official website. If successful, you should be able to see the version.
+Next, install Node with Homebrew. Please be patient, as this can take some time.
 
-    node -v
+    brew install -v node
+
+To test your Node install, try installing [Grunt](http://gruntjs.com/){:target="_blank"} which will be used to run the build process.
+
+    npm install -g grunt-cli
+
+Next install [Bower](http://bower.io){:target="_blank"}. We use Bower to retrieve front-end dependencies such as Bootstrap, JQuery and others.
+
+    npm install -g bower
 
 ### 04. Python
 
-Simply [download the executable](https://www.python.org/downloads/){:target="_blank"} at the official website. If you're operating OSX or MacOS - Python is likely already installed. __Python is optional__, but we use it in our build script to create an ad-hoc local server to immediately serve the contents of our processed build so one can see the final output.
+MacOS will have Python installed by default, but we'll grab the latest version. In this case __Python is optional__. We use it in our Grunt File to create an ad-hoc local server to immediately serve the contents of our processed build.
 
 If successful, you should be able to see the version.
 
-    python -v
+    python
 
 <div class="spacer m-b-2"></div>
 
 ## Start the Server
 
-Once everything is installed, you can then download the codebase and create a local server running the Grunt task ```grunt serve```. Any changes to the files (eg. SCSS, JS etc) will trigger a live reload in the browser.
+Once everything is installed, you can clone the codebase or [download]({{ github_repo_path }}){:target="_blank"} the contents from our Github repo.
 
     git clone git@github.com:liquidvisual/{{ github_repo_name }}.git
-    cd {{ github_repo_name }}
-    bundle install
-    npm install
-    bower install
-    grunt serve
-    # => Now browse to http://localhost:9000
 
-If successful, head to [http://localhost:9000](http://localhost:9000) to see your website. If you don't have git installed, you can visit the <a href="{{github_repo_path}}" target="_blank"><i class="fa fa-github"></i> Github repo</a> and download the zip directly.
+Now that you have the project, we can download its dependencies.
+
+    cd {{ github_repo_name }}
+    bower install     # => for front-end dependencies (Eg. Bootstrap, JQuery etc)
+    bundle install    # => for Ruby dependencies (Eg. Jekyll)
+    npm install       # => for Node dependencies (Eg. Grunt)
+
+Next we'll create a local server by running the Grunt task ```grunt serve```. Any changes to the files (eg. SCSS, JS etc) will trigger a page refresh in the browser.
+
+    grunt serve
+
+If successful, your favorite browser should launch with [http://localhost:9000](http://localhost:9000).
 
 <div class="spacer m-b-2"></div>
 
 ### For Production
 
-The following task ```grunt build``` will compile everything into the final end product. Files will concatenate and minify, assets will be compressed to produce a __/dist__ folder, which can then be uploaded directly to a server.
+The following task ```grunt build``` will compile everything into the final end-product. Files will concatenate and minify, assets will be compressed to produce a __/dist__ folder, which can then be uploaded directly to a server.
 
-    grunt build # => to concat and minify etc
+    grunt build    # => to concat and minify etc
 
 To view the contents of the compiled build in the browser, you can run the following task. This will run ```grunt build``` followed by creating an ad-hoc local server with Python.
 
-    grunt host # => Now browse to http://localhost:8000
+    grunt host    # => Now browse to http://localhost:8000
+
+If successful, your favorite browser should launch with [http://localhost:8000](http://localhost:8000).
+Please note the change from port 9000 to **8000**.
 
 <div class="spacer m-b-2"></div>
 

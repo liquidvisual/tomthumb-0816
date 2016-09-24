@@ -1,0 +1,29 @@
+/*
+    STAMPS.CSS
+
+    - Last updated: 21.09.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+
+.stamp {
+    display: inline-block;
+    width: rem-calc(140);
+    height: rem-calc(140);
+    margin-bottom: $spacer-y;
+    line-height: rem-calc(140);
+    background-image: linear-gradient(-180deg, $brand-primary 0%, $brand-secondary 100%);
+    border-radius: 100%;
+    color: white;
+    font-size: rem-calc(60);
+    font-weight: 100;
+}
+
+//=========================================
+//
+//=========================================

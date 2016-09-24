@@ -1,6 +1,8 @@
 ---
 ---
 
+<!-- http://stackoverflow.com/questions/13491657/javascript-library-to-convert-web-page-to-pdf -->
+
 <h2>Sitemap</h2><br>
 
 <a class="btn btn-secondary" href="#" role="button"><i class="fa fa-print"></i> Print</a>
@@ -14,6 +16,11 @@
 			<li><a href="#/preview{{item.url}}"><small>{{ item.url }}</small><br> {{ item.title }}</a>
 		{% endfor %}
 	</ul>
+
+	<br>
+	<br>
+	<br>
+	<br>
 
 	<ul id="primaryNav" class="">
 	    {% for item in site.data.sitemap %}

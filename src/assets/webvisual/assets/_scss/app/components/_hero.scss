@@ -1,0 +1,42 @@
+/*
+    HERO.CSS
+
+    - Last updated: 19.09.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+
+.lv-hero .bg-fill-pink-grad {
+    background: $brand-primary;
+    height: 500px;
+
+    // background-image: linear-gradient(-74deg, #F57B78 0%, #EF526E 35%, #F07F79 100%, #EA2B65 100%);
+    // background-image: url(/assets/webvisual/assets/img/layout/pink-gradient.jpg);
+    // background-image: url(http://liquidvisual.com/assets/img/content/banner-4.jpg);
+
+    background-image: linear-gradient(-74deg, desaturate($brand-primary, 10%) 0%, lighten($brand-primary, 5%) 35%, darken($brand-tertiary, 5%) 100%, $brand-tertiary 100%);
+
+    .lv-hero-header {
+        color: white;
+        font-size: rem-calc(50);
+        font-weight: 100;
+    }
+
+    .btn {
+        border: 1px solid white;
+        background: none;
+        color: white;
+    }
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+//=========================================
+//
+//=========================================

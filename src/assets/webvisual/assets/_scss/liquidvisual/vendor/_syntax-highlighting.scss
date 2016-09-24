@@ -16,13 +16,23 @@ $blue:     darken($gray-light, 50%); //$common-color;//$common-color; //$common-
 $cyan:     $common-color; //  strings, numbers
 $green:    $common-color; //  operators, other keywords
 
+.highlight > pre,
+.highlight > code {
+    padding: rem-calc(20 25);
+    display: block;
+    margin: 0;
+}
+
 .highlight {
     font-family: 'Source Code Pro', serif;
     font-weight: 300;
-    padding: rem-calc(20 25);
+    // padding: rem-calc(20 25);
     background: darken($gray-light, 4%); //$gray-light;//darken($gray-light, 6%); //$bg-color; color: $body;
+    // border: 1px solid darken(#e3e6ec, 6%);
     border-radius: $border-radius-sm;
     color: $body;
+    // margin-bottom: $spacer-y * 2;
+    // box-shadow: 0 2px 4px rgba(50, 50, 93, .1);
 
     .c { color: $base01; } /* Comment */
     .err { color: $body; } /* Error */
