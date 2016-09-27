@@ -12,13 +12,21 @@
 //-----------------------------------------------------------------
 
 .lv-page .nav-list {
+	padding-top: 20px;
+
 	@include media-breakpoint-up(md) {
 	    position: relative;
 	    top: 6px;
 	}
+
+	@include media-breakpoint-up(xl) {
+		left: 30px; // easiest way to go about it
+		padding-top: 0;
+	}
+
 	a {
 		display: block;
-		padding: 0 15px 15px 0;
+		padding: 0 15px 15px 15px;
 		color: $brand-quinary;
 
 		@include media-breakpoint-up(md) {
