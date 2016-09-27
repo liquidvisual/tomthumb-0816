@@ -44,13 +44,13 @@
     <a href=https://github.com/liquidvisual/tomthumb-0816/blob/master/src/_layouts/base.html target=_blank>base.html</a> and copy the contents. Make sure to substitute any template logic for your own. When it comes to assets, they compile into
     <strong>/assets</strong> on build so you’ll only need to do a bit of substitution.</p>
 <p>You can replace this:</p>
-<div class=highlighter-rouge><pre class=highlight><code>&lt;!-- build:css /assets/css/minified.css --&gt;
-  &lt;link rel="stylesheet" href="/css/some-css-file.css"&gt;
-  &lt;link rel="stylesheet" href="/css/some-css-file.css"&gt;
-  &lt;link rel="stylesheet" href="/css/some-css-file.css"&gt;
-  &lt;link rel="stylesheet" href="/css/some-css-file.css"&gt;
-  &lt;link rel="stylesheet" href="/css/some-css-file.css"&gt;
-&lt;!-- endbuild --&gt;
+<div class="language-html highlighter-rouge"><pre class=highlight><code><span class=c>&lt;!-- build:css /assets/css/minified.css --&gt;</span>
+    <span class=nt>&lt;link</span> <span class=na>rel=</span><span class=s>"stylesheet"</span> <span class=na>href=</span><span class=s>"/css/some-css-file.css"</span><span class=nt>&gt;</span>
+    <span class=nt>&lt;link</span> <span class=na>rel=</span><span class=s>"stylesheet"</span> <span class=na>href=</span><span class=s>"/css/some-css-file.css"</span><span class=nt>&gt;</span>
+    <span class=nt>&lt;link</span> <span class=na>rel=</span><span class=s>"stylesheet"</span> <span class=na>href=</span><span class=s>"/css/some-css-file.css"</span><span class=nt>&gt;</span>
+    <span class=nt>&lt;link</span> <span class=na>rel=</span><span class=s>"stylesheet"</span> <span class=na>href=</span><span class=s>"/css/some-css-file.css"</span><span class=nt>&gt;</span>
+    <span class=nt>&lt;link</span> <span class=na>rel=</span><span class=s>"stylesheet"</span> <span class=na>href=</span><span class=s>"/css/some-css-file.css"</span><span class=nt>&gt;</span>
+<span class=c>&lt;!-- endbuild --&gt;</span>
 </code></pre></div>
 <p>With this:</p>
 <div class=highlighter-rouge><pre class=highlight><code>&lt;link rel="stylesheet" href="/assets/css/minified.css"&gt;
