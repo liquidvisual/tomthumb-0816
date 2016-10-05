@@ -4,7 +4,7 @@ title: Chris Bierton
 job_title: Director
 permalink: /about-us/team/chris-bierton/
 hero: null
-image: /assets/img/ui/no-face.png
+image: /assets/img/content/team/chris-bierton.jpg
 content_type: team_member
 ---
 

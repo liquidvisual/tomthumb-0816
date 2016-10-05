@@ -17,6 +17,15 @@
 	font-size: rem-calc(18);
 }
 
+.lv-page .btn {
+	&:active,
+	&:focus {
+		background: #b3b3b3;
+		border-color: #b3b3b3;
+		color: #222;
+	}
+}
+
 //-----------------------------------------------------------------
 // BUTTONS
 //-----------------------------------------------------------------
@@ -29,6 +38,7 @@
 	font-size: rem-calc(21);
 	font-weight: bold;
 	padding: rem-calc(9 30);
+	transition: background-color ease 300ms, border-color ease 300ms;
 
 	&:hover {
 		background: white;

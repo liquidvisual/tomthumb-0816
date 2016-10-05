@@ -16,7 +16,7 @@ strategy_execution: <p>Our role in this was to work out a way that we could info
 testimonial_id: 2
 
 media:
-  - src: /assets/img/content/case-studies/QSRH@2x.jpg
-  - src: /assets/img/content/case-studies/placeholder@2x.jpg
-  - src: /assets/img/content/case-studies/placeholder@2x.jpg
+  - src: /assets/img/content/case-studies/qsrh@2x.jpg
+  - src: /assets/img/content/case-studies/qsrh-2@2x.jpg
+  - src: /assets/img/content/case-studies/qsrh-3@2x.jpg
 ---

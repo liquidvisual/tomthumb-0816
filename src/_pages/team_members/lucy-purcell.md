@@ -4,7 +4,7 @@ title: Lucy Purcell
 job_title: Events
 permalink: /about-us/team/lucy-purcell/
 hero: null
-image: /assets/img/ui/no-face.png
+image: /assets/img/content/team/lucy-purcell.jpg
 content_type: team_member
 ---
 

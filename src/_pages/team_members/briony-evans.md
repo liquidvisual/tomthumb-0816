@@ -4,7 +4,7 @@ title: Briony Evans
 job_title: Director
 permalink: /about-us/team/briony-evans/
 hero: null
-image: /assets/img/ui/no-face.png
+image: /assets/img/content/team/briony-evans.jpg
 content_type: team_member
 ---
 

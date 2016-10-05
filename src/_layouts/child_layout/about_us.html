@@ -49,7 +49,7 @@ layout: base__page
 		<ul class="block-grid-xs-1 block-grid-md-2 block-grid-lg-4">
 			{% for item in team_members %}
 			<li>
-				<p><a href="{{ item.url }}"><img width="100%" src="{{ item.image }}" alt="{{ item.title }}"></a></p>
+				<p><a class="img-link" href="{{ item.url }}"><img width="100%" src="{{ item.image }}" alt="{{ item.title }}"></a></p>
 				<h3 class="m-b-1">{{ item.title }} - {{ item.job_title }}</h3>
 				{{ item.content | markdownify | truncate: 250 }}
 				<p><a class="anchor-link" href="{{ item.url }}">MORE <i class="fa fa-angle-right"></i></a></p>

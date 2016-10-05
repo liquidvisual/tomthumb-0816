@@ -15,6 +15,6 @@ testimonial_id: 3
 
 media:
   - src: /assets/img/content/case-studies/living-turf@2x.jpg
-  - src: /assets/img/content/case-studies/placeholder@2x.jpg
-  - src: /assets/img/content/case-studies/placeholder@2x.jpg
+  - src: /assets/img/content/case-studies/living-turf-2@2x.jpg
+  - src: /assets/img/content/case-studies/living-turf-3@2x.jpg
 ---

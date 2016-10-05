@@ -21,9 +21,10 @@ layout: base__page
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<p><img src="/assets/img/content/logo-dark.png" alt="{{ settings.company_title }}"></p>
-				<div class="spacer m-b-2"></div>
+				<p><img width="240" src="/assets/img/content/logo-simple.png" alt="{{ settings.company_title }}"></p>
+				<div class="spacer m-b-1"></div>
 				<p class="h6 m-b-2">{{ settings.offices[0].address }}</p>
+				<div class="spacer hidden-md-down" style="height: 37px;"></div>
 
 				<ul class="block-grid-md-2">
 					{% for person in contacts %}

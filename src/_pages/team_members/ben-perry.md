@@ -4,7 +4,7 @@ title: Ben Perry
 job_title: Director
 permalink: /about-us/team/ben-perry/
 hero: null
-image: /assets/img/ui/no-face.png
+image: /assets/img/content/team/ben-perry.jpg
 content_type: team_member
 ---
 

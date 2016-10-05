@@ -15,6 +15,6 @@ testimonial_id: 4
 
 media:
   - src: /assets/img/content/case-studies/helm@2x.jpg
-  - src: /assets/img/content/case-studies/placeholder@2x.jpg
-  - src: /assets/img/content/case-studies/placeholder@2x.jpg
+  - src: /assets/img/content/case-studies/helm-2@2x.jpg
+  - src: /assets/img/content/case-studies/helm-3@2x.jpg
 ---
