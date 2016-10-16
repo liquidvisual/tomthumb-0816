@@ -15,6 +15,6 @@ testimonial_id: null
 
 media:
   - src: /assets/img/content/case-studies/starting-blocks@2x.jpg
-  - src: http://www.youtube.com/watch?v=ScMzIvxBSi4
+  - src: https://www.youtube.com/watch?v=kG5j-6Bl9sQ
   - src: /assets/img/content/case-studies/starting-blocks-2@2x.jpg
 ---

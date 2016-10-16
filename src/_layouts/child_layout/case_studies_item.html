@@ -43,7 +43,7 @@ layout: base__page
 	{% for item in case_study limit: 3 %}
 	<li>
 		{% if item.src contains 'youtube' %}
-			<a class="popup-youtube" href="http://www.youtube.com/watch?v=ScMzIvxBSi4">
+			<a class="popup-youtube" href="{{ item.src }}">
 				<img width="100%" src="/assets/img/layout/video-placeholder@2x.png" alt="Case Study Video Thumbnail">
 			</a>
 		{% else %}

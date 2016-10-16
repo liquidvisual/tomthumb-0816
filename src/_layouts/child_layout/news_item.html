@@ -2,9 +2,9 @@
 layout: base__page
 ---
 
-{% assign supporting_image = page.supporting_image %}
 {% assign news = site.data.news %}
 {% assign news_item = site.data.news[0] %}
+{% assign news_placeholder_img = '/assets/img/content/news/tom-thumb-news-placeholder.png' %}
 
 <!-- BANNER TEXT -->
 <section class="section-dark is-slim">
@@ -17,7 +17,7 @@ layout: base__page
 <section class="section">
 	<div class="container">
 		<p><a class="anchor-link" href="/news/"><i class="fa fa-reply"></i>&nbsp; RETURN</a></p>
-		<h1 class="text-uppercase">News</h1>
+		<h1 class="text-uppercase">News <br><small>(NOTE: this is a template only. CMS will need to handle individual entries)</small></h1>
 		<hr>
 		<br>
 		<div class="row">
@@ -29,9 +29,7 @@ layout: base__page
 
 					{{ news_item.body | markdownify }}
 
-					{% if news_item.image %}
-						<p class="m-y-2"><img width="300" src="{{ news_item.image }}" alt="Thumbnail"></p>
-					{% endif %}
+					<p class="m-y-2"><img width="300" src="{{ news_item.image | default: news_placeholder_img }}" alt="Thumbnail"></p>
 
 				</article>
 

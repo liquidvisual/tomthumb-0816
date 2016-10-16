@@ -2,7 +2,7 @@
 layout: base__page
 ---
 
-{% assign supporting_image = page.supporting_image %}
+{% assign news_placeholder_img = '/assets/img/content/news/tom-thumb-news-placeholder.png' %}
 {% assign news = site.data.news %}
 
 <!-- BANNER TEXT -->
@@ -27,17 +27,17 @@ layout: base__page
 						{% endif %}
 						<article>
 							<div class="media">
-								{% if item.image %}
-									<span class="media-left p-r-1 hidden-sm-down">
-									  <img width="150" class="media-object" src="{{ item.image }}" alt="Thumbnail">
-									</span>
-								{% endif %}
 
-							  <div class="media-body">
-							    <a href="/news/news-item/"><h3 class="media-heading m-b-0">{{ item.title }}</h3></a>
-							    <p><date>{{ item.date }}</date></p>
-							    {{ item.body | markdownify }}
-							  </div>
+								<span class="media-left p-r-1 hidden-sm-down">
+									<img width="150" class="media-object" src="{{ item.image | default: news_placeholder_img }}" alt="Thumbnail">
+								</span>
+
+								<div class="media-body">
+									<a href="/news/news-item/"><h3 class="media-heading m-b-0">{{ item.title }}</h3></a>
+									<p><date>{{ item.date }}</date></p>
+									{{ item.body | markdownify }}
+								</div>
+
 							</div>
 						</article>
 						<hr class="m-y-2">

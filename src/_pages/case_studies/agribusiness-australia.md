@@ -1,7 +1,7 @@
 ---
 layout: child_layout/case_studies_item
-title: Agri Business Association
-permalink: /case-studies/agri-business-association/
+title: AGRIBUSINESS AUSTRALIA
+permalink: /case-studies/agribusiness-australia/
 content_type: case_study
 featured_on_homepage: true
 feature_order: 5
