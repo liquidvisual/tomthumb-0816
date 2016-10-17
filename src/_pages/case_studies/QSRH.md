@@ -7,7 +7,7 @@ featured_on_homepage: true
 feature_order: 4
 feature_image: /assets/img/content/case-studies/qsrh@2x.jpg
 
-case_desc: <h2>Quick Service Restaurants Holding</h2><p class="lead">Internal communications, Design and Motion</p>Internal communications, Design and Motion<p>We have been working with the QSRH executive team since our conception.  We came in as they were launching Red Roosters new brand and significant change was happening in Oporto and Chicken Treat. Our role has been to help these brands develop strategies to communicate effectively to their franchise partners as well as strategies to help change their customer service offering.  The following is one example of this work.</p>
+case_desc: <h2>Quick Service Restaurants Holding</h2><p class="lead">Internal communications, Design and Motion</p>We have been working with the QSRH executive team since our conception. We came in as they were launching Red Rooster's new brand and significant change was happening in Oporto and Chicken Treat. Our role has been to help these brands develop strategies to communicate effectively to their franchise partners as well as strategies to help change their customer service offering. The following is one example of this work.
 
 vision: <p>Red Rooster is moving away from the fast food space into the convenience space.  To do this they have had to reshape their menu offering. Needing healthier salads to go with their whole roast chicken was seen as vital so by leveraging off the Sumo Salad brand this made smart sense.</p>
 

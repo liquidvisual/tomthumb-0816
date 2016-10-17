@@ -43,7 +43,32 @@
 	&:hover {
 		background: white;
 		color: #444;
-		border-color: inherit;
+		border-color: white;
+	}
+}
+
+//-----------------------------------------------------------------
+// PLAY SYMBOL OVERLAY
+//-----------------------------------------------------------------
+
+.popup-youtube {
+	position: relative;
+	display: block;
+	transition: opacity ease 300ms;
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url(/assets/img/layout/play-overlay@2x.png) no-repeat center center;
+		background-size: cover;
+	}
+
+	&:hover {
+		opacity: 0.6;
 	}
 }
 

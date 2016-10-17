@@ -8,6 +8,8 @@ image: /assets/img/content/team/chris-bierton.jpg
 content_type: team_member
 ---
 
-Chris started his career in events when he was 18 developing a BMX series.  From here went on to study Event Management at South Bank Institute.  He was head hunted by Brisbane’s premier outdoor venue, South Bank Parklands. During his time there, Chris was responsible for events ranging from live TV broadcasts, music concerts and street markets.  Within 2 years, Chris was the running Brisbane’s largest event, the South Bank New Years Eve Celebrations, with over 100,000 attending patrons.
+Chris’s passion has been in the interaction between brands and their consumers. He has owned a number of businesses and is the current owner of Rampfest, (indoor skate park) in Melbourne that reflects his personal passion for youth and action sports. Within Tom Thumb, Chris brings this business experience into developing strategies for our clients to engage with their target audience.
 
-After leaving South Bank in 2007 Chris started Core Operations managing events including The Buddha Birthday Festival (Brisbane). Kite Festival (Brisbane), Newton’s Nation Festival (Bathurst) and Ausbike (Melbourne). In 2012 Chris was contracted by the London 2012 Olympic Games, where he worked as a key part in the development and running of the Cycling and BMX events.
+Chris is passionate about implementing new technologies, processes and systems into business and then monitoring their impact for greatest success.
+
+Chris is also the event director for our sister company, Tom Thumb Events.

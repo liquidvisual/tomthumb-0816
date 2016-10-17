@@ -8,6 +8,8 @@ image: /assets/img/content/team/ben-perry.jpg
 content_type: team_member
 ---
 
-Ben founded Tom Thumb in 2013 as a company that specialised in developing inspiring ideas. The ethos of the business is to discover the ‘why’ before looking at how and what we are to do.
+Ben founded Tom Thumb in 2013. The ethos of this business is to discover the ‘inspiring idea’ before developing the strategy. This reflects Ben’s personal interest in how a business’s brand philosophy permeates through their communication, culture and customer promise which forms the basis of Tom Thumb’s Eye-Q model.
 
-The 10 years previous to Tom Thumb, Ben founded and directed Channelzero - a specialist branding agency with offices in Sydney and Newcastle working with some of Australia’s largest brands. He also owns the Newton’s Nation festival and part owner of the Foxy’s Frozen Yogurt brand in the USA. Ben lives in Sydney with Kate and 2 boys.
+Ben has owned 11 businesses with a variety of partners. These have ranged from an online dating site - **meetmyfriend.com.au**, to Australia’s largest action sports festival - Newton’s Nation, to a FMCG - Foxy’s Frozen yogurt. This exposure to multiple business sectors as well as his marketing and branding experience gained over 10 years through his previous agency, Channel Zero, enables Ben to help businesses leverage their strengths and develop strategies to minimise their risks.
+
+Ben lives in Sydney with Kate and his 2 boys.

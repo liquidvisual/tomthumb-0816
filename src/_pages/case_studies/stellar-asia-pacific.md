@@ -14,7 +14,8 @@ strategy_execution: <p>We undertook extensive research into their market and spe
 testimonial_id: 1
 
 media:
-  - src: http://www.youtube.com/watch?v=ScMzIvxBSi4
+  - src: /assets/img/content/case-studies/stellar-2@2x.png
+    video: https://player.vimeo.com/video/126345386
   - src: /assets/img/content/case-studies/stellar@2x.jpg
   - src: /assets/img/content/case-studies/stellar-women@2x.jpg
 ---

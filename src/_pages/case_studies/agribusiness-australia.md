@@ -1,6 +1,6 @@
 ---
 layout: child_layout/case_studies_item
-title: AGRIBUSINESS AUSTRALIA
+title: Agribusiness Australia
 permalink: /case-studies/agribusiness-australia/
 content_type: case_study
 featured_on_homepage: true

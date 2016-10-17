@@ -42,9 +42,9 @@ layout: base__page
 <ul class="block-grid-xs-1 block-grid-md-3 gallery-grid">
 	{% for item in case_study limit: 3 %}
 	<li>
-		{% if item.src contains 'youtube' %}
-			<a class="popup-youtube" href="{{ item.src }}">
-				<img width="100%" src="/assets/img/layout/video-placeholder@2x.png" alt="Case Study Video Thumbnail">
+		{% if item.video %}
+			<a class="popup-youtube" href="{{ item.video }}">
+				<img width="100%" src="{{ item.src }}" alt="Case Study Video Thumbnail">
 			</a>
 		{% else %}
 			<img width="100%" src="{{ item.src }}" alt="Case Study Thumbnail">

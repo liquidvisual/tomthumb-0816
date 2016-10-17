@@ -9,7 +9,7 @@
 //-----------------------------------------------------------------
 
 $body-bg: white !default;
-$menu-bg-color: #111;
+$menu-bg-color: darken($brand-primary, 5%); //#444;
 $menu-width-xs: 260px;
 $menu-width-md: 350px;
 $hamburger-width: 30px;
