@@ -11,11 +11,11 @@
 // Hero
 //-----------------------------------------------------------------
 
-.lv-hero-wrapper {
-	@include media-breakpoint-down(sm) {
-	    padding-top: $header-height-sm;
-	}
-}
+//.lv-hero-wrapper {
+//	@include media-breakpoint-down(sm) {
+//	    padding-top: $header-height-sm;
+//	}
+//}
 
 .lv-hero .lv-hero-item-caption {
 	color: white;

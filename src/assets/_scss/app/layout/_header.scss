@@ -42,9 +42,9 @@ $header-height-lg: 220px !default;
 	width: 100%;
 	z-index: 1000;
 
-	@include media-breakpoint-down(sm) {
-	    background: white;
-	}
+	//@include media-breakpoint-down(sm) {
+	//    background: white;
+	//}
 
 	> .container {
 		position: relative;
