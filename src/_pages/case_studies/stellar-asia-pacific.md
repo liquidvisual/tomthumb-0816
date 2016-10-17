@@ -6,6 +6,7 @@ content_type: case_study
 featured_on_homepage: true
 feature_order: 2
 feature_image: /assets/img/content/case-studies/stellar@2x.jpg
+hero: video-2
 
 vision: <p>Stellar is Australia’s largest multi-channel customer contact centre group and the most awarded business in their sector looking after a large number of Australia’s most recognised brands across government and commercial enterprise. With 4,500 employees across the region and a rapid growth strategy, their executive team believed their brand did not reflect the evolving organisation and where the business needed to be positioned for the future.</p>
 
