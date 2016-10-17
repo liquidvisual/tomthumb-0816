@@ -171,9 +171,15 @@
         <section class=section>
             <div class=container>
                 <h2 class="text-xs-center m-b-3">How we Work</h2>
-                <a href="/">
+                <a href="/case-studies/" class=hidden-sm-down>
                     <img width=100% src=/assets/img/content/our-process.png>
                 </a>
+                <div class=hidden-md-up>
+                    <p>
+                        <img class=p-x-1 width=100% src=/assets/img/content/our-process-mobile@2x.png>
+                    </p>
+                    <a href="/case-studies/" class="btn btn-primary">Find out more</a>
+                </div>
             </div>
         </section>
 
@@ -470,15 +476,7 @@
     <!-- DELETE BELOW FOR PRODUCTION -->
     <script>
     localStorage.setItem("pageURL", "/about-us/");
-    localStorage.setItem("pageNotes", JSON.stringify([{
-        "title": "Video Issue",
-        "date": "30 August 2016",
-        "body": "This page is currently having issues with the video, it'll be fixed too but expect delays of about 3 days."
-    }, {
-        "title": "Footer problem",
-        "date": "20 June 2016",
-        "body": "There is an issue with the footer on this page - updates to come soon."
-    }]));
+    localStorage.setItem("pageNotes", JSON.stringify(null));
     </script>
 </body>
 </html>
