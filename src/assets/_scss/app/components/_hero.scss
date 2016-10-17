@@ -21,10 +21,16 @@
 	color: white;
 	text-align: center;
 	padding: rem-calc(30);
+	margin: rem-calc(100 0);
+	@include media-breakpoint-up(md) {
+        margin: rem-calc(50 0);
+    }
 
 	h1, h2, h3, h4, h5, h6 {
 		color: white;
 	}
+
+	
 
 	// @include media-breakpoint-down(sm) {
 	//     // background: rgba(black, 0.3);
@@ -33,10 +39,11 @@
 	.lv-hero-header {
 		font-weight: bold;
 		font-size: rem-calc(30);
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 
 		@include media-breakpoint-up(md) {
 		    font-size: rem-calc(36);
+			margin-bottom: 30px;
 		}
 	}
 
@@ -44,10 +51,11 @@
 		width: 40%;
 		height: 2px;
 		background: white;
-		margin: 0 auto 45px auto;
+		margin: 0 auto 30px auto;
 
 		@include media-breakpoint-up(md) {
 		    width: 56%;
+			margin-bottom: 45px;
 		}
 	}
 }
