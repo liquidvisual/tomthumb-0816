@@ -40,7 +40,7 @@ layout: base
 		<div class="carousel">
 			{% for item in news limit: 8 %}
 				<div class="carousel-slide">
-					<div class="row">
+					<div class="row" style="display: flex; align-items: center;">
 						<div class="col-md-8 col-lg-7">
 							<a href="/news/"><h2 class="m-b-2">Latest News</h2></a>
 							<article>
@@ -50,7 +50,7 @@ layout: base
 							</article>
 						</div>
 						<div class="col-md-4 offset-lg-1 hidden-sm-down">
-							<img width="100%" src="{{ item.image }}">
+							<img style="width: auto; max-width: 100%; margin: auto; display: block;" src="{{ item.image }}">
 						</div>
 					</div>
 				</div>

@@ -33,10 +33,11 @@
 	.lv-hero-header {
 		font-weight: bold;
 		font-size: rem-calc(30);
-		margin-bottom: 30px;
+		margin-bottom: rem-calc(20);
 
 		@include media-breakpoint-up(md) {
 		    font-size: rem-calc(36);
+		    margin-bottom: rem-calc(30);
 		}
 	}
 
@@ -44,10 +45,11 @@
 		width: 40%;
 		height: 2px;
 		background: white;
-		margin: 0 auto 45px auto;
+		margin: 0 auto 30px auto;
 
 		@include media-breakpoint-up(md) {
 		    width: 56%;
+		    margin-bottom: 45px;
 		}
 	}
 }
