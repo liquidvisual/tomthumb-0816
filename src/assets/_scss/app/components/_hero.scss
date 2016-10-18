@@ -11,20 +11,26 @@
 // Hero
 //-----------------------------------------------------------------
 
-.lv-hero-wrapper {
-	@include media-breakpoint-down(sm) {
-	    padding-top: $header-height-sm;
-	}
-}
+//.lv-hero-wrapper {
+//	@include media-breakpoint-down(sm) {
+//	    padding-top: $header-height-sm;
+//	}
+//}
 
 .lv-hero .lv-hero-item-caption {
 	color: white;
 	text-align: center;
 	padding: rem-calc(30);
+	margin: rem-calc(100 0);
+	@include media-breakpoint-up(md) {
+        margin: rem-calc(50 0);
+    }
 
 	h1, h2, h3, h4, h5, h6 {
 		color: white;
 	}
+
+	
 
 	// @include media-breakpoint-down(sm) {
 	//     // background: rgba(black, 0.3);
