@@ -25,7 +25,16 @@
 	.headroom--top.global-header {
 		@include media-breakpoint-down(sm) {
 		    background: none;
-		    // position: absolute;
+		}
+
+		.logo-dark {
+			display: none;
+		}
+
+		.logo-light {
+			position: relative;
+			top: 6px;
+			display: block !important;
 		}
 	}
 
