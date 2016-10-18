@@ -40,7 +40,7 @@ $header-height-lg: 220px !default;
 	position: absolute; // covers more use cases
 	top: 0;
 	width: 100%;
-	z-index: 1000;
+	z-index: 2000;
 
 	@include media-breakpoint-down(sm) {
 	    background: white;

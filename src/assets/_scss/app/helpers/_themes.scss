@@ -8,7 +8,7 @@
 // Variables
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
-// Themes
+// HOME THEME
 //-----------------------------------------------------------------
 
 .theme-home-hero {
@@ -20,6 +20,37 @@
 	    }
 	}
 }
+
+.theme-home-hero {
+	.headroom--top.global-header {
+		@include media-breakpoint-down(sm) {
+		    background: none;
+		    // position: absolute;
+		}
+	}
+
+	.headroom--top .lv-hamburger-top,
+	.headroom--top .lv-hamburger-middle,
+	.headroom--top .lv-hamburger-bottom {
+	 	background: white;
+	 }
+
+	.lv-hero-wrapper {
+		@include media-breakpoint-down(sm) {
+		    padding-top: 0;
+		}
+	}
+
+	.lv-hero-item {
+		@include media-breakpoint-down(sm) {
+			padding: rem-calc(60 0);
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// LIGHT THEME
+//-----------------------------------------------------------------
 
 .theme-light-hero {
 	.topbar .top-parent-anchor {
