@@ -64,5 +64,11 @@
 }
 
 //=========================================
-//
+// TEMPORARY - UNTIL CLIENT REVERSES
 //=========================================
+
+.lv-hero.has-fixed-height {
+	@include media-breakpoint-down(sm) {
+	    display: none;
+	}
+}
