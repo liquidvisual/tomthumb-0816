@@ -51,6 +51,12 @@ $header-height-lg: 220px !default;
 	}
 }
 
+.theme-home-hero{
+	.global-header {
+		background: transparent;
+	}
+}
+
 //=========================================
 // Header Height [locked]
 //=========================================
