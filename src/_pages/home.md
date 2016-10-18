@@ -3,6 +3,6 @@ layout: base__homepage
 title: Homepage
 permalink: /
 regenerate: true
-hero: /assets/img/content/hero/video-1.jpg
+hero: video-1
 theme: theme-home-hero
 ---

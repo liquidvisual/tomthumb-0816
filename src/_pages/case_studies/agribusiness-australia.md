@@ -6,6 +6,7 @@ content_type: case_study
 featured_on_homepage: true
 feature_order: 5
 feature_image: /assets/img/content/case-studies/agri@2x.jpg
+hero: video-2
 
 vision: <p>Agribusiness Association of Australia wanted to rebrand to coincide with a new constitution and direction of advocacy. The association started 25 years ago and is the peak body that represents agribusiness in Australia.</p>
 

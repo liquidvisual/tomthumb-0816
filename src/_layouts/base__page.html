@@ -7,7 +7,25 @@ layout: base
 <!-- HERO -->
 <div class="lv-hero-wrapper">
     <div class="lv-hero has-fixed-height">
-        <div class="lv-hero-item" style="background-image: url('{{ hero }}')"></div>
+
+		<!-- HERO ITEM -->
+		{% if hero contains 'video' %}
+
+	    	<div class="lv-hero-item" style="background-image: url('/assets/video/{{hero}}.jpg')">
+	    		<!-- HTML5 VIDEO -->
+	    		<video autoplay loop muted>
+	    		    <source data-src="/assets/video/{{hero}}.webm" type="video/webm">
+	    		    <source data-src="/assets/video/{{hero}}.mp4" type="video/mp4">
+	    		</video>
+			</div>
+
+		{% else %}
+
+			<!-- HERO ITEM -->
+	    	<div class="lv-hero-item" style="background-image: url('{{ hero }}')"></div>
+
+		{% endif %}
+
     </div>
 </div>
 

@@ -6,6 +6,7 @@ content_type: case_study
 featured_on_homepage: true
 feature_order: 6
 feature_image: /assets/img/content/case-studies/living-turf@2x.jpg
+hero: video-2
 
 vision: <p>Owner Rob Cooper had a vision to change the current practice of reactive spraying of chemicals in the turf industry to one of preventative spraying. This would greatly reduce the amount of chemicals used, be kinder to the environment and save on turf repair costs. To do this, the concept was to bring real time weather and soil data into weed and disease algorithms that could alert ground-keepers when the chance of outbreak was imminent.</p>
 

@@ -2,7 +2,7 @@
 layout: child_layout/about_us
 title: About Us
 permalink: /about-us/
-hero: null
+hero: video-3
 
 body_col_1: <p>We are named after the small and nimble boat ‘Tom Thumb’ that explorers Bass and Flinders built to investigate the tributaries around the Australian coastline. Just like Bass and Flinders, we aspire to delve into our clients’ business to develop inspiring strategies and creative ideas that will bring their vision to life.</p><p>We work with company leaders and through our business and brand acumen, best marketing practices and creative knowledge we deliver targeted and effective strategies to solve their challenges.</p>
 
