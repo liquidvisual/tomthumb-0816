@@ -25,8 +25,8 @@ layout: base__page
 			<div class="col-md-12 col-xl-4 text-xs-center text-xl-left">
 				<h1 class="h2 text-transform-inherit">{{ page.title }}</h1>
 			</div>
-			<div class="col-md-12 col-xl-8 text-md-right">
-				<nav class="nav-list ">
+			<div class="col-md-12 col-xl-8">
+				<nav class="nav-list text-md-center text-xl-right">
 					{% for item in case_studies %}
 						{% unless item.title == page.title %}
 							<a class="nav-link" href="{{ item.url }}">{{ item.title }}</a>

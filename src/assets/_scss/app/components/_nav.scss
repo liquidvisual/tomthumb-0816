@@ -20,7 +20,7 @@
 	}
 
 	@include media-breakpoint-up(xl) {
-		left: 25px; // easiest way to go about it
+		left: 32px; // easiest way to go about it // magic numbers
 		padding-top: 0;
 	}
 
@@ -31,11 +31,12 @@
 
 	a {
 		display: block;
-		padding: 0 15px 0 15px;
+		padding: rem-calc(0 18 18 18); // prevent spillage
 		color: $brand-quinary;
 
 		@include media-breakpoint-up(md) {
 		    display: inline-block;
+		    padding-bottom: 0;
 		}
 
 		&:hover {
