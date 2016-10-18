@@ -120,7 +120,7 @@ $header-height-lg: 220px !default;
 
 .global-mobile-menu {
 	position: absolute;
-	right: $container-gutter;
+	right: $container-gutter/2;
 	top: 18px;//$container-gutter;
 	display: block;
 	overflow: hidden;
