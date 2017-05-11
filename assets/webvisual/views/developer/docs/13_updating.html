@@ -1,17 +1,17 @@
-<h1 id=updating>Updating</h1>
+<h1 id="updating">Updating</h1>
 <hr>
 <div class="spacer m-b-3"></div>
-<h2 id=the-easy-way>The Easy Way</h2>
+<h2 id="the-easy-way">The Easy Way</h2>
 <p>Cosmetic changes can be applied the quickest by simply replacing your
     <strong>/assets</strong> folder with the one in the
-    <a href=https://github.com/liquidvisual/tomthumb-0816/tree/gh-pages>gh-pages</a> repo, assuming
+    <a href="https://github.com/liquidvisual/tomthumb-0816/tree/gh-pages">gh-pages</a> repo, assuming
     <strong>liquidvisual</strong> is contracted for updates. Remember the assets folder contains everything that isn’t HTML (images, fonts, JavaScript, CSS).</p>
 <div class="spacer m-b-2"></div>
-<h2 id=the-diy-way>The DIY Way</h2>
-<p>In a pinch, you may want to fix something quickly yourself. To avoid the effort of installing the codebase, simply create a new stylesheet or JavaScript file and link to it in the <code class=highlighter-rouge>&lt;head&gt;</code> of your document. These files can store quick fixes and time sensitive updates. At a later time, they can be absorbed into the SCSS files and recompiled with a <code class=highlighter-rouge>grunt build</code> by you or your developer.</p>
+<h2 id="the-diy-way">The DIY Way</h2>
+<p>In a pinch, you may want to fix something quickly yourself. To avoid the effort of installing the codebase, simply create a new stylesheet or JavaScript file and link to it in the <code class="highlighter-rouge">&lt;head&gt;</code> of your document. These files can store quick fixes and time sensitive updates. At a later time, they can be absorbed into the SCSS files and recompiled with a <code class="highlighter-rouge">grunt build</code> by you or your developer.</p>
 <p>In future, when updates are made - one only needs to copy over the
     <strong>dist/assets</strong> folder from the remote repo into your CMS environment.</p>
-<h2 id=arent-two-codebases-counter-intuitive>Aren’t Two Codebases Counter Intuitive?</h2>
+<h2 id="arent-two-codebases-counter-intuitive">Aren’t Two Codebases Counter Intuitive?</h2>
 <p>Yes and no. In our experience, upgrading the simplest of websites once inside a CMS can be really difficult, and that difficulty grows exponentially with every change. You lose the ability to use local tools such as browserSync to quickly preview changes and your ability to version control updates.</p>
 <p>Having a Jekyll codebase for development has 3 powerful advantages:</p>
 <ol>

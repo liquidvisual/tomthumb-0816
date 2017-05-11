@@ -1,10 +1,10 @@
-<h1 id=templating>Templating</h1>
+<h1 id="templating">Templating</h1>
 <p>
     <strong>NOTE:</strong> All of these folders live inside
     <strong>/src</strong>
 </p>
 <div class="spacer m-b-2"></div>
-<h2 id=layouts>Layouts</h2>
+<h2 id="layouts">Layouts</h2>
 <p>Layouts are stored in the
     <strong>/_layouts</strong> folder and have 3 levels of heirarchy. They inherit from the bottom up.</p>
 <ol>
@@ -13,20 +13,20 @@
     <li>base__*.html (eg. base__homepage.html)</li>
 </ol>
 <div class="spacer m-b-2"></div>
-<h2 id=includes>Includes</h2>
+<h2 id="includes">Includes</h2>
 <p>Some templates will draw on partials, which are just small HTML chunks inside the
     <strong>/_includes</strong> folder. These includes will sometimes use global template variables from their parent template.</p>
 <div class="spacer m-b-2"></div>
-<h2 id=data>Data</h2>
+<h2 id="data">Data</h2>
 <p>Some templates and includes will draw data (such as the navigation and locations listing) from YAML files located inside
     <strong>/_data</strong>. This keeps things external and templates are able to use basic loops and conditionals to interact with it, similiar to the logic in the back-end.</p>
 <div class="spacer m-b-2"></div>
-<h2 id=pages>Pages</h2>
+<h2 id="pages">Pages</h2>
 <p>Each Jekyll page is initiated with a single MARKDOWN file acting as the point of entry. These files contain meta data, permalinks and page specific variables which get passed into the layouts. They also contain body text which is stored as:</p>
-<div class=highlighter-rouge><pre class=highlight><code><span class=p>{</span><span class=err>{</span><span class=w> </span><span class=err>content</span><span class=w> </span><span class=p>}</span><span class=err>}</span><span class=w>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">content</span><span class="w"> </span><span class="p">}</span><span class="err">}</span><span class="w">
 </span></code></pre></div>
 <p>In the YAML front matter - these leaf pages will specify a template to use, eg. /internal/blog.html which will start at the page layouts and inherit up the chain.</p>
 <div class="spacer m-b-2"></div>
-<h2 id=front-matter>Front Matter</h2>
+<h2 id="front-matter">Front Matter</h2>
 <p>Every layout and markdown file (except the master.html) contain front matter in the form of YAML at the head of the document. This is used to specify layouts and page variables. Some data is stubbed inside the actual layout - for hinting and quick access.</p>
 <p>As a general rule of thumb; if variables are in the front-matter, they’re page variables and user editable. If they’re inside the actual layout - it’s for layout logic.</p>

@@ -1,21 +1,21 @@
-<h1 id=troubleshooting>Troubleshooting</h1>
+<h1 id="troubleshooting">Troubleshooting</h1>
 <hr>
 <div class="spacer m-b-3"></div>
-<h2 id=im-receiving-an-emfile-error>I’m Receiving an EMFILE error</h2>
+<h2 id="im-receiving-an-emfile-error">I’m Receiving an EMFILE error</h2>
 <p>This relates to the hard limits set by the operating system and the ability for browserSync to watch files. If the limit exceeds, the terminal will throw the below error.</p>
-<div class="language-shell highlighter-rouge"><pre class=highlight><code>Fatal error: EMFILE: Too many opened files.
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>Fatal error: EMFILE: Too many opened files.
 </code></pre></div>
 <p>A way around this is to set a higher limit with each session. Simply use the following and you’re good to go:</p>
-<div class="language-shell highlighter-rouge"><pre class=highlight><code><span class=nb>ulimit</span> -n 10240
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">ulimit</span> -n 10240
 </code></pre></div>
 <div class="spacer m-b-2"></div>
-<h2 id=random-css-styles-arent-working-in-ie>Random CSS Styles Aren’t Working in IE</h2>
+<h2 id="random-css-styles-arent-working-in-ie">Random CSS Styles Aren’t Working in IE</h2>
 <p>There’s a lesser known restriction in Internet Explorer where stylesheets hit a soft limit of 4095 selectors. Reaching this number will cause IE6, IE7, IE8 and IE9 to simply ignore all subsequent rules past that limit. The best course of action is to break files down into multiple files to reduce this number.</p>
 <p>Another way around this can be found in “Blessing” files. See
-    <a href=http://blesscss.com>http://blesscss.com</a>
+    <a href="http://blesscss.com">http://blesscss.com</a>
 </p>
 <div class="spacer m-b-2"></div>
-<h2 id=my-assets-arent-loading-properly>My Assets Aren’t Loading Properly</h2>
+<h2 id="my-assets-arent-loading-properly">My Assets Aren’t Loading Properly</h2>
 <p>All paths are
     <strong>root relative</strong>, pointing to an
     <strong>/assets</strong> directory and assuming everything resides in that root directory.</p>
@@ -23,14 +23,14 @@
     <strong>assets/</strong> folder is in the root directory. For more information see
     <a href="/manage/#/developer/docs/08_assets/">Assets</a>.</p>
 <div class="spacer m-b-2"></div>
-<h2 id=i-cant-run-npm-install>I Can’t Run ‘npm install’</h2>
-<p>In many cases a failure with <code class=highlighter-rouge>npm install</code> is to do with user permissions. On Mac one can use
+<h2 id="i-cant-run-npm-install">I Can’t Run ‘npm install’</h2>
+<p>In many cases a failure with <code class="highlighter-rouge">npm install</code> is to do with user permissions. On Mac one can use
     <strong>sudo</strong> to run the command as Administrator, which takes care of it in most cases:</p>
-<div class=highlighter-rouge><pre class=highlight><code>sudo npm install
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm install
 </code></pre></div>
 <p>Failing that, you may want to clear npm’s cache - as some files can get corrupted if downloaded incorrectly.</p>
 <p>Delete the
     <strong>/node-modules</strong> directory and then run:</p>
-<div class=highlighter-rouge><pre class=highlight><code>sudo npm cache clean
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm cache clean
 sudo npm install
 </code></pre></div>

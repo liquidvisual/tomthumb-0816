@@ -1,28 +1,28 @@
-<h1 id=compatibility>Compatibility</h1>
+<h1 id="compatibility">Compatibility</h1>
 <hr>
-<div class=panel>
+<div class="panel">
     <strong>NOTE:</strong>
     <p>Cross browser testing has been performed in IE9 and IE10 in addition to all modern browsers.</p>
 </div>
-<h3 id=ie-conditionals>IE Conditionals</h3>
+<h3 id="ie-conditionals">IE Conditionals</h3>
 <p>IE Conditionals are found throughout the Base layout but the most important are at the very top.</p>
-<div class=highlighter-rouge><pre class=highlight><code><span class=cp>&lt;!DOCTYPE html&gt;</span>
-<span class=c>&lt;!--[if lt IE 9]&gt;       &lt;html class="lt-ie9"&gt; &lt;![endif]--&gt;</span>
-<span class=c>&lt;!--[if IE 9]&gt;          &lt;html class="lt-ie10"&gt; &lt;![endif]--&gt;</span>
-<span class=c>&lt;!--[if gt IE 9]&gt;&lt;!--&gt;</span>  <span class=nt>&lt;html&gt;</span> <span class=c>&lt;!--&lt;![endif]--&gt;</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="c">&lt;!--[if lt IE 9]&gt;       &lt;html class="lt-ie9"&gt; &lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if IE 9]&gt;          &lt;html class="lt-ie10"&gt; &lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if gt IE 9]&gt;&lt;!--&gt;</span>  <span class="nt">&lt;html&gt;</span> <span class="c">&lt;!--&lt;![endif]--&gt;</span>
 </code></pre></div>
 <p>This allows us to target “versions” of IE in CSS and JS by using a
     <strong>.lt-ie[x]</strong> class selector.</p>
-<h3 id=polyfills>Polyfills</h3>
+<h3 id="polyfills">Polyfills</h3>
 <p>All polyfills are found in the
     <strong>master.html</strong> in the
     <strong>/layouts</strong> folder. The order of these items in that Master layout is extremely important. Let’s run through them.</p>
-<div class="language-html highlighter-rouge"><pre class=highlight><code><span class=c>&lt;!-- Priority Scripts --&gt;</span>
-<span class=nt>&lt;script </span><span class=na>src=</span><span class=s>"//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"</span><span class=nt>&gt;&lt;/script&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- Priority Scripts --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre></div>
 <p>
-    <a href=http://modernizr.com>Modernizr</a> is loaded in the head via CDN (right below JQuery). Modernizr is a JavaScript library that detects HTML5 and CSS3 features. IE8 will NOT recognise HTML5 elements such as <code class=highlighter-rouge>&lt;article&gt;</code> or <code class=highlighter-rouge>&lt;header&gt;</code> by default. Fortunately Modernizr patches this for us.</p>
-<h2 id=cdns>CDNs</h2>
+    <a href="http://modernizr.com">Modernizr</a> is loaded in the head via CDN (right below JQuery). Modernizr is a JavaScript library that detects HTML5 and CSS3 features. IE8 will NOT recognise HTML5 elements such as <code class="highlighter-rouge">&lt;article&gt;</code> or <code class="highlighter-rouge">&lt;header&gt;</code> by default. Fortunately Modernizr patches this for us.</p>
+<h2 id="cdns">CDNs</h2>
 <p>Leveraging content delivery networks is much easier for these polyfills. We don’t have to worry about minifying or maintaining local files. Business networks
     <strong>may</strong> have an issue if they have some crazy firewall in place - but in that case they wouldn’t be able to load fonts from Google either. Best to keep in mind.</p>
 <p class="text-center medium-text-right">
