@@ -1,67 +1,84 @@
 /*
-    MAIN.JS - Last updated: 04.08.16
+    MAIN.JS - Last updated: 11.11.17
 */
 //-----------------------------------------------------------------
-// Variables
+// VARIABLES
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
-// Document Ready
+// WINDOW LOAD
 //-----------------------------------------------------------------
 
-$(document).ready(function() {
-    $('input, textarea').placeholder(); // IE9 Patch
+$(window).on('load', function() {
+    $('html').addClass('has-loaded');
+    carousel();
 
-    //-----------------------------------------------------------------
-    // HTML5 Video
-    //-----------------------------------------------------------------
+    // LOAD VIDEO
 
-    if ($(window).width() > 1024) {
-        var sources = $("video source");
-
-        sources.each(function(){
-            $this = $(this);
-            var source = $this.attr('data-src');
-            $(this).attr('src', source);
-        });
+    try {
+        $('video')[0].load();
+    } catch(err) {
+        console.log('Eek! Video error.')
     }
+});
 
-    //-----------------------------------------------------------------
-    // Menu Toggle
-    //-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// PLACEHOLDER
+//-----------------------------------------------------------------
 
-    var $submenuTrigger = $('<span class="submenu-trigger"><i class="fa fa-angle-right"></i></span>');
+$('input, textarea').placeholder(); // IE9 Patch
 
-    $('[data-menu-toggle]').click(function(){
-        $('html').toggleClass('has-open-menu');
+//-----------------------------------------------------------------
+// HTML5 Video
+//-----------------------------------------------------------------
+
+if ($(window).width() > 1024) {
+    var sources = $("video source");
+
+    sources.each(function(){
+        $this = $(this);
+        var source = $this.attr('data-src');
+        $(this).attr('src', source);
     });
+}
 
-    $submenuTrigger.click(function(event){
-        event.preventDefault();
-        event.stopPropagation();
-        $(this).parent().next('.dropdown').addClass('is-open');
-    });
+//-----------------------------------------------------------------
+// Menu Toggle
+//-----------------------------------------------------------------
 
-    // INIT
-    $('.lv-off-canvas .has-dropdown > a').append($submenuTrigger);
+var $submenuTrigger = $('<span class="submenu-trigger"><i class="fa fa-angle-right"></i></span>');
 
-    // BACK
-    $('.lv-off-canvas .dropdown').click(function(event){
-        $(this).removeClass('is-open');
-        event.stopPropagation();
-    });
+$('[data-menu-toggle]').click(function(){
+    $('html').toggleClass('has-open-menu');
+});
 
-    //-----------------------------------------------------------------
-    // Launch Manage
-    //-----------------------------------------------------------------
+$submenuTrigger.click(function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    $(this).parent().next('.dropdown').addClass('is-open');
+});
 
-    key('⌘+shift+m, ctrl+shift+m', function(){
-      window.location = '/manage/';
-    });
+// INIT
+$('.lv-off-canvas .has-dropdown > a').append($submenuTrigger);
 
-    //-----------------------------------------------------------------
-    // Carousel
-    //-----------------------------------------------------------------
+// BACK
+$('.lv-off-canvas .dropdown').click(function(event){
+    $(this).removeClass('is-open');
+    event.stopPropagation();
+});
 
+//-----------------------------------------------------------------
+// Launch Manage
+//-----------------------------------------------------------------
+
+key('⌘+shift+m, ctrl+shift+m', function(){
+    window.location = '/manage/';
+});
+
+//-----------------------------------------------------------------
+// Carousel
+//-----------------------------------------------------------------
+
+function carousel(){
     $('.carousel').bxSlider({
         auto: true,
         mode: 'horizontal', // fade (much have fixed height or won't work)
@@ -79,35 +96,19 @@ $(document).ready(function() {
         useCSS: true,
         pager: true
     });
-
-    //-----------------------------------------------------------------
-    // Magnific Popup
-    //-----------------------------------------------------------------
-
-    $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-        // disableOn: 700,
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false
-    });
-
-});
+}
 
 //-----------------------------------------------------------------
-// WINDOW LOAD
+// Magnific Popup
 //-----------------------------------------------------------------
 
-$(window).on('load', function() {
-
-    try {
-        $('video')[0].load();
-    } catch(err) {
-
-    }
-
-    $('html').addClass('has-loaded');
+$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+    // disableOn: 700,
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
+    fixedContentPos: false
 });
 
 //-----------------------------------------------------------------
