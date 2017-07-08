@@ -72,7 +72,6 @@ $('.lv-off-canvas .dropdown').click(function(event){
 
 key('⌘+shift+m, ctrl+shift+m', function(){
     window.location = '/manage/';
-    console.log('Netlify working');
 });
 
 //-----------------------------------------------------------------
