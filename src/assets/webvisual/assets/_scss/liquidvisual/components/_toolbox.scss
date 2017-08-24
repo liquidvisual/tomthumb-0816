@@ -41,21 +41,8 @@ $include-developer-styles: true !default;
 }
 
 //-----------------------------------------------------------------
-// Example Text
-//-----------------------------------------------------------------
-
-.lv-example {
-	padding: 1.250em;
-	border: 1px dashed #CFCCCF;
-	margin-bottom: 1.875em;
-	background: white;
-	box-shadow: 0 3px 5px -4px rgba(0, 0, 0, 0.26);
-}
-
-//-----------------------------------------------------------------
 // Helper Classes
 //-----------------------------------------------------------------
-
 //=========================================
 // Display
 //=========================================
@@ -104,12 +91,12 @@ $include-developer-styles: true !default;
 
 .lv-dropcap:first-letter {
 	float: left;
-	color: $primary-color;
-	font-size: 100px;
-	line-height: 90px;
 	padding-top: 4px;
 	padding-right: 10px;
 	padding-left: 3px;
+	line-height: 90px;
+	font-size: 100px;
+	color: $primary-color;
 }
 
 //=========================================

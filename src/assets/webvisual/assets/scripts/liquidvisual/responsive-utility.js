@@ -1,5 +1,5 @@
 /*
-    RESPONSIVE-UTILITY.JS - Last updated: 17.01.16
+    RESPONSIVE-UTILITY.JS - Last updated: 24.02.17
 
     - Notes: Needs refactor
 */
@@ -66,7 +66,7 @@
         var $body = $('body');
 
         if ($('.lv-screen-data').length != 1) {
-            $body.append('<div class="lv-screen-data"></div>');
+            $body.append('<div class="lv-screen-data" draggable="true"></div>');
         }
         var screenWidth = $(window).width();
         var screenHeight = $(window).height();
@@ -83,6 +83,8 @@
                 'position': 'fixed',
                 'top': 0,
                 'padding': '10px 20px',
+                //'margin': '4px',
+                // 'border-radius': '3px',
                 'background': 'rgba(0,0,0,0.5)',
                 'font-family': 'Helvetica Neue',
                 'font-size': '14px',
@@ -98,7 +100,7 @@
     // Display if body has 'dev-mode' attribute
     //-----------------------------------------------------------------
 
-    if ($('body[dev-mode-enabled="true"]').length) {
+    if ($('html[data-dev-mode]').length) {
 
         // Launch it
         responsiveHelper();

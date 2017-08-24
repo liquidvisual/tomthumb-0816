@@ -1,11 +1,10 @@
 /*
 	ALERT-BAR.CSS
 
-	- updated: 23.07.16
+	- updated: 24.02.17
 	- liquidvisual.com
 
 	- Notes:
-	  - Requires Modernizr
 	  - Since this is primarily an IE notifier, pxs and hacks are used
 */
 //-----------------------------------------------------------------
@@ -45,6 +44,7 @@ $alert-font-size:     14px    !default;
 	left: 0;
 	margin: 0;
 	width: 100%;
+	background: $alert-color; // IE8 fallback
 	background: rgba($alert-color, 0.95);
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: white;
@@ -83,6 +83,20 @@ $alert-font-size:     14px    !default;
 	&:active {
 		background: darken($alert-color, 10%);
 	}
+}
+
+//-----------------------------------------------------------------
+// BLACKOUT
+//-----------------------------------------------------------------
+
+.lv-blackout {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: white;
+	z-index: -1;
 }
 
 //-----------------------------------------------------------------

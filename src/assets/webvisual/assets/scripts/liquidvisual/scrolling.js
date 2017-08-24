@@ -1,44 +1,9 @@
 /*
-	SCROLLING.JS - Last updated: 16.06.15
+	SCROLLING.JS - Last updated: 30.09.16
 */
 //-----------------------------------------------------------------
 // Variables
 //-----------------------------------------------------------------
-//-----------------------------------------------------------------
-// http://stackoverflow.com/questions/24765185/hide-fixed-header-on-scroll-down-show-on-scroll-up-and-hover
-// http://jsfiddle.net/uAc3p/5/
-//-----------------------------------------------------------------
-
-$(function(){
-	var lastScrollTop = 0;
-	var delta = 5;
-
-	$(window).scroll(function(event){
-		var header = $('.global-header');
-		var st = $(this).scrollTop();
-		var headerHeight = header.position().top + header.outerHeight(true);
-
-		if (Math.abs(lastScrollTop - st) <= delta) return;
-
-		if (st > lastScrollTop ) {
-			$('body').removeClass('scrolling-up');
-
-		} else {
-			// upscroll code
-			$('body').addClass('scrolling-up');
-		}
-		lastScrollTop = st;
-	});
-});
-
-//-----------------------------------------------------------------
-//
-//-----------------------------------------------------------------
-
-// var topMenu = $(".topbar");
-// var topMenuHeight = topMenu.outerHeight();
-// var menuItems = $('.topbar, .off-canvas-menu').find('a');
-
 //-----------------------------------------------------------------
 // Click Logo: Jump to Top
 //-----------------------------------------------------------------

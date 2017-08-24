@@ -1,22 +1,24 @@
 /*
-BLOCK-GRID.CSS
+    BLOCK-GRID.CSS
 
-- updated: 28.06.16
-- liquidvisual.com
+    - Last updated: 06.10.16
+    - liquidvisual.com
 */
 //-----------------------------------------------------------------
-// Variables
-//-----------------------------------------------------------------
-//-----------------------------------------------------------------
-// BLOCK GRID
+// VARIABLES
 //-----------------------------------------------------------------
 
+$grid-gutter-width: 30px !default;
+
+//-----------------------------------------------------------------
+// BLOCK GRID
+//
 // https://gist.github.com/Jursdotme/67abe379d4a357233d3c
-// Block Grid
-// Technique adapted from Foundation 5 for Bootstrap 3.
+// Block Grid technique adapted from Foundation 5 for Bootstrap 3.
 // https://github.com/zurb/foundation/blob/f755d8704123f86c281ede0b171881e2672f150d/scss/foundation/components/_block-grid.scss
 // Original LESS Version by Christopher Mitchell (https://gist.github.com/ChrisTM)
 // Converted to SCSS by Rasmus Jürs (https://github.com/Jursdotme)
+//-----------------------------------------------------------------
 
 [class*="block-grid-"] {
   @include clearfix();
@@ -100,6 +102,3 @@ BLOCK-GRID.CSS
 //=========================================
 //
 //=========================================
-
-
-
