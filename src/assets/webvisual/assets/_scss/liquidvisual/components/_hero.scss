@@ -10,11 +10,11 @@
 // Variables
 //-----------------------------------------------------------------
 
-$hero-height-small:           auto; //rem-calc(266); // default: auto // IMPORTANT: if carousel slides, you need a fixed height
-$hero-height-medium:          rem-calc(575);
-$hero-height-medium-fixed:    rem-calc(575);
-$hero-height-large:           rem-calc(690); //rem-calc(570);
-$hero-carousel-bullet-size:   rem-calc(16);
+$hero-height-sm:            auto; // IMPORTANT: if carousel slides, you need a fixed height
+$hero-height-md:            rem-calc(575);
+$hero-height-md-fixed:      rem-calc(575);
+$hero-height-lg:            rem-calc(690);
+$hero-carousel-bullet-size: rem-calc(16);
 
 //-----------------------------------------------------------------
 // Hero Wrapper
@@ -35,14 +35,14 @@ $hero-carousel-bullet-size:   rem-calc(16);
 .lv-hero {
     width: 100%; // added last minute - breaking?
     overflow: hidden; // causes problems without JS
-    height: $hero-height-small;
+    height: $hero-height-sm;
 
     @include media-breakpoint-up(md) {
-        height: $hero-height-medium;
+        height: $hero-height-md;
     }
 
     @include media-breakpoint-up(lg) {
-       height: $hero-height-large;
+       height: $hero-height-lg;
     }
 
     //=========================================
@@ -62,7 +62,7 @@ $hero-carousel-bullet-size:   rem-calc(16);
     //=========================================
 
     &.has-fixed-height {
-        height: rem-calc(150); //$hero-height-small;
+        height: rem-calc(150); //$hero-height-sm;
         background-position: center center;
 
         @include media-breakpoint-up(md) { // added - refactor
@@ -70,7 +70,7 @@ $hero-carousel-bullet-size:   rem-calc(16);
         }
 
         @include media-breakpoint-up(xl) {
-           height: $hero-height-medium-fixed;
+           height: $hero-height-md-fixed;
         }
     }
 }
@@ -150,6 +150,11 @@ $hero-carousel-bullet-size:   rem-calc(16);
         text-align: center;
         font-family: "FontAwesome";
         font-size: rem-calc(50);
+        display: none;
+
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
 
         a {
             position: absolute;
@@ -162,19 +167,11 @@ $hero-carousel-bullet-size:   rem-calc(16);
     }
 
     .lv-hero-carousel-prev-btn {
-        left: rem-calc(20);
-
-        @include media-breakpoint-up(md) {
-            left: 0;
-        }
+        left: $container-gutter/2;
     }
 
     .lv-hero-carousel-next-btn {
-        right: rem-calc(20);
-
-        @include media-breakpoint-up(md) {
-            right: 0;
-        }
+        right: $container-gutter/2;
     }
 }
 
